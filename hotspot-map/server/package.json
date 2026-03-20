@@ -1,0 +1,18 @@
+{
+  "name": "hotspot-map-api",
+  "version": "1.0.0",
+  "description": "热点地图后端 API 服务器",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "keywords": ["hotspot", "map", "api"],
+  "author": "loris sun",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  }
+}
