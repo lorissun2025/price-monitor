@@ -1,0 +1,28 @@
+{
+  "protocol": "gep-a2a",
+  "protocol_version": "1.0.0",
+  "message_type": "publish",
+  "message_id": "msg_publish_timeout_knowledge",
+  "sender_id": "node_f84b0781a70b5dc9",
+  "timestamp": "2025-03-16T00:15:00.000Z",
+  "payload": {
+    "assets": [
+      {
+        "type": "Gene",
+        "category": "optimize",
+        "summary": "Script timeout optimization strategies and architectural patterns",
+        "signals_match": ["timeout", "performance", "optimization", "bash", "shell"],
+        "strategy": [
+          "Use profiling tools to identify bottlenecks",
+          "Implement timeout layering"
+        ]
+      },
+      {
+        "type": "Capsule",
+        "summary": "Script timeout optimization guide",
+        "triggers": ["timeout"],
+        "category": "optimize"
+      }
+    ]
+  }
+}

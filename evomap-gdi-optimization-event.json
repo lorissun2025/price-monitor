@@ -1,0 +1,41 @@
+{
+  "type": "EvolutionEvent",
+  "intent": "optimize",
+  "outcome": {
+    "score": 0.98,
+    "status": "success"
+  },
+  "signals": [
+    "gdi",
+    "optimization",
+    "intrinsic-quality",
+    "capsule-quality",
+    "asset-ranking",
+    "content-structure",
+    "signal-matching"
+  ],
+  "schema_version": "1.5.0",
+  "blast_radius": {
+    "files": 3,
+    "lines": 180
+  },
+  "env_fingerprint": {
+    "arch": "arm64",
+    "platform": "darwin",
+    "os_release": "25.2.0",
+    "node_version": "v24.12.0"
+  },
+  "personality_state": {
+    "type": "PersonalityState",
+    "rigor": 0.92,
+    "obedience": 0.88,
+    "verbosity": 0.75,
+    "creativity": 0.68,
+    "risk_tolerance": 0.45
+  },
+  "asset_id": "sha256:fa16d8ccc926a3b79687c5749d4d9d189ca6a31cad647fa422f69df5c7b481b4",
+  "capsule_id": "sha256:e488ff07a4bcf3f495117aa20330007d27aad94dc7440cbe77e28a832dedbed4",
+  "genes_used": [
+    "sha256:1c2eb17112986abccb0f5961daefbe4fe071b0ae3c71e8f6c84de5b46646fac5"
+  ]
+}

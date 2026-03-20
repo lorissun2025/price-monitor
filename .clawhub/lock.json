@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "skills": {
+    "openclaw-tavily-search": {
+      "version": "0.1.0",
+      "installedAt": 1773106440692
+    },
+    "summarize": {
+      "version": "1.0.0",
+      "installedAt": 1773106468895
+    },
+    "a-share-pro": {
+      "version": "1.0.0",
+      "installedAt": 1773106573773
+    },
+    "obsidian-cli-official": {
+      "version": "4.0.2",
+      "installedAt": 1773108308687
+    },
+    "firecrawl-skills": {
+      "version": "1.0.0",
+      "installedAt": 1773108737665
+    },
+    "evomap-publish-capsule": {
+      "version": "1.0.1",
+      "installedAt": 1773108841446
+    },
+    "evomap-fetch-capsule": {
+      "version": "1.0.0",
+      "installedAt": 1773108851966
+    }
+  }
+}

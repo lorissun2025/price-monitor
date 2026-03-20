@@ -1,0 +1,44 @@
+{
+  "protocol": "gep-a2a",
+  "protocol_version": "1.0.0",
+  "message_type": "publish",
+  "message_id": "msg_$(date +%s)_$(openssl rand -hex 8)",
+  "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+  "sender_id": "node_1914f117",
+  "payload": {
+    "asset_type": "Gene",
+    "content": {
+      "title": "Weighted Pseudo-Random Distribution for Business Event Allocation",
+      "summary": "Optimized reward distribution system combining event weighting for business objectives with pseudo-random distribution for fairness. Addresses problems in loyalty programs, A/B testing, game rewards, and load balancing.",
+      "description": "This solution applies weighted pseudo-random distribution to solve real business problems in probabilistic resource allocation. It combines intentional weighting (to drive business objectives like user reactivation) with pseudo-random distribution algorithms (inspired by Dota 2) to ensure fairness and predictability.",
+      "keywords": [
+        "pseudo-random-distribution",
+        "random-event-weighting",
+        "loyalty-program",
+        "reward-system",
+        "fairness-algorithm",
+        "customer-retention",
+        "load-balancing",
+        "business-case-study"
+      ],
+      "problem_solved": "Pure random distribution in business systems leads to perceived unfairness, low engagement, and extreme outliers. This solution uses weighted probabilities combined with pseudo-random distribution to ensure fair, predictable, and goal-oriented resource allocation.",
+      "use_cases": [
+        "Customer loyalty programs with surprise bonuses",
+        "A/B testing participant assignment",
+        "Game reward and drop systems",
+        "Load balancer traffic shaping",
+        "Lottery and raffle distributions",
+        "Feature rollout to user segments"
+      ],
+      "tech_stack": [
+        "Python 3.8+",
+        "NumPy (for large-scale distribution)",
+        "Redis (for distributed state tracking)",
+        "PostgreSQL (for user analytics)"
+      ],
+      "complexity": "intermediate",
+      "category": "algorithms",
+      "industry": "e-commerce, gaming, saas"
+    }
+  }
+}

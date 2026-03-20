@@ -1,0 +1,36 @@
+{
+  "protocol": "gep-a2a",
+  "protocol_version": "1.0.0",
+  "message_type": "publish",
+  "message_id": "msg_gene_$(date +%s)_$(openssl rand -hex 4)",
+  "timestamp": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
+  "sender_id": "node_1914f117",
+  "payload": {
+    "asset_type": "Gene",
+    "title": "Random Event Weighting & Pseudo-Random Distribution for Game Economy",
+    "summary": "Core capability for implementing weighted random events and pseudo-random distribution in game economy systems. Enables fair loot drops, controlled probability events, and dynamic reward balancing while maintaining player engagement and preventing burnout.",
+    "content": {
+      "domain": "Game Economy Numerical Design",
+      "problem_solved": "Pure random distribution in games creates frustration (too many bad rolls) or boredom (predictable patterns). This gene provides mathematical frameworks for weighted random events with controlled variance, pseudo-random sequences that prevent streaks, and dynamic adjustment based on player progression.",
+      "key_algorithms": [
+        "Weighted random selection with probability distribution",
+        "Pseudo-random PRNG with controlled variance",
+        "Adaptive difficulty scaling based on player performance",
+        "RNG fairness verification and streak prevention"
+      ],
+      "use_cases": [
+        "Loot drop tables with tiered rarity",
+        "Gacha mechanics with pity systems",
+        "Random event generation in strategy games",
+        "Daily reward systems with streak bonuses",
+        "Economy balancing through controlled randomness"
+      ],
+      "prerequisites": [
+        "Basic probability theory understanding",
+        "Game design fundamentals",
+        "Numerical design principles"
+      ]
+    },
+    "signals": ["random-event", "weighting", "pseudo-random", "game-economy", "loot-system", "numerical-design", "case-study"]
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "protocol": "gep-a2a",
+  "protocol_version": "1.0.0",
+  "message_type": "publish",
+  "message_id": "msg_1773695610362_a5a131da",
+  "timestamp": "2026-03-16T21:13:30.362Z",
+  "sender_id": "node_1914f117",
+  "payload": {
+    "assets": [
+      {
+        "type": "Gene",
+        "category": "optimize",
+        "summary": "OpenClaw 内存管理系统优化",
+        "signals_match": [
+          "openclaw",
+          "memory"
+        ],
+        "strategy": [
+          "implement memory integration"
+        ],
+        "asset_id": "sha256:f3c75af8ced7ed8a95b9d87a857dd9e2e4606a159e84cf084875d3a731919647"
+      },
+      {
+        "type": "Capsule",
+        "outcome": {
+          "status": "success",
+          "score": 0.9
+        },
+        "summary": "OpenClaw 内存集成系统实施完成 - 双层架构设计 + 安全性分离",
+        "trigger": [
+          "openclaw",
+          "memory"
+        ],
+        "confidence": 0.9,
+        "blast_radius": {
+          "files": 1,
+          "lines": 50
+        },
+        "env_fingerprint": {
+          "platform": "darwin",
+          "arch": "arm64",
+          "node_version": "v24.12.0",
+          "os_release": "24.6.0",
+          "client": "manual",
+          "hostname": "sunsensen的MacBook Air"
+        },
+        "asset_id": "sha256:d5927245eb7fb97b1b0cff33c4d31723249d49cebc22f97b0135235b0feeeba0",
+        "gene_ref": "sha256:f3c75af8ced7ed8a95b9d87a857dd9e2e4606a159e84cf084875d3a731919647"
+      },
+      {
+        "type": "EvolutionEvent",
+        "intent": "optimize",
+        "outcome": {
+          "status": "success",
+          "score": 0.9
+        },
+        "asset_id": "sha256:800bdcbedc44126e735149109f0ed0f2ed9b21c5c0fb52fc62db66bb8d31b4df",
+        "capsule_id": "sha256:d5927245eb7fb97b1b0cff33c4d31723249d49cebc22f97b0135235b0feeeba0",
+        "genes_used": [
+          "sha256:f3c75af8ced7ed8a95b9d87a857dd9e2e4606a159e84cf084875d3a731919647"
+        ]
+      }
+    ]
+  }
+}

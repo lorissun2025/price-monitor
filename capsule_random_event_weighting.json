@@ -1,0 +1,150 @@
+{
+  "capsule": {
+    "id": "sha256:capsule_prd_weighted_random_impl",
+    "name": "伪随机分布与权重随机实现",
+    "version": "1.0.0",
+    "description": "生产级实现：伪随机分布、权重随机选择、动态权重调整、保底机制",
+    "genes": ["sha256:gene_random_event_weighting_001"],
+    "triggers": [
+      "random event",
+      "pseudo-random",
+      "weighted random",
+      "drop system",
+      "gacha",
+      "loot box",
+      "guaranteed floor",
+      "random weight",
+      "drop rate",
+      "probability distribution",
+      "game economy",
+      "numerical design"
+    ],
+    "implementations": [
+      {
+        "language": "Python",
+        "title": "伪随机分布核心实现",
+        "code": "class PseudoRandomDistribution:\n    def __init__(self, target_prob, prd_n=6):\n        \"\"\"\n        伪随机分布（PRD）实现\n        \n        Args:\n            target_prob: 目标触发概率 (0-1)\n            prd_n: 伪随机系数，控制收敛速度 (通常 3-8)\n        \"\"\"\n        self.target_prob = target_prob\n        self.prd_n = prd_n\n        self.reset()\n    \n    def reset(self):\n        \"\"\"重置概率到初始值\"\"\"\n        self.current_prob = self.target_prob\n        self.streak = 0\n    \n    def roll(self):\n        \"\"\"\n        执行一次随机检查\n        \n        Returns:\n            bool: 是否触发目标事件\n        \"\"\"\n        import random\n        \n        self.streak += 1\n        \n        # 当前概率检查\n        if random.random() < self.current_prob:\n            self.reset()  # 触发后重置\n            return True\n        \n        # 未触发，提升概率\n        self.current_prob += (1 - self.target_prob) / self.prd_n\n        \n        # 保底检查\n        if self.current_prob >= 1.0:\n            self.reset()\n            return True\n        \n        return False\n    \n    def get_current_prob(self):\n        \"\"\"获取当前概率\"\"\"\n        return self.current_prob\n\n# 使用示例\nprd = PseudoRandomDistribution(target_prob=0.25, prd_n=6)\nfor i in range(10):\n    result = prd.roll()\n    print(f\"Attempt {i+1}: Success={result}, Prob={prd.get_current_prob():.2%}\")"
+      },
+      {
+        "language": "Python",
+        "title": "权重随机选择实现",
+        "code": "import random\n\ndef weighted_random_choice(events, key=\"weight\"):\n    \"\"\"\n    基于权重的随机选择\n    \n    Args:\n        events: 事件列表，每个事件需包含指定权重键\n        key: 权重键名\n    \n    Returns:\n        选中的事件对象\n    \"\"\"\n    total_weight = sum(event[key] for event in events)\n    roll = random.random() * total_weight\n    \n    cumulative = 0\n    for event in events:\n        cumulative += event[key]\n        if roll < cumulative:\n            return event\n    \n    return events[-1]  # fallback\n\n# 使用示例\nevents = [\n    {\"id\": \"common\", \"weight\": 600, \"name\": \"普通物品\"},\n    {\"id\": \"rare\", \"weight\": 300, \"name\": \"稀有物品\"},\n    {\"id\": \"legendary\", \"weight\": 50, \"name\": \"传说物品\"}\n]\n\nresult = weighted_random_choice(events)\nprint(f\"Dropped: {result['name']}\")"
+      },
+      {
+        "language": "Python",
+        "title": "动态权重调整系统",
+        "code": "class DynamicWeightSystem:\n    def __init__(self, base_events):\n        \"\"\"\n        动态权重系统\n        \n        Args:\n            base_events: 基础事件配置 [{\"id\": str, \"weight\": float}]\n        \"\"\"\n        self.base_events = {e[\"id\"]: e[\"weight\"] for e in base_events}\n        self.player_states = {}\n    \n    def get_player_state(self, player_id):\n        \"\"\"获取或创建玩家状态\"\"\"\n        if player_id not in self.player_states:\n            self.player_states[player_id] = {\n                \"rare_streak\": 0,\n                \"last_rare_time\": None,\n                \"total_rolls\": 0\n            }\n        return self.player_states[player_id]\n    \n    def get_dynamic_weights(self, player_id):\n        \"\"\"获取动态权重\"\"\"\n        state = self.get_player_state(player_id)\n        current_time = time.time()\n        \n        weights = self.base_events.copy()\n        \n        # 稀有事件连续未获得，提升权重\n        if state[\"rare_streak\"] > 5:\n            for event_id in weights:\n                if event_id in [\"rare\", \"legendary\"]:\n                    weights[event_id] *= (1 + state[\"rare_streak\"] * 0.1)\n        \n        # 近期获得稀有奖励后，降低稀有事件权重\n        if state[\"last_rare_time\"]:\n            time_since_rare = current_time - state[\"last_rare_time\"]\n            if time_since_rare < 3600:  # 1小时内\n                for event_id in weights:\n                    if event_id in [\"rare\", \"legendary\"]:\n                        weights[event_id] *= 0.5\n        \n        return weights\n    \n    def roll(self, player_id, events=None):\n        \"\"\"执行一次随机并更新状态\"\"\"\n        if events is None:\n            events = [{\"id\": eid, \"weight\": w} \n                    for eid, w in self.get_dynamic_weights(player_id).items()]\n        \n        import time\n        import random\n        \n        result = weighted_random_choice(events)\n        state = self.get_player_state(player_id)\n        state[\"total_rolls\"] += 1\n        \n        # 更新状态\n        if result[\"id\"] in [\"rare\", \"legendary\"]:\n            state[\"rare_streak\"] = 0\n            state[\"last_rare_time\"] = time.time()\n        else:\n            state[\"rare_streak\"] += 1\n        \n        return result"
+      },
+      {
+        "language": "TypeScript",
+        "title": "TypeScript 实现版本",
+        "code": "interface WeightedEvent {\n  id: string;\n  weight: number;\n  [key: string]: any;\n}\n\nclass WeightedRandom {\n  static choose<T extends WeightedEvent>(\n    events: T[], \n    weightKey: string = 'weight'\n  ): T | null {\n    const totalWeight = events.reduce((sum, e) => sum + e[weightKey], 0);\n    const roll = Math.random() * totalWeight;\n    \n    let cumulative = 0;\n    for (const event of events) {\n      cumulative += event[weightKey];\n      if (roll < cumulative) {\n        return event;\n      }\n    }\n    \n    return events[events.length - 1];\n  }\n}\n\nclass PseudoRandom {\n  private targetProb: number;\n  private prdN: number;\n  private currentProb: number;\n  private streak: number;\n  \n  constructor(targetProb: number, prdN: number = 6) {\n    this.targetProb = targetProb;\n    this.prdN = prdN;\n    this.currentProb = targetProb;\n    this.streak = 0;\n  }\n  \n  roll(): boolean {\n    this.streak++;\n    \n    if (Math.random() < this.currentProb) {\n      this.reset();\n      return true;\n    }\n    \n    this.currentProb += (1 - this.targetProb) / this.prdN;\n    \n    if (this.currentProb >= 1.0) {\n      this.reset();\n      return true;\n    }\n    \n    return false;\n  }\n  \n  reset(): void {\n    this.currentProb = this.targetProb;\n    this.streak = 0;\n  }\n  \n  getCurrentProb(): number {\n    return this.currentProb;\n  }\n}"
+      }
+    ],
+    "configurations": [
+      {
+        "scenario": "game_crit",
+        "name": "游戏暴击率配置",
+        "config": {
+          "target_probability": 0.25,
+          "prd_n": 6,
+          "guaranteed_within": 8,
+          "description": "暴击率 25%，最多 8 次必出一次暴击"
+        }
+      },
+      {
+        "scenario": "gacha_ssr",
+        "name": "抽卡 SSR 保底配置",
+        "config": {
+          "target_probability": 0.01,
+          "prd_n": 4,
+          "guaranteed_within": 90,
+          "description": "SSR 概率 1%，90 抽保底"
+        }
+      },
+      {
+        "scenario": "drop_loot",
+        "name": "装备掉落权重配置",
+        "config": {
+          "weights": {
+            "common": 600,
+            "rare": 300,
+            "legendary": 50,
+            "mythic": 50
+          },
+          "dynamic_adjustment": true,
+          "rare_streak_threshold": 5,
+          "description": "传奇和神话各 5%，稀有 30%，普通 60%"
+        }
+      },
+      {
+        "scenario": "ecommerce_red_packet",
+        "name": "电商红包配置",
+        "config": {
+          "weights": {
+            "small": 60,
+            "medium": 30,
+            "large": 9,
+            "jackpot": 1
+          },
+          "guaranteed_rules": {
+            "min_tiers": 3,
+            "guaranteed_tier": "medium"
+          },
+          "description": "红包分四档，前 3 次必出中档或以上"
+        }
+      }
+    ],
+    "testing": [
+      {
+        "name": "PRD 收敛性测试",
+        "description": "验证伪随机分布的实际收敛速度和公平性",
+        "method": "运行 10,000 次模拟，统计触发次数分布",
+        "expected": "95% 的触发次数在理论期望值的 ±20% 范围内"
+      },
+      {
+        "name": "保底机制测试",
+        "description": "验证保底机制在最坏情况下是否生效",
+        "method": "模拟 1,000,000 次，记录最长不触发次数",
+        "expected": "最长不触发次数不超过理论保底值"
+      },
+      {
+        "name": "权重分布测试",
+        "description": "验证权重随机选择的分布是否符合预期",
+        "method": "运行 100,000 次选择，统计各选项出现频率",
+        "expected": "各选项出现频率与权重比例误差 < 1%"
+      },
+      {
+        "name": "动态权重压力测试",
+        "description": "测试动态权重调整在高并发下的表现",
+        "method": "并发 10,000 个用户同时进行 100 次操作",
+        "expected": "无数据竞争，性能下降 < 20%"
+      }
+    ],
+    "monitoring": {
+      "key_metrics": [
+        "触发概率实际值 vs 理论值",
+        "平均不触发次数",
+        "最长不触发次数",
+        "保底触发频率",
+        "用户满意度评分",
+        "留存率变化",
+        "付费转化率变化"
+      ],
+      "alerts": [
+        "实际触发概率与理论值偏差 > 10%",
+        "保底触发率 > 5% (说明纯随机应该触发)",
+        "用户满意度评分 < 3.0/5.0",
+        "最长不触发次数超过保底值 50%"
+      ]
+    },
+    "best_practices": [
+      "在生产环境前进行充分的数据模拟和 A/B 测试",
+      "使用配置文件管理概率和权重，便于调优",
+      "实时监控关键指标，设置告警阈值",
+      "定期审计数据分布，确保系统健康运行",
+      "向用户透明展示机制，建立信任",
+      "考虑不同用户群体的风险偏好差异"
+    ]
+  }
+}

@@ -1,0 +1,2454 @@
+{
+  "version": "1.0",
+  "lastUpdate": "2026-03-13T05:53:41.101Z",
+  "hotspots": [
+    {
+      "id": "bili_1773381179223_4656",
+      "platform": "bilibili",
+      "title": "铁三角R70Xa 深度评测| 直推实测| 对比：R70X、MV1",
+      "type": "social_trend",
+      "influenceScore": 1,
+      "location": {
+        "lat": 39.9102,
+        "lng": 116.422,
+        "city": "北京",
+        "district": "丰台区"
+      },
+      "metrics": {
+        "views": 678810,
+        "likes": 189959,
+        "coins": 11150
+      },
+      "metadata": {
+        "author": "科技评测",
+        "url": "https://www.bilibili.com/video/BV1WXtmz8Eb9/",
+        "description": "一次价值3K的“铁味”还原！它值这个价吗？！| 铁三角R70Xa 深度评测| 直推实测| 对比：R70X、MV1、HD490Pro、HD600、EDXS. 刘湿糊. bilibili热搜. 完整榜单.",
+        "publishTime": "2026-03-13T05:52:59.223Z",
+        "fetchTime": "2026-03-13T05:52:59.223Z"
+      }
+    },
+    {
+      "id": "bili_1773381176555_3417",
+      "platform": "bilibili",
+      "title": "皇冠6个6级英雄的RPG 魔兽争霸xiaoy解说LabyRinth 浪漫",
+      "type": "acg",
+      "influenceScore": 1,
+      "location": {
+        "lat": 39.8726,
+        "lng": 116.4201,
+        "city": "北京",
+        "district": "西城区"
+      },
+      "metrics": {
+        "views": 1776808,
+        "likes": 118799,
+        "coins": 64431
+      },
+      "metadata": {
+        "author": "生活记录",
+        "url": "https://www.bilibili.com/video/BV1S2czz7EoB/",
+        "description": "全站首发！CS2死手系列22副新手套游戏内检视动画. 05:06. 全站首发！CS2死手系列22副新手套游戏内检视动画. 猛犸Eienno. 14.6万· 8小时前. 正在热搜. CS2更新22款全新手套.",
+        "publishTime": "2026-03-13T05:52:56.555Z",
+        "fetchTime": "2026-03-13T05:52:56.555Z"
+      }
+    },
+    {
+      "id": "bili_1773381176555_1094",
+      "platform": "bilibili",
+      "title": "【喜加一】Epic喜加十七第六款游戏正式揭晓！《幽灵线 - 哔哩哔哩",
+      "type": "acg",
+      "influenceScore": 1,
+      "location": {
+        "lat": 39.9502,
+        "lng": 116.4411,
+        "city": "北京",
+        "district": "朝阳区"
+      },
+      "metrics": {
+        "views": 1654776,
+        "likes": 109248,
+        "coins": 48801
+      },
+      "metadata": {
+        "author": "UP主小A",
+        "url": "http://www.bilibili.com/video/BV1F64y1H7DS",
+        "description": "全站首发！CS2死手系列22副新手套游戏内检视动画. 05:06. 全站首发！CS2死手系列22副新手套游戏内检视动画. 猛犸Eienno. 15.0万· 9小时前. 正在热搜. CS2更新22款全新手套.",
+        "publishTime": "2026-03-13T05:52:56.555Z",
+        "fetchTime": "2026-03-13T05:52:56.555Z"
+      }
+    },
+    {
+      "id": "bili_1773381176555_3976",
+      "platform": "bilibili",
+      "title": "低薪如何快速积累财富",
+      "type": "acg",
+      "influenceScore": 1,
+      "location": {
+        "lat": 39.8584,
+        "lng": 116.3746,
+        "city": "北京",
+        "district": "东城区"
+      },
+      "metrics": {
+        "views": 818946,
+        "likes": 62442,
+        "coins": 82744
+      },
+      "metadata": {
+        "author": "科技评测",
+        "url": "https://www.bilibili.com/video/BV11gvQBgEt4/",
+        "description": "低薪如何快速积累财富. B站金融学院. 低薪如何快速积累财富; 感谢支持！ 分集(2). 低 ... CS2死手系列22副新手套游戏内检视动画. 05:06. 全站首发！CS2死手系列22副新 ...",
+        "publishTime": "2026-03-13T05:52:56.555Z",
+        "fetchTime": "2026-03-13T05:52:56.555Z"
+      }
+    },
+    {
+      "id": "bili_1773381173823_9349",
+      "platform": "bilibili",
+      "title": "《云逸河山》一首阿嫲唤醒老司令心中魂#漫画解说#二次元#小说推荐#动漫",
+      "type": "tourism",
+      "influenceScore": 1,
+      "location": {
+        "lat": 39.8583,
+        "lng": 116.454,
+        "city": "北京",
+        "district": "朝阳区"
+      },
+      "metrics": {
+        "views": 861051,
+        "likes": 189388,
+        "coins": 38190
+      },
+      "metadata": {
+        "author": "动画推荐",
+        "url": "https://www.bilibili.com/video/BV1YHP5efEF5/",
+        "description": "《云逸河山》一首阿嫲唤醒老司令心中魂#漫画解说#二次元#小说推荐#动漫. 柒木说漫. bilibili热搜. 完整榜单. 《明日方舟：终末地》干员叙事[汤汤：大.",
+        "publishTime": "2026-03-13T05:52:53.823Z",
+        "fetchTime": "2026-03-13T05:52:53.823Z"
+      }
+    },
+    {
+      "id": "bili_1773381171200_6103",
+      "platform": "bilibili",
+      "title": "致敬我的入宅之作——青春猪头少年不会梦到兔女郎学姐",
+      "type": "acg",
+      "influenceScore": 1,
+      "location": {
+        "lat": 39.9002,
+        "lng": 116.3835,
+        "city": "北京",
+        "district": "丰台区"
+      },
+      "metrics": {
+        "views": 1214593,
+        "likes": 144156,
+        "coins": 88000
+      },
+      "metadata": {
+        "author": "生活记录",
+        "url": "https://www.bilibili.com/opus/383541348334799030",
+        "description": "在一个对于bilibili来说特别的日子——成立十周年纪念日，入站了。 “……B站还有各种分区，你可以看动画区，如果喜欢的话可以追番，还可以看鬼畜……” 我时至今日还清楚地 ...",
+        "publishTime": "2026-03-13T05:52:51.200Z",
+        "fetchTime": "2026-03-13T05:52:51.200Z"
+      }
+    },
+    {
+      "id": "bili_1773381135069_5665",
+      "platform": "bilibili",
+      "title": "荣耀-哔哩哔哩_Bilibili",
+      "type": "acg",
+      "influenceScore": 1,
+      "location": {
+        "lat": 39.9257,
+        "lng": 116.3856,
+        "city": "北京",
+        "district": "海淀区"
+      },
+      "metrics": {
+        "views": 631024,
+        "likes": 128079,
+        "coins": 86350
+      },
+      "metadata": {
+        "author": "游戏解说",
+        "url": "https://search.bilibili.com/all?keyword=%E8%8D%A3%E8%80%80",
+        "description": "bilibili为您提供荣耀相关的视频、番剧、影视、动画等内容。bilibili是国内知名的在线视频弹幕网站，拥有最棒的ACG氛围，哔哩哔哩内容丰富多元，涵盖动漫、电影、二次元 ...",
+        "publishTime": "2026-03-13T05:52:15.069Z",
+        "fetchTime": "2026-03-13T05:52:15.069Z"
+      }
+    },
+    {
+      "id": "bili_1773381135069_4573",
+      "platform": "bilibili",
+      "title": "vLLM的语义路由框架：把\"改策略\"从工程问题变成配置问题",
+      "type": "other",
+      "influenceScore": 1,
+      "location": {
+        "lat": 39.925,
+        "lng": 116.4,
+        "city": "北京",
+        "district": "海淀区"
+      },
+      "metrics": {
+        "views": 1175126,
+        "likes": 68690,
+        "coins": 93431
+      },
+      "metadata": {
+        "author": "科技评测",
+        "url": "https://zhuanlan.zhihu.com/p/2015493215835416159",
+        "description": "这篇来自vLLM 开源社区的工作不是在刷榜，而是在解决一个实际的系统工程问题：当企业同时运行十几个来自不同提供商的语言模型，一条请求进来，谁来决定路由给哪个模型？",
+        "publishTime": "2026-03-13T05:52:15.069Z",
+        "fetchTime": "2026-03-13T05:52:15.069Z"
+      }
+    },
+    {
+      "id": "bili_1773381127630_2955",
+      "platform": "bilibili",
+      "title": "皇冠6个6级英雄的RPG 魔兽争霸xiaoy解说LabyRinth 浪漫",
+      "type": "acg",
+      "influenceScore": 1,
+      "location": {
+        "lat": 39.9172,
+        "lng": 116.3674,
+        "city": "北京",
+        "district": "西城区"
+      },
+      "metrics": {
+        "views": 794835,
+        "likes": 105500,
+        "coins": 93855
+      },
+      "metadata": {
+        "author": "生活记录",
+        "url": "https://www.bilibili.com/video/BV1S2czz7EoB/",
+        "description": "全站首发！CS2死手系列22副新手套游戏内检视动画. 05:06. 全站首发！CS2死手系列22副新手套游戏内检视动画. 猛犸Eienno. 14.6万· 8小时前. 正在热搜. CS2更新22款全新手套.",
+        "publishTime": "2026-03-13T05:52:07.630Z",
+        "fetchTime": "2026-03-13T05:52:07.630Z"
+      }
+    },
+    {
+      "id": "bili_1773381127630_4271",
+      "platform": "bilibili",
+      "title": "低薪如何快速积累财富",
+      "type": "acg",
+      "influenceScore": 1,
+      "location": {
+        "lat": 39.8625,
+        "lng": 116.4068,
+        "city": "北京",
+        "district": "朝阳区"
+      },
+      "metrics": {
+        "views": 933640,
+        "likes": 176151,
+        "coins": 39066
+      },
+      "metadata": {
+        "author": "游戏解说",
+        "url": "https://www.bilibili.com/video/BV11gvQBgEt4/",
+        "description": "低薪如何快速积累财富. B站金融学院. 低薪如何快速积累财富; 感谢支持！ 分集(2). 低 ... CS2死手系列22副新手套游戏内检视动画. 05:06. 全站首发！CS2死手系列22副新 ...",
+        "publishTime": "2026-03-13T05:52:07.630Z",
+        "fetchTime": "2026-03-13T05:52:07.630Z"
+      }
+    },
+    {
+      "id": "bili_1773381117904_8039",
+      "platform": "bilibili",
+      "title": "《云逸河山》一首阿嫲唤醒老司令心中魂#漫画解说#二次元#小说推荐#动漫",
+      "type": "tourism",
+      "influenceScore": 1,
+      "location": {
+        "lat": 39.9193,
+        "lng": 116.387,
+        "city": "北京",
+        "district": "东城区"
+      },
+      "metrics": {
+        "views": 1918168,
+        "likes": 100691,
+        "coins": 48832
+      },
+      "metadata": {
+        "author": "动画推荐",
+        "url": "https://www.bilibili.com/video/BV1YHP5efEF5/",
+        "description": "《云逸河山》一首阿嫲唤醒老司令心中魂#漫画解说#二次元#小说推荐#动漫. 柒木说漫. bilibili热搜. 完整榜单. 《明日方舟：终末地》干员叙事[汤汤：大.",
+        "publishTime": "2026-03-13T05:51:57.905Z",
+        "fetchTime": "2026-03-13T05:51:57.905Z"
+      }
+    },
+    {
+      "id": "bili_1773381117904_6559",
+      "platform": "bilibili",
+      "title": "一口气看完S级怪兽《贝希摩斯》被误认成小猫，成为精灵女孩骑士#动漫 ...",
+      "type": "acg",
+      "influenceScore": 1,
+      "location": {
+        "lat": 39.8967,
+        "lng": 116.443,
+        "city": "北京",
+        "district": "东城区"
+      },
+      "metrics": {
+        "views": 907419,
+        "likes": 95021,
+        "coins": 60472
+      },
+      "metadata": {
+        "author": "生活记录",
+        "url": "https://www.bilibili.com/video/BV1TUJrz8EQ5/",
+        "description": "一口气看完S级怪兽《贝希摩斯》被误认成小猫，成为精灵女孩骑士#动漫推荐#二次元#漫剪#动漫解说#新番动漫. 小王动漫季节. bilibili热搜. 完整榜单. 3.12杨瀚森天神下凡！",
+        "publishTime": "2026-03-13T05:51:57.904Z",
+        "fetchTime": "2026-03-13T05:51:57.904Z"
+      }
+    },
+    {
+      "id": "bili_1773381117904_9294",
+      "platform": "bilibili",
+      "title": "【安利】30部独特的rpg maker游戏",
+      "type": "acg",
+      "influenceScore": 1,
+      "location": {
+        "lat": 39.8602,
+        "lng": 116.4363,
+        "city": "北京",
+        "district": "丰台区"
+      },
+      "metrics": {
+        "views": 1637357,
+        "likes": 168949,
+        "coins": 46418
+      },
+      "metadata": {
+        "author": "UP主小A",
+        "url": "https://www.bilibili.com/opus/1028802730832953363",
+        "description": "一个欧美漫画风的rpg，画风很独特，就是目前完成度不太高，只有一个demo而且经常有一些画面加载不出来（也有可能是我电脑问题）…但bgm很炫酷！ 有点科幻+猎奇的感觉，大家感兴趣 ...",
+        "publishTime": "2026-03-13T05:51:57.904Z",
+        "fetchTime": "2026-03-13T05:51:57.904Z"
+      }
+    },
+    {
+      "id": "bili_1773381102750_9783",
+      "platform": "bilibili",
+      "title": "许仙动漫馆-哔哩哔哩_Bilibili",
+      "type": "acg",
+      "influenceScore": 1,
+      "location": {
+        "lat": 39.8592,
+        "lng": 116.3704,
+        "city": "北京",
+        "district": "西城区"
+      },
+      "metrics": {
+        "views": 1867534,
+        "likes": 186745,
+        "coins": 61137
+      },
+      "metadata": {
+        "author": "动画推荐",
+        "url": "https://m.bilibili.com/search?keyword=%E8%AE%B8%E4%BB%99%E5%8A%A8%E6%BC%AB%E9%A6%86&from_source=video_tag",
+        "description": "bilibili为您提供许仙动漫馆相关的视频、番剧、影视、动画等内容。bilibili是国内知名的在线视频弹幕网站，拥有最棒的ACG氛围，哔哩哔哩内容丰富多元，涵盖动漫、电影、二 ...",
+        "publishTime": "2026-03-13T05:51:42.750Z",
+        "fetchTime": "2026-03-13T05:51:42.750Z"
+      }
+    },
+    {
+      "id": "bili_1773381089237_5405",
+      "platform": "bilibili",
+      "title": "别害怕，男神来了",
+      "type": "social_trend",
+      "influenceScore": 1,
+      "location": {
+        "lat": 39.9535,
+        "lng": 116.4202,
+        "city": "北京",
+        "district": "东城区"
+      },
+      "metrics": {
+        "views": 1103164,
+        "likes": 180146,
+        "coins": 59402
+      },
+      "metadata": {
+        "author": "UP主小A",
+        "url": "https://www.bilibili.com/video/BV1hXcXzDEF8/",
+        "description": "《 别害怕，男神来了》. 念熙阿. bilibili热搜. 完整榜单. 1500万吃牛排、690万吃龙虾尾，美国防部被曝“. 01:56. 1500万吃牛排、690万吃龙虾尾，美国防部被曝“龙虾门”.",
+        "publishTime": "2026-03-13T05:51:29.237Z",
+        "fetchTime": "2026-03-13T05:51:29.237Z"
+      }
+    },
+    {
+      "id": "bili_1773381089237_6948",
+      "platform": "bilibili",
+      "title": "从纸片人到分不清现实，如今二游的画质究竟重要吗？",
+      "type": "acg",
+      "influenceScore": 1,
+      "location": {
+        "lat": 39.8698,
+        "lng": 116.3583,
+        "city": "北京",
+        "district": "东城区"
+      },
+      "metrics": {
+        "views": 1472764,
+        "likes": 78945,
+        "coins": 28393
+      },
+      "metadata": {
+        "author": "生活记录",
+        "url": "https://www.bilibili.com/video/BV1iZPfzpEHk/",
+        "description": "从纸片人到分不清现实，如今二游的画质究竟重要吗？ 住B站的王王. 相关推荐. 查看更多. 曾经被全网怒喷的《原神》！究竟是如何变. 123.9万 1695. 06:07. 百万播放.",
+        "publishTime": "2026-03-13T05:51:29.237Z",
+        "fetchTime": "2026-03-13T05:51:29.237Z"
+      }
+    },
+    {
+      "id": "bili_1773381089235_1355",
+      "platform": "bilibili",
+      "title": "B站最受欢迎的车评人回来了",
+      "type": "acg",
+      "influenceScore": 1,
+      "location": {
+        "lat": 39.8956,
+        "lng": 116.3883,
+        "city": "北京",
+        "district": "东城区"
+      },
+      "metrics": {
+        "views": 790806,
+        "likes": 161931,
+        "coins": 10397
+      },
+      "metadata": {
+        "author": "游戏解说",
+        "url": "https://www.bilibili.com/video/BV1Vpc6z9EvT/",
+        "description": "B站最受欢迎的车评人回来了. 大象主观说车. bilibili热搜. 完整榜单. 从千人排队到纷纷卸载揭秘“龙虾”AI智能体. 03:15. 从千人排队到纷纷卸载揭秘“龙虾”AI智能体.",
+        "publishTime": "2026-03-13T05:51:29.236Z",
+        "fetchTime": "2026-03-13T05:51:29.237Z"
+      }
+    },
+    {
+      "id": "wb_001",
+      "platform": "weibo",
+      "title": "#北京天气# 大范围降温预警",
+      "type": "social_trend",
+      "influenceScore": 0.92,
+      "location": {
+        "lat": 39.9042,
+        "lng": 116.4074,
+        "city": "北京",
+        "district": "东城区"
+      },
+      "metrics": {
+        "readCount": 5800000,
+        "discussCount": 320000
+      },
+      "metadata": {
+        "category": "天气",
+        "publishTime": "2026-03-12T09:00:00Z",
+        "fetchTime": "2026-03-12T09:00:00Z"
+      }
+    },
+    {
+      "id": "dy_1773381177789_7686",
+      "platform": "douyin",
+      "title": "#熟悉的城市#打卡新地标#城市风景一角#行走的风景- 抖音",
+      "type": "tourism",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.8894,
+        "lng": 116.4277,
+        "city": "北京",
+        "district": "朝阳区"
+      },
+      "metrics": {
+        "likes": 388339,
+        "shares": 61711,
+        "comments": 25233
+      },
+      "metadata": {
+        "author": "探店达人",
+        "url": "https://m.douyin.com/share/video/7610651806477494922",
+        "description": "熟悉的城市#打卡新地标#城市风景一角#行走的风景- 寻姐姐陈雁贞（我是妹妹陈雁慈）于20260224发布在抖音，已经收获了13个喜欢，来抖音，记录美好生活！",
+        "publishTime": "2026-03-13T05:52:57.789Z",
+        "fetchTime": "2026-03-13T05:52:57.789Z"
+      }
+    },
+    {
+      "id": "dy_1773381177789_4094",
+      "platform": "douyin",
+      "title": "打卡探店",
+      "type": "food",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.8921,
+        "lng": 116.4028,
+        "city": "北京",
+        "district": "西城区"
+      },
+      "metrics": {
+        "likes": 437427,
+        "shares": 97169,
+        "comments": 46194
+      },
+      "metadata": {
+        "author": "视频创作者",
+        "url": "https://jingxuan.douyin.com/m/video/7616286217781633610",
+        "description": "打卡探店,于2026年3月12日上线。抖音精选为您提供高清视频，画面清晰、播放流畅，看丰富、高质量视频就上抖音精选。",
+        "publishTime": "2026-03-13T05:52:57.789Z",
+        "fetchTime": "2026-03-13T05:52:57.789Z"
+      }
+    },
+    {
+      "id": "dy_1773381177789_3009",
+      "platform": "douyin",
+      "title": "上海著名景点简笔画大全- 抖音",
+      "type": "tourism",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.9536,
+        "lng": 116.4442,
+        "city": "北京",
+        "district": "西城区"
+      },
+      "metrics": {
+        "likes": 290362,
+        "shares": 57096,
+        "comments": 16137
+      },
+      "metadata": {
+        "author": "视频创作者",
+        "url": "https://www.douyin.com/search/%E4%B8%8A%E6%B5%B7%E8%91%97%E5%90%8D%E6%99%AF%E7%82%B9%E7%AE%80%E7%AC%94%E7%94%BB%E5%A4%A7%E5%85%A8",
+        "description": "上海简笔画-城市地标建筑系列插画。 第三站-上海： 上海南浦大桥海关大楼武康大楼东方体育中心中华艺术馆（世博会中国馆） 上海东方明珠#城市插画 #城市建筑 #简笔画 ...",
+        "publishTime": "2026-03-13T05:52:57.789Z",
+        "fetchTime": "2026-03-13T05:52:57.789Z"
+      }
+    },
+    {
+      "id": "dy_1773381175216_3883",
+      "platform": "douyin",
+      "title": "探店美食博主排行榜前十名- 抖音",
+      "type": "food",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.9175,
+        "lng": 116.394,
+        "city": "北京",
+        "district": "西城区"
+      },
+      "metrics": {
+        "likes": 133803,
+        "shares": 35022,
+        "comments": 30953
+      },
+      "metadata": {
+        "author": "视频创作者",
+        "url": "https://www.douyin.com/search/%E6%8E%A2%E5%BA%97%E7%BE%8E%E9%A3%9F%E5%8D%9A%E4%B8%BB%E6%8E%92%E8%A1%8C%E6%A6%9C%E5%89%8D%E5%8D%81%E5%90%8D",
+        "description": "抖音美食探店博主排行榜（探店达人榜）。2023年9月18日至9月24日抖音美食探店博主排行榜，单周新增点赞数据排名前100名网红探店达人。（仅为抖音数据排名，个人观点仅供 ...",
+        "publishTime": "2026-03-13T05:52:55.216Z",
+        "fetchTime": "2026-03-13T05:52:55.216Z"
+      }
+    },
+    {
+      "id": "dy_1773381175216_1112",
+      "platform": "douyin",
+      "title": "美食博主十大排行榜- 抖音",
+      "type": "food",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.9143,
+        "lng": 116.4336,
+        "city": "北京",
+        "district": "西城区"
+      },
+      "metrics": {
+        "likes": 463510,
+        "shares": 70263,
+        "comments": 32768
+      },
+      "metadata": {
+        "author": "视频创作者",
+        "url": "https://www.douyin.com/search/%E7%BE%8E%E9%A3%9F%E5%8D%9A%E4%B8%BB%E5%8D%81%E5%A4%A7%E6%8E%92%E8%A1%8C%E6%A6%9C",
+        "description": "抖音美食探店博主排行榜（探店达人榜）。2023年9月18日至9月24日抖音美食探店博主排行榜，单周新增点赞数据排名前100名网红探店达人。（仅为抖音数据排名，个人观点仅供 ...",
+        "publishTime": "2026-03-13T05:52:55.216Z",
+        "fetchTime": "2026-03-13T05:52:55.216Z"
+      }
+    },
+    {
+      "id": "dy_1773381175216_3061",
+      "platform": "douyin",
+      "title": "探店博主排行榜前十名- 抖音",
+      "type": "food",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.9475,
+        "lng": 116.4534,
+        "city": "北京",
+        "district": "丰台区"
+      },
+      "metrics": {
+        "likes": 408694,
+        "shares": 55279,
+        "comments": 49102
+      },
+      "metadata": {
+        "author": "美食专家",
+        "url": "https://www.douyin.com/search/%E6%8E%A2%E5%BA%97%E5%8D%9A%E4%B8%BB%E6%8E%92%E8%A1%8C%E6%A6%9C%E5%89%8D%E5%8D%81%E5%90%8D",
+        "description": "抖音美食探店博主排行榜（探店达人榜）。2023年9月18日至9月24日抖音美食探店博主排行榜，单周新增点赞数据排名前100名网红探店达人。（仅为抖音数据排名，个人观点仅供 ...",
+        "publishTime": "2026-03-13T05:52:55.216Z",
+        "fetchTime": "2026-03-13T05:52:55.216Z"
+      }
+    },
+    {
+      "id": "dy_1773381175216_9698",
+      "platform": "douyin",
+      "title": "美食博主排行榜前十名- 抖音",
+      "type": "food",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.9519,
+        "lng": 116.4536,
+        "city": "北京",
+        "district": "东城区"
+      },
+      "metrics": {
+        "likes": 251864,
+        "shares": 60573,
+        "comments": 15119
+      },
+      "metadata": {
+        "author": "生活分享",
+        "url": "https://www.douyin.com/search/%E7%BE%8E%E9%A3%9F%E5%8D%9A%E4%B8%BB%E6%8E%92%E8%A1%8C%E6%A6%9C%E5%89%8D%E5%8D%81%E5%90%8D",
+        "description": "抖音美食探店博主排行榜（探店达人榜）。2023年9月18日至9月24日抖音美食探店博主排行榜，单周新增点赞数据排名前100名网红探店达人。（仅为抖音数据排名，个人观点仅供 ...",
+        "publishTime": "2026-03-13T05:52:55.216Z",
+        "fetchTime": "2026-03-13T05:52:55.216Z"
+      }
+    },
+    {
+      "id": "dy_1773381172992_7058",
+      "platform": "douyin",
+      "title": "旅行vlog-大理篇！ 拖了好久的旅行视频终于剪出来啦！#旅行vlog - 抖音",
+      "type": "other",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.8592,
+        "lng": 116.418,
+        "city": "北京",
+        "district": "朝阳区"
+      },
+      "metrics": {
+        "likes": 172448,
+        "shares": 70979,
+        "comments": 41947
+      },
+      "metadata": {
+        "author": "视频创作者",
+        "url": "https://m.douyin.com/share/video/7553218819007860009",
+        "description": "旅行vlog-大理篇！ 拖了好久的旅行视频终于剪出来啦！#旅行vlog #情侣#云南#ootd穿搭#vlog - 泡芙 于20250923发布在抖音，已经收获了2420个喜欢，来抖音，记录美好生活！",
+        "publishTime": "2026-03-13T05:52:52.992Z",
+        "fetchTime": "2026-03-13T05:52:52.992Z"
+      }
+    },
+    {
+      "id": "dy_1773381172992_9736",
+      "platform": "douyin",
+      "title": "爱旅行的巧克力最新视频在线观看- 抖音",
+      "type": "tourism",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.9413,
+        "lng": 116.3787,
+        "city": "北京",
+        "district": "海淀区"
+      },
+      "metrics": {
+        "likes": 74325,
+        "shares": 97612,
+        "comments": 36372
+      },
+      "metadata": {
+        "author": "旅行博主",
+        "url": "https://www.douyin.com/search/%E7%88%B1%E6%97%85%E8%A1%8C%E7%9A%84%E5%B7%A7%E5%85%8B%E5%8A%9B%E6%9C%80%E6%96%B0%E8%A7%86%E9%A2%91%E5%9C%A8%E7%BA%BF%E8%A7%82%E7%9C%8B",
+        "description": "旅行不可能一直踩雷吧。除了酒店吓到我外岘港真的超好体验感新鲜美味的海鲜超长的绝美海岸线租个小电驴就可以逛完整个城岘港真的超chill #越南旅游 #岘港旅游攻略 ...",
+        "publishTime": "2026-03-13T05:52:52.992Z",
+        "fetchTime": "2026-03-13T05:52:52.992Z"
+      }
+    },
+    {
+      "id": "dy_1773381172992_2384",
+      "platform": "douyin",
+      "title": "50-60岁旅行方法- 抖音",
+      "type": "tourism",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.9153,
+        "lng": 116.3961,
+        "city": "北京",
+        "district": "东城区"
+      },
+      "metrics": {
+        "likes": 228618,
+        "shares": 34513,
+        "comments": 45903
+      },
+      "metadata": {
+        "author": "探店达人",
+        "url": "https://www.douyin.com/search/50-60%E5%B2%81%E6%97%85%E8%A1%8C%E6%96%B9%E6%B3%95",
+        "description": "#真实生活分享官 关于我和我的朋友带八旬老人去北京游玩4天3晚的全攻略，视频有点长，大家耐心看完，如果你也想带家里的长辈出去走走，希望这条视频能给你一些参考。这条视频里 ...",
+        "publishTime": "2026-03-13T05:52:52.992Z",
+        "fetchTime": "2026-03-13T05:52:52.992Z"
+      }
+    },
+    {
+      "id": "dy_1773381172992_9634",
+      "platform": "douyin",
+      "title": "来这真的让人很放松你们可以带娃一起来#在搞一种很新的旅行vlog #假- 抖音",
+      "type": "tourism",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.8652,
+        "lng": 116.3592,
+        "city": "北京",
+        "district": "东城区"
+      },
+      "metrics": {
+        "likes": 129426,
+        "shares": 41952,
+        "comments": 40851
+      },
+      "metadata": {
+        "author": "生活分享",
+        "url": "https://m.douyin.com/share/video/7603203341074572431",
+        "description": "来这真的让人很放松你们可以带娃一起来#在搞一种很新的旅行vlog #假期游玩打卡#跟我打卡最红地标- 小康逛榆林于20260204发布在抖音，已经收获了593个喜欢，来抖音，记录美好",
+        "publishTime": "2026-03-13T05:52:52.992Z",
+        "fetchTime": "2026-03-13T05:52:52.992Z"
+      }
+    },
+    {
+      "id": "dy_1773381170415_1987",
+      "platform": "douyin",
+      "title": "探店博主排行榜前十名- 抖音",
+      "type": "food",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.9356,
+        "lng": 116.4242,
+        "city": "北京",
+        "district": "东城区"
+      },
+      "metrics": {
+        "likes": 308304,
+        "shares": 70948,
+        "comments": 31730
+      },
+      "metadata": {
+        "author": "视频创作者",
+        "url": "https://www.douyin.com/search/%E6%8E%A2%E5%BA%97%E5%8D%9A%E4%B8%BB%E6%8E%92%E8%A1%8C%E6%A6%9C%E5%89%8D%E5%8D%81%E5%90%8D",
+        "description": "抖音美食探店博主排行榜（探店达人榜）。2023年9月18日至9月24日抖音美食探店博主排行榜，单周新增点赞数据排名前100名网红探店达人。（仅为抖音数据排名，个人观点仅供 ...",
+        "publishTime": "2026-03-13T05:52:50.416Z",
+        "fetchTime": "2026-03-13T05:52:50.416Z"
+      }
+    },
+    {
+      "id": "dy_1773381170416_6215",
+      "platform": "douyin",
+      "title": "美食探店博主排行榜前十名- 抖音",
+      "type": "food",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.8869,
+        "lng": 116.3863,
+        "city": "北京",
+        "district": "西城区"
+      },
+      "metrics": {
+        "likes": 468583,
+        "shares": 42242,
+        "comments": 14324
+      },
+      "metadata": {
+        "author": "生活分享",
+        "url": "https://www.douyin.com/search/%E7%BE%8E%E9%A3%9F%E6%8E%A2%E5%BA%97%E5%8D%9A%E4%B8%BB%E6%8E%92%E8%A1%8C%E6%A6%9C%E5%89%8D%E5%8D%81%E5%90%8D",
+        "description": "抖音美食探店博主排行榜（探店达人榜）。2023年9月18日至9月24日抖音美食探店博主排行榜，单周新增点赞数据排名前100名网红探店达人。（仅为抖音数据排名，个人观点仅供 ...",
+        "publishTime": "2026-03-13T05:52:50.416Z",
+        "fetchTime": "2026-03-13T05:52:50.416Z"
+      }
+    },
+    {
+      "id": "dy_1773381170416_7343",
+      "platform": "douyin",
+      "title": "美食博主排行榜前十名- 抖音",
+      "type": "food",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.8668,
+        "lng": 116.3783,
+        "city": "北京",
+        "district": "海淀区"
+      },
+      "metrics": {
+        "likes": 360503,
+        "shares": 53495,
+        "comments": 43924
+      },
+      "metadata": {
+        "author": "视频创作者",
+        "url": "https://www.douyin.com/search/%E7%BE%8E%E9%A3%9F%E5%8D%9A%E4%B8%BB%E6%8E%92%E8%A1%8C%E6%A6%9C%E5%89%8D%E5%8D%81%E5%90%8D",
+        "description": "抖音美食探店博主排行榜（探店达人榜）。2023年9月18日至9月24日抖音美食探店博主排行榜，单周新增点赞数据排名前100名网红探店达人。（仅为抖音数据排名，个人观点仅供 ...",
+        "publishTime": "2026-03-13T05:52:50.416Z",
+        "fetchTime": "2026-03-13T05:52:50.416Z"
+      }
+    },
+    {
+      "id": "dy_1773381168150_8126",
+      "platform": "douyin",
+      "title": "抖音排行榜",
+      "type": "other",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.9285,
+        "lng": 116.3937,
+        "city": "北京",
+        "district": "朝阳区"
+      },
+      "metrics": {
+        "likes": 161999,
+        "shares": 73233,
+        "comments": 28160
+      },
+      "metadata": {
+        "author": "旅行博主",
+        "url": "https://www.douyin.com/search/%E6%8A%96%E9%9F%B3%E6%8E%92%E8%A1%8C%E6%A6%9C",
+        "description": "您在查找抖音排行榜吗？抖音综合搜索帮你找到更多相关视频、图文、直播内容，支持在线观看。更有海量高清视频、相关直播、用户，满足您的在线观看需求。",
+        "publishTime": "2026-03-13T05:52:48.151Z",
+        "fetchTime": "2026-03-13T05:52:48.151Z"
+      }
+    },
+    {
+      "id": "dy_1773381168151_9182",
+      "platform": "douyin",
+      "title": "抖音排行榜前十名",
+      "type": "other",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.9508,
+        "lng": 116.3733,
+        "city": "北京",
+        "district": "西城区"
+      },
+      "metrics": {
+        "likes": 223594,
+        "shares": 25495,
+        "comments": 20601
+      },
+      "metadata": {
+        "author": "旅行博主",
+        "url": "https://www.douyin.com/search/%E6%8A%96%E9%9F%B3%E6%8E%92%E8%A1%8C%E6%A6%9C%E5%89%8D%E5%8D%81%E5%90%8D",
+        "description": "抖音排行榜前十名 ; 数据可是 · #大数据 ; 为你数说 · #抖音 ; 瓜讯雷达 · 抖音粉丝数TOP100排行榜 ; 桂林阿牛哥 · #抖音 ; 娱乐盘点王 · 2026年抖音热歌top100 ...",
+        "publishTime": "2026-03-13T05:52:48.151Z",
+        "fetchTime": "2026-03-13T05:52:48.151Z"
+      }
+    },
+    {
+      "id": "dy_1773381168151_2815",
+      "platform": "douyin",
+      "title": "抖音十大热门歌曲",
+      "type": "other",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.9361,
+        "lng": 116.404,
+        "city": "北京",
+        "district": "东城区"
+      },
+      "metrics": {
+        "likes": 348715,
+        "shares": 89124,
+        "comments": 28599
+      },
+      "metadata": {
+        "author": "探店达人",
+        "url": "https://www.douyin.com/search/%E6%8A%96%E9%9F%B3%E5%8D%81%E5%A4%A7%E7%83%AD%E9%97%A8%E6%AD%8C%E6%9B%B2",
+        "description": "抖音十大热门歌曲 ; 晚风听曲集 · 2月前 ; 悦音馆 · 3月前 ; 断舍离（听歌版） · 断舍离（听歌版） · 2周前 ; 挽情音乐 · 2月前 ; 失眠专辑. · 6月前.",
+        "publishTime": "2026-03-13T05:52:48.151Z",
+        "fetchTime": "2026-03-13T05:52:48.151Z"
+      }
+    },
+    {
+      "id": "dy_1773381149293_5736",
+      "platform": "douyin",
+      "title": "#熟悉的城市#打卡新地标#城市风景一角#行走的风景- 抖音",
+      "type": "tourism",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.9123,
+        "lng": 116.4368,
+        "city": "北京",
+        "district": "东城区"
+      },
+      "metrics": {
+        "likes": 447360,
+        "shares": 69182,
+        "comments": 13180
+      },
+      "metadata": {
+        "author": "旅行博主",
+        "url": "https://m.douyin.com/share/video/7610651806477494922",
+        "description": "熟悉的城市#打卡新地标#城市风景一角#行走的风景- 寻姐姐陈雁贞（我是妹妹陈雁慈）于20260224发布在抖音，已经收获了13个喜欢，来抖音，记录美好生活！",
+        "publishTime": "2026-03-13T05:52:29.293Z",
+        "fetchTime": "2026-03-13T05:52:29.293Z"
+      }
+    },
+    {
+      "id": "dy_1773381149293_8704",
+      "platform": "douyin",
+      "title": "打卡探店",
+      "type": "food",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.8774,
+        "lng": 116.4493,
+        "city": "北京",
+        "district": "丰台区"
+      },
+      "metrics": {
+        "likes": 237261,
+        "shares": 82781,
+        "comments": 14128
+      },
+      "metadata": {
+        "author": "旅行博主",
+        "url": "https://jingxuan.douyin.com/m/video/7616286217781633610",
+        "description": "打卡探店,于2026年3月12日上线。抖音精选为您提供高清视频，画面清晰、播放流畅，看丰富、高质量视频就上抖音精选。",
+        "publishTime": "2026-03-13T05:52:29.293Z",
+        "fetchTime": "2026-03-13T05:52:29.293Z"
+      }
+    },
+    {
+      "id": "dy_1773381149293_3988",
+      "platform": "douyin",
+      "title": "中国四个字的旅游景点- 抖音",
+      "type": "tourism",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.9122,
+        "lng": 116.3669,
+        "city": "北京",
+        "district": "丰台区"
+      },
+      "metrics": {
+        "likes": 269545,
+        "shares": 24785,
+        "comments": 30414
+      },
+      "metadata": {
+        "author": "探店达人",
+        "url": "https://www.douyin.com/search/%E4%B8%AD%E5%9B%BD%E5%9B%9B%E4%B8%AA%E5%AD%97%E7%9A%84%E6%97%85%E6%B8%B8%E6%99%AF%E7%82%B9",
+        "description": "您在查找中国四个字的旅游景点吗？抖音综合搜索帮你找到更多相关视频、图文、直播内容，支持在线观看。更有海量高清视频、相关直播、用户，满足您的在线观看需求。",
+        "publishTime": "2026-03-13T05:52:29.293Z",
+        "fetchTime": "2026-03-13T05:52:29.293Z"
+      }
+    },
+    {
+      "id": "dy_1773381131988_2680",
+      "platform": "douyin",
+      "title": "美食博主十大排行榜- 抖音",
+      "type": "food",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.9026,
+        "lng": 116.388,
+        "city": "北京",
+        "district": "西城区"
+      },
+      "metrics": {
+        "likes": 448737,
+        "shares": 89961,
+        "comments": 23641
+      },
+      "metadata": {
+        "author": "视频创作者",
+        "url": "https://www.douyin.com/search/%E7%BE%8E%E9%A3%9F%E5%8D%9A%E4%B8%BB%E5%8D%81%E5%A4%A7%E6%8E%92%E8%A1%8C%E6%A6%9C",
+        "description": "抖音美食探店博主排行榜（探店达人榜）。2023年9月18日至9月24日抖音美食探店博主排行榜，单周新增点赞数据排名前100名网红探店达人。（仅为抖音数据排名，个人观点仅供 ...",
+        "publishTime": "2026-03-13T05:52:11.988Z",
+        "fetchTime": "2026-03-13T05:52:11.988Z"
+      }
+    },
+    {
+      "id": "dy_1773381131988_2823",
+      "platform": "douyin",
+      "title": "探店博主排行榜前十名- 抖音",
+      "type": "food",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.9177,
+        "lng": 116.3919,
+        "city": "北京",
+        "district": "东城区"
+      },
+      "metrics": {
+        "likes": 332420,
+        "shares": 51270,
+        "comments": 20366
+      },
+      "metadata": {
+        "author": "视频创作者",
+        "url": "https://www.douyin.com/search/%E6%8E%A2%E5%BA%97%E5%8D%9A%E4%B8%BB%E6%8E%92%E8%A1%8C%E6%A6%9C%E5%89%8D%E5%8D%81%E5%90%8D",
+        "description": "抖音美食探店博主排行榜（探店达人榜）。2023年9月18日至9月24日抖音美食探店博主排行榜，单周新增点赞数据排名前100名网红探店达人。（仅为抖音数据排名，个人观点仅供 ...",
+        "publishTime": "2026-03-13T05:52:11.988Z",
+        "fetchTime": "2026-03-13T05:52:11.988Z"
+      }
+    },
+    {
+      "id": "dy_1773381131987_4201",
+      "platform": "douyin",
+      "title": "探店美食博主排行榜前十名- 抖音",
+      "type": "food",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.9487,
+        "lng": 116.4352,
+        "city": "北京",
+        "district": "东城区"
+      },
+      "metrics": {
+        "likes": 79219,
+        "shares": 96210,
+        "comments": 48484
+      },
+      "metadata": {
+        "author": "探店达人",
+        "url": "https://www.douyin.com/search/%E6%8E%A2%E5%BA%97%E7%BE%8E%E9%A3%9F%E5%8D%9A%E4%B8%BB%E6%8E%92%E8%A1%8C%E6%A6%9C%E5%89%8D%E5%8D%81%E5%90%8D",
+        "description": "抖音美食探店博主排行榜（探店达人榜）。2023年9月18日至9月24日抖音美食探店博主排行榜，单周新增点赞数据排名前100名网红探店达人。（仅为抖音数据排名，个人观点仅供 ...",
+        "publishTime": "2026-03-13T05:52:11.987Z",
+        "fetchTime": "2026-03-13T05:52:11.987Z"
+      }
+    },
+    {
+      "id": "dy_1773381124177_5741",
+      "platform": "douyin",
+      "title": "旅行vlog-大理篇！ 拖了好久的旅行视频终于剪出来啦！#旅行vlog - 抖音",
+      "type": "other",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.9329,
+        "lng": 116.395,
+        "city": "北京",
+        "district": "丰台区"
+      },
+      "metrics": {
+        "likes": 57676,
+        "shares": 34537,
+        "comments": 33075
+      },
+      "metadata": {
+        "author": "视频创作者",
+        "url": "https://m.douyin.com/share/video/7553218819007860009",
+        "description": "旅行vlog-大理篇！ 拖了好久的旅行视频终于剪出来啦！#旅行vlog #情侣#云南#ootd穿搭#vlog - 泡芙 于20250923发布在抖音，已经收获了2420个喜欢，来抖音，记录美好生活！",
+        "publishTime": "2026-03-13T05:52:04.177Z",
+        "fetchTime": "2026-03-13T05:52:04.177Z"
+      }
+    },
+    {
+      "id": "dy_1773381124177_5593",
+      "platform": "douyin",
+      "title": "爱旅行的巧克力最新视频在线观看- 抖音",
+      "type": "tourism",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.9448,
+        "lng": 116.4251,
+        "city": "北京",
+        "district": "西城区"
+      },
+      "metrics": {
+        "likes": 419133,
+        "shares": 22960,
+        "comments": 25770
+      },
+      "metadata": {
+        "author": "探店达人",
+        "url": "https://www.douyin.com/search/%E7%88%B1%E6%97%85%E8%A1%8C%E7%9A%84%E5%B7%A7%E5%85%8B%E5%8A%9B%E6%9C%80%E6%96%B0%E8%A7%86%E9%A2%91%E5%9C%A8%E7%BA%BF%E8%A7%82%E7%9C%8B",
+        "description": "旅行不可能一直踩雷吧。除了酒店吓到我外岘港真的超好体验感新鲜美味的海鲜超长的绝美海岸线租个小电驴就可以逛完整个城岘港真的超chill #越南旅游 #岘港旅游攻略 ...",
+        "publishTime": "2026-03-13T05:52:04.177Z",
+        "fetchTime": "2026-03-13T05:52:04.177Z"
+      }
+    },
+    {
+      "id": "dy_1773381124177_8726",
+      "platform": "douyin",
+      "title": "50-60岁旅行方法- 抖音",
+      "type": "tourism",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.9148,
+        "lng": 116.4355,
+        "city": "北京",
+        "district": "海淀区"
+      },
+      "metrics": {
+        "likes": 153645,
+        "shares": 38378,
+        "comments": 38931
+      },
+      "metadata": {
+        "author": "旅行博主",
+        "url": "https://www.douyin.com/search/50-60%E5%B2%81%E6%97%85%E8%A1%8C%E6%96%B9%E6%B3%95",
+        "description": "#真实生活分享官 关于我和我的朋友带八旬老人去北京游玩4天3晚的全攻略，视频有点长，大家耐心看完，如果你也想带家里的长辈出去走走，希望这条视频能给你一些参考。这条视频里 ...",
+        "publishTime": "2026-03-13T05:52:04.177Z",
+        "fetchTime": "2026-03-13T05:52:04.177Z"
+      }
+    },
+    {
+      "id": "dy_1773381124177_6044",
+      "platform": "douyin",
+      "title": "来这真的让人很放松你们可以带娃一起来#在搞一种很新的旅行vlog #假- 抖音",
+      "type": "tourism",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.8852,
+        "lng": 116.4339,
+        "city": "北京",
+        "district": "海淀区"
+      },
+      "metrics": {
+        "likes": 82799,
+        "shares": 33200,
+        "comments": 30012
+      },
+      "metadata": {
+        "author": "美食专家",
+        "url": "https://m.douyin.com/share/video/7603203341074572431",
+        "description": "来这真的让人很放松你们可以带娃一起来#在搞一种很新的旅行vlog #假期游玩打卡#跟我打卡最红地标- 小康逛榆林于20260204发布在抖音，已经收获了593个喜欢，来抖音，记录美好",
+        "publishTime": "2026-03-13T05:52:04.177Z",
+        "fetchTime": "2026-03-13T05:52:04.177Z"
+      }
+    },
+    {
+      "id": "dy_1773381105915_5851",
+      "platform": "douyin",
+      "title": "探店美食博主排行榜前十名- 抖音",
+      "type": "food",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.8761,
+        "lng": 116.3748,
+        "city": "北京",
+        "district": "丰台区"
+      },
+      "metrics": {
+        "likes": 205569,
+        "shares": 33936,
+        "comments": 32715
+      },
+      "metadata": {
+        "author": "生活分享",
+        "url": "https://www.douyin.com/search/%E6%8E%A2%E5%BA%97%E7%BE%8E%E9%A3%9F%E5%8D%9A%E4%B8%BB%E6%8E%92%E8%A1%8C%E6%A6%9C%E5%89%8D%E5%8D%81%E5%90%8D",
+        "description": "抖音美食探店博主排行榜（探店达人榜）。2023年9月18日至9月24日抖音美食探店博主排行榜，单周新增点赞数据排名前100名网红探店达人。（仅为抖音数据排名，个人观点仅供 ...",
+        "publishTime": "2026-03-13T05:51:45.915Z",
+        "fetchTime": "2026-03-13T05:51:45.915Z"
+      }
+    },
+    {
+      "id": "dy_1773381105915_8090",
+      "platform": "douyin",
+      "title": "美食探店博主排行榜前十名- 抖音",
+      "type": "food",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.8759,
+        "lng": 116.4092,
+        "city": "北京",
+        "district": "西城区"
+      },
+      "metrics": {
+        "likes": 446589,
+        "shares": 33994,
+        "comments": 19118
+      },
+      "metadata": {
+        "author": "视频创作者",
+        "url": "https://www.douyin.com/search/%E7%BE%8E%E9%A3%9F%E6%8E%A2%E5%BA%97%E5%8D%9A%E4%B8%BB%E6%8E%92%E8%A1%8C%E6%A6%9C%E5%89%8D%E5%8D%81%E5%90%8D",
+        "description": "抖音美食探店博主排行榜（探店达人榜）。2023年9月18日至9月24日抖音美食探店博主排行榜，单周新增点赞数据排名前100名网红探店达人。（仅为抖音数据排名，个人观点仅供 ...",
+        "publishTime": "2026-03-13T05:51:45.915Z",
+        "fetchTime": "2026-03-13T05:51:45.915Z"
+      }
+    },
+    {
+      "id": "dy_1773381105915_8010",
+      "platform": "douyin",
+      "title": "美食博主排行榜前十名- 抖音",
+      "type": "food",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.8631,
+        "lng": 116.427,
+        "city": "北京",
+        "district": "西城区"
+      },
+      "metrics": {
+        "likes": 291454,
+        "shares": 99017,
+        "comments": 30170
+      },
+      "metadata": {
+        "author": "探店达人",
+        "url": "https://www.douyin.com/search/%E7%BE%8E%E9%A3%9F%E5%8D%9A%E4%B8%BB%E6%8E%92%E8%A1%8C%E6%A6%9C%E5%89%8D%E5%8D%81%E5%90%8D",
+        "description": "抖音美食探店博主排行榜（探店达人榜）。2023年9月18日至9月24日抖音美食探店博主排行榜，单周新增点赞数据排名前100名网红探店达人。（仅为抖音数据排名，个人观点仅供 ...",
+        "publishTime": "2026-03-13T05:51:45.915Z",
+        "fetchTime": "2026-03-13T05:51:45.915Z"
+      }
+    },
+    {
+      "id": "dy_1773381105914_8980",
+      "platform": "douyin",
+      "title": "探店博主排行榜前十名- 抖音",
+      "type": "food",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.94,
+        "lng": 116.3821,
+        "city": "北京",
+        "district": "东城区"
+      },
+      "metrics": {
+        "likes": 119618,
+        "shares": 70510,
+        "comments": 13233
+      },
+      "metadata": {
+        "author": "美食专家",
+        "url": "https://www.douyin.com/search/%E6%8E%A2%E5%BA%97%E5%8D%9A%E4%B8%BB%E6%8E%92%E8%A1%8C%E6%A6%9C%E5%89%8D%E5%8D%81%E5%90%8D",
+        "description": "抖音美食探店博主排行榜（探店达人榜）。2023年9月18日至9月24日抖音美食探店博主排行榜，单周新增点赞数据排名前100名网红探店达人。（仅为抖音数据排名，个人观点仅供 ...",
+        "publishTime": "2026-03-13T05:51:45.914Z",
+        "fetchTime": "2026-03-13T05:51:45.915Z"
+      }
+    },
+    {
+      "id": "dy_1773381090396_8398",
+      "platform": "douyin",
+      "title": "抖音排行榜",
+      "type": "other",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.8701,
+        "lng": 116.3967,
+        "city": "北京",
+        "district": "西城区"
+      },
+      "metrics": {
+        "likes": 162459,
+        "shares": 93077,
+        "comments": 44030
+      },
+      "metadata": {
+        "author": "旅行博主",
+        "url": "https://www.douyin.com/search/%E6%8A%96%E9%9F%B3%E6%8E%92%E8%A1%8C%E6%A6%9C",
+        "description": "您在查找抖音排行榜吗？抖音综合搜索帮你找到更多相关视频、图文、直播内容，支持在线观看。更有海量高清视频、相关直播、用户，满足您的在线观看需求。",
+        "publishTime": "2026-03-13T05:51:30.396Z",
+        "fetchTime": "2026-03-13T05:51:30.396Z"
+      }
+    },
+    {
+      "id": "dy_1773381090396_5594",
+      "platform": "douyin",
+      "title": "抖音排行榜前十名",
+      "type": "other",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.8566,
+        "lng": 116.3637,
+        "city": "北京",
+        "district": "朝阳区"
+      },
+      "metrics": {
+        "likes": 368058,
+        "shares": 56998,
+        "comments": 30287
+      },
+      "metadata": {
+        "author": "视频创作者",
+        "url": "https://www.douyin.com/search/%E6%8A%96%E9%9F%B3%E6%8E%92%E8%A1%8C%E6%A6%9C%E5%89%8D%E5%8D%81%E5%90%8D",
+        "description": "抖音排行榜前十名 ; 数据可是 · #大数据 ; 为你数说 · #抖音 ; 瓜讯雷达 · 抖音粉丝数TOP100排行榜 ; 桂林阿牛哥 · #抖音 ; 娱乐盘点王 · 2026年抖音热歌top100 ...",
+        "publishTime": "2026-03-13T05:51:30.396Z",
+        "fetchTime": "2026-03-13T05:51:30.396Z"
+      }
+    },
+    {
+      "id": "dy_1773381090396_3420",
+      "platform": "douyin",
+      "title": "网络最红40首流行歌- 抖音",
+      "type": "other",
+      "influenceScore": 0.8999999999999999,
+      "location": {
+        "lat": 39.9396,
+        "lng": 116.3646,
+        "city": "北京",
+        "district": "丰台区"
+      },
+      "metrics": {
+        "likes": 112889,
+        "shares": 38512,
+        "comments": 19921
+      },
+      "metadata": {
+        "author": "视频创作者",
+        "url": "https://www.douyin.com/search/%E7%BD%91%E7%BB%9C%E6%9C%80%E7%BA%A240%E9%A6%96%E6%B5%81%E8%A1%8C%E6%AD%8C",
+        "description": "您在查找网络最红40首流行歌吗？抖音综合搜索帮你找到更多相关视频、图文、直播内容，支持在线观看。更有海量高清视频、相关直播、用户，满足您的在线观看需求。",
+        "publishTime": "2026-03-13T05:51:30.396Z",
+        "fetchTime": "2026-03-13T05:51:30.396Z"
+      }
+    },
+    {
+      "id": "dy_1773381177789_1209",
+      "platform": "douyin",
+      "title": "中国四个字的旅游景点- 抖音",
+      "type": "tourism",
+      "influenceScore": 0.8910399999999999,
+      "location": {
+        "lat": 39.8869,
+        "lng": 116.3859,
+        "city": "北京",
+        "district": "海淀区"
+      },
+      "metrics": {
+        "likes": 142452,
+        "shares": 99199,
+        "comments": 9552
+      },
+      "metadata": {
+        "author": "美食专家",
+        "url": "https://www.douyin.com/search/%E4%B8%AD%E5%9B%BD%E5%9B%9B%E4%B8%AA%E5%AD%97%E7%9A%84%E6%97%85%E6%B8%B8%E6%99%AF%E7%82%B9",
+        "description": "您在查找中国四个字的旅游景点吗？抖音综合搜索帮你找到更多相关视频、图文、直播内容，支持在线观看。更有海量高清视频、相关直播、用户，满足您的在线观看需求。",
+        "publishTime": "2026-03-13T05:52:57.789Z",
+        "fetchTime": "2026-03-13T05:52:57.789Z"
+      }
+    },
+    {
+      "id": "dy_1773381168151_1592",
+      "platform": "douyin",
+      "title": "网络最红40首流行歌- 抖音",
+      "type": "other",
+      "influenceScore": 0.88896,
+      "location": {
+        "lat": 39.9125,
+        "lng": 116.4107,
+        "city": "北京",
+        "district": "丰台区"
+      },
+      "metrics": {
+        "likes": 267406,
+        "shares": 18896,
+        "comments": 37926
+      },
+      "metadata": {
+        "author": "美食专家",
+        "url": "https://www.douyin.com/search/%E7%BD%91%E7%BB%9C%E6%9C%80%E7%BA%A240%E9%A6%96%E6%B5%81%E8%A1%8C%E6%AD%8C",
+        "description": "您在查找网络最红40首流行歌吗？抖音综合搜索帮你找到更多相关视频、图文、直播内容，支持在线观看。更有海量高清视频、相关直播、用户，满足您的在线观看需求。",
+        "publishTime": "2026-03-13T05:52:48.151Z",
+        "fetchTime": "2026-03-13T05:52:48.151Z"
+      }
+    },
+    {
+      "id": "dy_001",
+      "platform": "douyin",
+      "title": "故宫打卡视频爆火，游客激增",
+      "type": "tourism",
+      "influenceScore": 0.88,
+      "location": {
+        "lat": 39.9163,
+        "lng": 116.3972,
+        "city": "北京",
+        "district": "东城区"
+      },
+      "metrics": {
+        "likes": 250000,
+        "shares": 85000,
+        "comments": 32000
+      },
+      "metadata": {
+        "author": "旅行博主",
+        "publishTime": "2026-03-12T08:00:00Z",
+        "fetchTime": "2026-03-12T09:00:00Z"
+      }
+    },
+    {
+      "id": "dy_1773381131988_6299",
+      "platform": "douyin",
+      "title": "美食博主排行榜前十名- 抖音",
+      "type": "food",
+      "influenceScore": 0.8755,
+      "location": {
+        "lat": 39.9404,
+        "lng": 116.3651,
+        "city": "北京",
+        "district": "丰台区"
+      },
+      "metrics": {
+        "likes": 160292,
+        "shares": 17550,
+        "comments": 49612
+      },
+      "metadata": {
+        "author": "旅行博主",
+        "url": "https://www.douyin.com/search/%E7%BE%8E%E9%A3%9F%E5%8D%9A%E4%B8%BB%E6%8E%92%E8%A1%8C%E6%A6%9C%E5%89%8D%E5%8D%81%E5%90%8D",
+        "description": "抖音美食探店博主排行榜（探店达人榜）。2023年9月18日至9月24日抖音美食探店博主排行榜，单周新增点赞数据排名前100名网红探店达人。（仅为抖音数据排名，个人观点仅供 ...",
+        "publishTime": "2026-03-13T05:52:11.988Z",
+        "fetchTime": "2026-03-13T05:52:11.988Z"
+      }
+    },
+    {
+      "id": "bili_1773381173823_2405",
+      "platform": "bilibili",
+      "title": "【安利】30部独特的rpg maker游戏",
+      "type": "acg",
+      "influenceScore": 0.872332,
+      "location": {
+        "lat": 39.8881,
+        "lng": 116.4243,
+        "city": "北京",
+        "district": "西城区"
+      },
+      "metrics": {
+        "views": 372332,
+        "likes": 134218,
+        "coins": 92963
+      },
+      "metadata": {
+        "author": "UP主小A",
+        "url": "https://www.bilibili.com/opus/1028802730832953363",
+        "description": "一个欧美漫画风的rpg，画风很独特，就是目前完成度不太高，只有一个demo而且经常有一些画面加载不出来（也有可能是我电脑问题）…但bgm很炫酷！ 有点科幻+猎奇的感觉，大家感兴趣 ...",
+        "publishTime": "2026-03-13T05:52:53.823Z",
+        "fetchTime": "2026-03-13T05:52:53.823Z"
+      }
+    },
+    {
+      "id": "dy_1773381149293_6455",
+      "platform": "douyin",
+      "title": "上海著名景点简笔画大全- 抖音",
+      "type": "tourism",
+      "influenceScore": 0.86846,
+      "location": {
+        "lat": 39.907,
+        "lng": 116.3606,
+        "city": "北京",
+        "district": "西城区"
+      },
+      "metrics": {
+        "likes": 80049,
+        "shares": 37934,
+        "comments": 8423
+      },
+      "metadata": {
+        "author": "旅行博主",
+        "url": "https://www.douyin.com/search/%E4%B8%8A%E6%B5%B7%E8%91%97%E5%90%8D%E6%99%AF%E7%82%B9%E7%AE%80%E7%AC%94%E7%94%BB%E5%A4%A7%E5%85%A8",
+        "description": "上海简笔画-城市地标建筑系列插画。 第三站-上海： 上海南浦大桥海关大楼武康大楼东方体育中心中华艺术馆（世博会中国馆） 上海东方明珠#城市插画 #城市建筑 #简笔画 ...",
+        "publishTime": "2026-03-13T05:52:29.293Z",
+        "fetchTime": "2026-03-13T05:52:29.293Z"
+      }
+    },
+    {
+      "id": "bili_001",
+      "platform": "bilibili",
+      "title": "ChinaJoy 2024 上海漫展现场",
+      "type": "acg",
+      "influenceScore": 0.86,
+      "location": {
+        "lat": 31.1946,
+        "lng": 121.5464,
+        "city": "上海",
+        "district": "浦东新区"
+      },
+      "metrics": {
+        "views": 890000,
+        "likes": 58000,
+        "coins": 32000
+      },
+      "metadata": {
+        "author": "ACG情报局",
+        "publishTime": "2026-03-11T20:00:00Z",
+        "fetchTime": "2026-03-12T09:00:00Z"
+      }
+    },
+    {
+      "id": "dy_1773381170416_5938",
+      "platform": "douyin",
+      "title": "探店美食博主排行榜前十名- 抖音",
+      "type": "food",
+      "influenceScore": 0.85629,
+      "location": {
+        "lat": 39.8879,
+        "lng": 116.3637,
+        "city": "北京",
+        "district": "西城区"
+      },
+      "metrics": {
+        "likes": 409040,
+        "shares": 15629,
+        "comments": 21421
+      },
+      "metadata": {
+        "author": "探店达人",
+        "url": "https://www.douyin.com/search/%E6%8E%A2%E5%BA%97%E7%BE%8E%E9%A3%9F%E5%8D%9A%E4%B8%BB%E6%8E%92%E8%A1%8C%E6%A6%9C%E5%89%8D%E5%8D%81%E5%90%8D",
+        "description": "抖音美食探店博主排行榜（探店达人榜）。2023年9月18日至9月24日抖音美食探店博主排行榜，单周新增点赞数据排名前100名网红探店达人。（仅为抖音数据排名，个人观点仅供 ...",
+        "publishTime": "2026-03-13T05:52:50.416Z",
+        "fetchTime": "2026-03-13T05:52:50.416Z"
+      }
+    },
+    {
+      "id": "xhs_001",
+      "platform": "xiaohongshu",
+      "title": "三里屯网红咖啡厅，必打卡！",
+      "type": "food",
+      "influenceScore": 0.85,
+      "location": {
+        "lat": 39.937,
+        "lng": 116.4477,
+        "city": "北京",
+        "district": "朝阳区"
+      },
+      "metrics": {
+        "likes": 15000,
+        "collects": 8000
+      },
+      "metadata": {
+        "author": "美食小当家",
+        "publishTime": "2026-03-12T08:00:00Z",
+        "fetchTime": "2026-03-12T09:00:00Z"
+      }
+    },
+    {
+      "id": "bili_1773381127630_7063",
+      "platform": "bilibili",
+      "title": "【喜加一】Epic喜加十七第六款游戏正式揭晓！《幽灵线 - 哔哩哔哩",
+      "type": "acg",
+      "influenceScore": 0.80993,
+      "location": {
+        "lat": 39.8845,
+        "lng": 116.3923,
+        "city": "北京",
+        "district": "丰台区"
+      },
+      "metrics": {
+        "views": 1015981,
+        "likes": 30993,
+        "coins": 32156
+      },
+      "metadata": {
+        "author": "动画推荐",
+        "url": "http://www.bilibili.com/video/BV1F64y1H7DS",
+        "description": "全站首发！CS2死手系列22副新手套游戏内检视动画. 05:06. 全站首发！CS2死手系列22副新手套游戏内检视动画. 猛犸Eienno. 15.0万· 9小时前. 正在热搜. CS2更新22款全新手套.",
+        "publishTime": "2026-03-13T05:52:07.630Z",
+        "fetchTime": "2026-03-13T05:52:07.630Z"
+      }
+    },
+    {
+      "id": "bili_1773381179223_7846",
+      "platform": "bilibili",
+      "title": "vLLM的语义路由框架：把\"改策略\"从工程问题变成配置问题",
+      "type": "other",
+      "influenceScore": 0.8037909999999999,
+      "location": {
+        "lat": 39.8873,
+        "lng": 116.4009,
+        "city": "北京",
+        "district": "海淀区"
+      },
+      "metrics": {
+        "views": 303791,
+        "likes": 133835,
+        "coins": 34104
+      },
+      "metadata": {
+        "author": "UP主小A",
+        "url": "https://zhuanlan.zhihu.com/p/2015493215835416159",
+        "description": "这篇来自vLLM 开源社区的工作不是在刷榜，而是在解决一个实际的系统工程问题：当企业同时运行十几个来自不同提供商的语言模型，一条请求进来，谁来决定路由给哪个模型？",
+        "publishTime": "2026-03-13T05:52:59.223Z",
+        "fetchTime": "2026-03-13T05:52:59.223Z"
+      }
+    },
+    {
+      "id": "wb_1773381221099_7169",
+      "platform": "weibo",
+      "title": "#单亲妈妈14年手打200万个锅盔#_微博",
+      "type": "other",
+      "influenceScore": 0.8,
+      "location": {
+        "lat": 39.8633,
+        "lng": 116.4307,
+        "city": "北京",
+        "district": "朝阳区"
+      },
+      "metrics": {
+        "readCount": 3709670,
+        "discussCount": 414281
+      },
+      "metadata": {
+        "author": "新闻快报",
+        "url": "https://weibo.com/a/hot/d1d532e26341e0e8_0.html?type=grab",
+        "description": "【#单亲妈妈14年手打200万个锅盔#】近日，四川成都。“锅盔女王”张艳曾是一名酒店管理公司的业务经理，在婚姻失败后陷入困境，欠款一度达到200万元。张艳介绍，自己刚出月子 ...",
+        "publishTime": "2026-03-13T05:53:41.099Z",
+        "fetchTime": "2026-03-13T05:53:41.099Z"
+      }
+    },
+    {
+      "id": "wb_1773381221099_9577",
+      "platform": "weibo",
+      "title": "夫妻档手推车炒饭_新浪新闻",
+      "type": "food",
+      "influenceScore": 0.8,
+      "location": {
+        "lat": 39.8922,
+        "lng": 116.4079,
+        "city": "北京",
+        "district": "西城区"
+      },
+      "metrics": {
+        "readCount": 9594133,
+        "discussCount": 412970
+      },
+      "metadata": {
+        "author": "本地生活",
+        "url": "https://www.sina.cn/news/detail/5275787340290034.html",
+        "description": "聚焦基层餐饮人 只用一个字就能找出资格的自贡人 华阳通济桥下街小桥上夫妻档手推车炒饭（帅得） #超级小猪吃游记##超级小猪卤肉饭##成都美食# http://t.cn/AXVHlDXX ​.",
+        "publishTime": "2026-03-13T05:53:41.099Z",
+        "fetchTime": "2026-03-13T05:53:41.099Z"
+      }
+    },
+    {
+      "id": "wb_1773381218615_7324",
+      "platform": "weibo",
+      "title": "深圳天气预报15天查询",
+      "type": "other",
+      "influenceScore": 0.8,
+      "location": {
+        "lat": 39.954,
+        "lng": 116.4357,
+        "city": "北京",
+        "district": "西城区"
+      },
+      "metrics": {
+        "readCount": 2776005,
+        "discussCount": 244356
+      },
+      "metadata": {
+        "author": "本地生活",
+        "url": "https://m.weather.com.cn/mweather15d/101280601.shtml",
+        "description": "今天. 03/13. 晴. 22/12℃. 良 · 周六. 03/14. 晴. 23/15℃. 无持续风向<3级 · 周日. 03/15. 晴转多云. 24/17℃. 无持续风向<3级 · 周一. 03/16. 晴. 25/18℃. 东风3-4级 · 周二.",
+        "publishTime": "2026-03-13T05:53:38.615Z",
+        "fetchTime": "2026-03-13T05:53:38.615Z"
+      }
+    },
+    {
+      "id": "wb_1773381209858_6290",
+      "platform": "weibo",
+      "title": "#单亲妈妈14年手打200万个锅盔#_微博",
+      "type": "other",
+      "influenceScore": 0.8,
+      "location": {
+        "lat": 39.9367,
+        "lng": 116.4466,
+        "city": "北京",
+        "district": "海淀区"
+      },
+      "metrics": {
+        "readCount": 9642055,
+        "discussCount": 141338
+      },
+      "metadata": {
+        "author": "热点追踪",
+        "url": "https://weibo.com/a/hot/d1d532e26341e0e8_0.html?type=grab",
+        "description": "【#单亲妈妈14年手打200万个锅盔#】近日，四川成都。“锅盔女王”张艳曾是一名酒店管理公司的业务经理，在婚姻失败后陷入困境，欠款一度达到200万元。张艳介绍，自己刚出月子 ...",
+        "publishTime": "2026-03-13T05:53:29.858Z",
+        "fetchTime": "2026-03-13T05:53:29.858Z"
+      }
+    },
+    {
+      "id": "wb_1773381209858_6156",
+      "platform": "weibo",
+      "title": "夫妻档手推车炒饭_新浪新闻",
+      "type": "food",
+      "influenceScore": 0.8,
+      "location": {
+        "lat": 39.942,
+        "lng": 116.4048,
+        "city": "北京",
+        "district": "东城区"
+      },
+      "metrics": {
+        "readCount": 7305504,
+        "discussCount": 481689
+      },
+      "metadata": {
+        "author": "资讯博主",
+        "url": "https://www.sina.cn/news/detail/5275787340290034.html",
+        "description": "聚焦基层餐饮人 只用一个字就能找出资格的自贡人 华阳通济桥下街小桥上夫妻档手推车炒饭（帅得） #超级小猪吃游记##超级小猪卤肉饭##成都美食# http://t.cn/AXVHlDXX ​.",
+        "publishTime": "2026-03-13T05:53:29.858Z",
+        "fetchTime": "2026-03-13T05:53:29.858Z"
+      }
+    },
+    {
+      "id": "wb_1773381184828_5636",
+      "platform": "weibo",
+      "title": "湖南天气预报- 湖南",
+      "type": "tourism",
+      "influenceScore": 0.8,
+      "location": {
+        "lat": 39.9535,
+        "lng": 116.4206,
+        "city": "北京",
+        "district": "丰台区"
+      },
+      "metrics": {
+        "readCount": 2829723,
+        "discussCount": 121356
+      },
+      "metadata": {
+        "author": "热点追踪",
+        "url": "https://hunan.weather.com.cn/index.shtml",
+        "description": "我的城市天气. 我的城市天气. 新浪微博. 湖南气象服务. 短信服务: 省市气象台权威发布，定时提供全省各市县最新天气预报。 专业服务: 针对气象信息的特殊需求，开展专业专项 ...",
+        "publishTime": "2026-03-13T05:53:04.828Z",
+        "fetchTime": "2026-03-13T05:53:04.828Z"
+      }
+    },
+    {
+      "id": "wb_1773381174579_6255",
+      "platform": "weibo",
+      "title": "上海交通的微博视频",
+      "type": "other",
+      "influenceScore": 0.8,
+      "location": {
+        "lat": 39.9409,
+        "lng": 116.4402,
+        "city": "北京",
+        "district": "东城区"
+      },
+      "metrics": {
+        "readCount": 6420887,
+        "discussCount": 92075
+      },
+      "metadata": {
+        "author": "本地生活",
+        "url": "https://h5.video.weibo.com/show/1034:5267052085313659",
+        "description": "上海交通的微博视频. 599次观看24天前发布. 上海交通. 174.4万人关注. 关注. 相关推荐. 查看更多视频. 热门评论. 查看更多评论. 打开微博视频看高清.",
+        "publishTime": "2026-03-13T05:52:54.579Z",
+        "fetchTime": "2026-03-13T05:52:54.579Z"
+      }
+    },
+    {
+      "id": "wb_1773381174579_1011",
+      "platform": "weibo",
+      "title": "上海交通大学-智能云|科研 - 新浪",
+      "type": "other",
+      "influenceScore": 0.8,
+      "location": {
+        "lat": 39.9178,
+        "lng": 116.4401,
+        "city": "北京",
+        "district": "朝阳区"
+      },
+      "metrics": {
+        "readCount": 6509965,
+        "discussCount": 454543
+      },
+      "metadata": {
+        "author": "本地生活",
+        "url": "https://k.sina.com.cn/article_7879848900_1d5acf3c401902rhus.html",
+        "description": "上海交通大学（简称“上海交大”）是教育部直属的全国重点大学，办学历史悠久，是中国顶尖高校之一。该校是“双一流”大学，并属于多个大学 ... 转发至微博. 88字. 立即转发.",
+        "publishTime": "2026-03-13T05:52:54.579Z",
+        "fetchTime": "2026-03-13T05:52:54.579Z"
+      }
+    },
+    {
+      "id": "wb_1773381171198_7083",
+      "platform": "weibo",
+      "title": "微博实时热点_微博",
+      "type": "tourism",
+      "influenceScore": 0.8,
+      "location": {
+        "lat": 39.9066,
+        "lng": 116.4139,
+        "city": "北京",
+        "district": "东城区"
+      },
+      "metrics": {
+        "readCount": 5542660,
+        "discussCount": 196000
+      },
+      "metadata": {
+        "author": "热点追踪",
+        "url": "https://www.weibo.com/a/hot/realtime/32ddfc0dbd5e2fc9_0.html?type=grab",
+        "description": "#肖战品质盛典金辉魅影大片# · #霍尔木兹海峡将继续关闭# · 逐玉 · #微信视频防挂断功能来了# · 种地吧 · #王一博入围巴黎时装周名人声量# · #天塌了山姆的三文鱼原来不能生吃#.",
+        "publishTime": "2026-03-13T05:52:51.198Z",
+        "fetchTime": "2026-03-13T05:52:51.198Z"
+      }
+    },
+    {
+      "id": "wb_1773381171198_8087",
+      "platform": "weibo",
+      "title": "世界从中国两会看到新机遇 - 微博",
+      "type": "other",
+      "influenceScore": 0.8,
+      "location": {
+        "lat": 39.8658,
+        "lng": 116.4277,
+        "city": "北京",
+        "district": "海淀区"
+      },
+      "metrics": {
+        "readCount": 8367129,
+        "discussCount": 369722
+      },
+      "metadata": {
+        "author": "城市观察",
+        "url": "https://weibo.com/a/hot/e433e1ec94552c41_0.html?type=grab",
+        "description": "【#世界从中国两会看到新机遇#】#中国在新世界秩序中作用关键#2026年中国两会吸引全球关注。国际人士表示中国推动高质量发展，以人民为中发展经验值得各国借鉴。",
+        "publishTime": "2026-03-13T05:52:51.198Z",
+        "fetchTime": "2026-03-13T05:52:51.198Z"
+      }
+    },
+    {
+      "id": "wb_1773381171198_6261",
+      "platform": "weibo",
+      "title": "公积金制度改革加速中 - 微博",
+      "type": "other",
+      "influenceScore": 0.8,
+      "location": {
+        "lat": 39.8776,
+        "lng": 116.3586,
+        "city": "北京",
+        "district": "丰台区"
+      },
+      "metrics": {
+        "readCount": 7169538,
+        "discussCount": 384324
+      },
+      "metadata": {
+        "author": "热点追踪",
+        "url": "https://weibo.com/a/hot/realtime/fde3b52fa92c2e81_0.html?type=grab",
+        "description": "#王楚钦vs弗朗西斯卡# · #钟意云缨夯爆了# · #Apple50周年# · 认养一头牛投广在被弃养的这集 · 肖战白鹿白敬亭谁说内娱没有齐舞 · #美以无人机在伊朗接连折戟# · 于谦也想要 ...",
+        "publishTime": "2026-03-13T05:52:51.198Z",
+        "fetchTime": "2026-03-13T05:52:51.198Z"
+      }
+    },
+    {
+      "id": "wb_1773381168448_1150",
+      "platform": "weibo",
+      "title": "2025年微博十大热搜艺人完整榜单曝光,肖战断层领跑",
+      "type": "social_trend",
+      "influenceScore": 0.8,
+      "location": {
+        "lat": 39.9274,
+        "lng": 116.3608,
+        "city": "北京",
+        "district": "朝阳区"
+      },
+      "metrics": {
+        "readCount": 8609059,
+        "discussCount": 217186
+      },
+      "metadata": {
+        "author": "本地生活",
+        "url": "https://k.sina.com.cn/article_7857201856_1d45362c0019035aw4.html",
+        "description": "2025年微博十大热搜艺人完整榜单曝光,肖战断层领跑,幸福到万家,迪丽热巴,金鹰视后,刘宇宁,风吹半夏,播放量,魏劭,折腰,藏海传,梓渝,惊蛰无声,流量剧,年度,春晚,巡演, ...",
+        "publishTime": "2026-03-13T05:52:48.448Z",
+        "fetchTime": "2026-03-13T05:52:48.448Z"
+      }
+    },
+    {
+      "id": "wb_1773381168448_8626",
+      "platform": "weibo",
+      "title": "白鹿丁禹兮恰逢雨连天",
+      "type": "other",
+      "influenceScore": 0.8,
+      "location": {
+        "lat": 39.8597,
+        "lng": 116.4559,
+        "city": "北京",
+        "district": "东城区"
+      },
+      "metrics": {
+        "readCount": 8024509,
+        "discussCount": 219256
+      },
+      "metadata": {
+        "author": "新闻快报",
+        "url": "https://weibo.com/a/hot/20a3f5b2e2af8866_0.html?type=grab",
+        "description": "白鹿丁禹兮《恰逢雨连天》，这部剧定男选女，网传女主从卢昱晓变成了白鹿。 剧组在争取流量花，估计想凑双顶流阵容[思考][思考] #白鹿丁禹兮恰逢雨连天# ​​​​",
+        "publishTime": "2026-03-13T05:52:48.448Z",
+        "fetchTime": "2026-03-13T05:52:48.448Z"
+      }
+    },
+    {
+      "id": "wb_1773381136540_9424",
+      "platform": "weibo",
+      "title": "上海交通大学-智能云|科研 - 新浪",
+      "type": "other",
+      "influenceScore": 0.8,
+      "location": {
+        "lat": 39.8869,
+        "lng": 116.4548,
+        "city": "北京",
+        "district": "西城区"
+      },
+      "metrics": {
+        "readCount": 2512239,
+        "discussCount": 461310
+      },
+      "metadata": {
+        "author": "热点追踪",
+        "url": "https://k.sina.com.cn/article_7879848900_1d5acf3c401902rhus.html",
+        "description": "上海交通大学（简称“上海交大”）是教育部直属的全国重点大学，办学历史悠久，是中国顶尖高校之一。该校是“双一流”大学，并属于多个大学 ... 转发至微博. 88字. 立即转发.",
+        "publishTime": "2026-03-13T05:52:16.540Z",
+        "fetchTime": "2026-03-13T05:52:16.540Z"
+      }
+    },
+    {
+      "id": "wb_1773381136540_2743",
+      "platform": "weibo",
+      "title": "关于校友卡办理的通知 - 上海交通大学校友会",
+      "type": "social_trend",
+      "influenceScore": 0.8,
+      "location": {
+        "lat": 39.9454,
+        "lng": 116.4194,
+        "city": "北京",
+        "district": "海淀区"
+      },
+      "metrics": {
+        "readCount": 3921900,
+        "discussCount": 197962
+      },
+      "metadata": {
+        "author": "热点追踪",
+        "url": "https://1896.sjtu.edu.cn/web/articleInfo?id=3295",
+        "description": "上海交通大学实体校友卡是面向校友发行的实名制卡，是母校和校友之间的联系 ... 上海交通大学校友会微博. 上海交通大学校友总会办公室所有2014-2021. Shanghai Jiao ...",
+        "publishTime": "2026-03-13T05:52:16.540Z",
+        "fetchTime": "2026-03-13T05:52:16.540Z"
+      }
+    },
+    {
+      "id": "wb_1773381110310_8591",
+      "platform": "weibo",
+      "title": "公积金制度改革加速中 - 微博",
+      "type": "other",
+      "influenceScore": 0.8,
+      "location": {
+        "lat": 39.909,
+        "lng": 116.3864,
+        "city": "北京",
+        "district": "朝阳区"
+      },
+      "metrics": {
+        "readCount": 7538750,
+        "discussCount": 252351
+      },
+      "metadata": {
+        "author": "资讯博主",
+        "url": "https://weibo.com/a/hot/realtime/fde3b52fa92c2e81_0.html?type=grab",
+        "description": "#王楚钦vs弗朗西斯卡# · #钟意云缨夯爆了# · #Apple50周年# · 认养一头牛投广在被弃养的这集 · 肖战白鹿白敬亭谁说内娱没有齐舞 · #美以无人机在伊朗接连折戟# · 于谦也想要 ...",
+        "publishTime": "2026-03-13T05:51:50.310Z",
+        "fetchTime": "2026-03-13T05:51:50.310Z"
+      }
+    },
+    {
+      "id": "wb_1773381092498_3966",
+      "platform": "weibo",
+      "title": "2025年微博十大热搜艺人完整榜单曝光,肖战断层领跑",
+      "type": "social_trend",
+      "influenceScore": 0.8,
+      "location": {
+        "lat": 39.9092,
+        "lng": 116.3964,
+        "city": "北京",
+        "district": "海淀区"
+      },
+      "metrics": {
+        "readCount": 9996879,
+        "discussCount": 225153
+      },
+      "metadata": {
+        "author": "城市观察",
+        "url": "https://k.sina.com.cn/article_7857201856_1d45362c0019035aw4.html",
+        "description": "2025年微博十大热搜艺人完整榜单曝光,肖战断层领跑,幸福到万家,迪丽热巴,金鹰视后,刘宇宁,风吹半夏,播放量,魏劭,折腰,藏海传,梓渝,惊蛰无声,流量剧,年度,春晚,巡演, ...",
+        "publishTime": "2026-03-13T05:51:32.498Z",
+        "fetchTime": "2026-03-13T05:51:32.498Z"
+      }
+    },
+    {
+      "id": "wb_1773381092498_2495",
+      "platform": "weibo",
+      "title": "微博秀",
+      "type": "social_trend",
+      "influenceScore": 0.8,
+      "location": {
+        "lat": 39.875,
+        "lng": 116.4309,
+        "city": "北京",
+        "district": "朝阳区"
+      },
+      "metrics": {
+        "readCount": 9933397,
+        "discussCount": 291283
+      },
+      "metadata": {
+        "author": "本地生活",
+        "url": "http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=450&fansRow=1&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=0&uid=2712205020&verifier=75925608&dpc=1",
+        "description": "【#第一批用OpenClaw的人尝到甜头了#】#OpenClaw爆火催生多项付费服务#近日，多个“养龙虾”相关话题冲上热搜。 ... 榜单，排名第45位#惠州##惠民之州惠聚美好# http://t ...",
+        "publishTime": "2026-03-13T05:51:32.498Z",
+        "fetchTime": "2026-03-13T05:51:32.498Z"
+      }
+    },
+    {
+      "id": "dy_1773381090396_7472",
+      "platform": "douyin",
+      "title": "抖音十大热门歌曲",
+      "type": "other",
+      "influenceScore": 0.79244,
+      "location": {
+        "lat": 39.8556,
+        "lng": 116.3952,
+        "city": "北京",
+        "district": "丰台区"
+      },
+      "metrics": {
+        "likes": 52333,
+        "shares": 10112,
+        "comments": 9566
+      },
+      "metadata": {
+        "author": "旅行博主",
+        "url": "https://www.douyin.com/search/%E6%8A%96%E9%9F%B3%E5%8D%81%E5%A4%A7%E7%83%AD%E9%97%A8%E6%AD%8C%E6%9B%B2",
+        "description": "抖音十大热门歌曲 ; 晚风听曲集 · 2月前 ; 悦音馆 · 3月前 ; 断舍离（听歌版） · 断舍离（听歌版） · 2周前 ; 挽情音乐 · 2月前 ; 失眠专辑. · 6月前.",
+        "publishTime": "2026-03-13T05:51:30.396Z",
+        "fetchTime": "2026-03-13T05:51:30.396Z"
+      }
+    },
+    {
+      "id": "wb_002",
+      "platform": "weibo",
+      "title": "#上海迪士尼# 5周年庆典活动",
+      "type": "event",
+      "influenceScore": 0.78,
+      "location": {
+        "lat": 31.1444,
+        "lng": 121.6578,
+        "city": "上海",
+        "district": "浦东新区"
+      },
+      "metrics": {
+        "readCount": 3200000,
+        "discussCount": 180000
+      },
+      "metadata": {
+        "category": "娱乐",
+        "publishTime": "2026-03-11T18:00:00Z",
+        "fetchTime": "2026-03-12T09:00:00Z"
+      }
+    },
+    {
+      "id": "bili_1773381102749_6592",
+      "platform": "bilibili",
+      "title": "致敬我的入宅之作——青春猪头少年不会梦到兔女郎学姐",
+      "type": "acg",
+      "influenceScore": 0.7706919999999999,
+      "location": {
+        "lat": 39.9192,
+        "lng": 116.4401,
+        "city": "北京",
+        "district": "丰台区"
+      },
+      "metrics": {
+        "views": 270692,
+        "likes": 85287,
+        "coins": 58441
+      },
+      "metadata": {
+        "author": "游戏解说",
+        "url": "https://www.bilibili.com/opus/383541348334799030",
+        "description": "在一个对于bilibili来说特别的日子——成立十周年纪念日，入站了。 “……B站还有各种分区，你可以看动画区，如果喜欢的话可以追番，还可以看鬼畜……” 我时至今日还清楚地 ...",
+        "publishTime": "2026-03-13T05:51:42.750Z",
+        "fetchTime": "2026-03-13T05:51:42.750Z"
+      }
+    },
+    {
+      "id": "wb_1773381092498_4547",
+      "platform": "weibo",
+      "title": "白鹿丁禹兮恰逢雨连天",
+      "type": "other",
+      "influenceScore": 0.7704266666666666,
+      "location": {
+        "lat": 39.948,
+        "lng": 116.4428,
+        "city": "北京",
+        "district": "海淀区"
+      },
+      "metrics": {
+        "readCount": 7456393,
+        "discussCount": 81128
+      },
+      "metadata": {
+        "author": "资讯博主",
+        "url": "https://weibo.com/a/hot/20a3f5b2e2af8866_0.html?type=grab",
+        "description": "白鹿丁禹兮《恰逢雨连天》，这部剧定男选女，网传女主从卢昱晓变成了白鹿。 剧组在争取流量花，估计想凑双顶流阵容[思考][思考] #白鹿丁禹兮恰逢雨连天# ​​​​",
+        "publishTime": "2026-03-13T05:51:32.498Z",
+        "fetchTime": "2026-03-13T05:51:32.498Z"
+      }
+    },
+    {
+      "id": "wb_1773381209858_1881",
+      "platform": "weibo",
+      "title": "60斤和110斤互换饮食的一天_微博",
+      "type": "food",
+      "influenceScore": 0.7673487999999999,
+      "location": {
+        "lat": 39.946,
+        "lng": 116.416,
+        "city": "北京",
+        "district": "东城区"
+      },
+      "metrics": {
+        "readCount": 2336744,
+        "discussCount": 127829
+      },
+      "metadata": {
+        "author": "城市观察",
+        "url": "https://weibo.com/a/hot/d4c92f61c8e6ce1a_0.html?type=grab",
+        "description": "#60斤和110斤互换饮食的一天#这波互换也太敢了！必须狠狠夸夸两位勇敢挑战的姐妹！ 60斤的姐妹化身干饭达人，抱着高热量美食 ... 健康成都官微 13分钟前. ñ6 23 1 ...",
+        "publishTime": "2026-03-13T05:53:29.858Z",
+        "fetchTime": "2026-03-13T05:53:29.858Z"
+      }
+    },
+    {
+      "id": "bili_1773381173823_9973",
+      "platform": "bilibili",
+      "title": "一口气看完S级怪兽《贝希摩斯》被误认成小猫，成为精灵女孩骑士#动漫 ...",
+      "type": "acg",
+      "influenceScore": 0.76511,
+      "location": {
+        "lat": 39.9022,
+        "lng": 116.3805,
+        "city": "北京",
+        "district": "朝阳区"
+      },
+      "metrics": {
+        "views": 1173269,
+        "likes": 26511,
+        "coins": 91103
+      },
+      "metadata": {
+        "author": "UP主小A",
+        "url": "https://www.bilibili.com/video/BV1TUJrz8EQ5/",
+        "description": "一口气看完S级怪兽《贝希摩斯》被误认成小猫，成为精灵女孩骑士#动漫推荐#二次元#漫剪#动漫解说#新番动漫. 小王动漫季节. bilibili热搜. 完整榜单. 3.12杨瀚森天神下凡！",
+        "publishTime": "2026-03-13T05:52:53.823Z",
+        "fetchTime": "2026-03-13T05:52:53.823Z"
+      }
+    },
+    {
+      "id": "wb_1773381168448_2191",
+      "platform": "weibo",
+      "title": "微博秀",
+      "type": "social_trend",
+      "influenceScore": 0.7593512,
+      "location": {
+        "lat": 39.9485,
+        "lng": 116.3758,
+        "city": "北京",
+        "district": "东城区"
+      },
+      "metrics": {
+        "readCount": 2296756,
+        "discussCount": 390551
+      },
+      "metadata": {
+        "author": "本地生活",
+        "url": "http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=450&fansRow=1&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=0&uid=2712205020&verifier=75925608&dpc=1",
+        "description": "【#第一批用OpenClaw的人尝到甜头了#】#OpenClaw爆火催生多项付费服务#近日，多个“养龙虾”相关话题冲上热搜。 ... 榜单，排名第45位#惠州##惠民之州惠聚美好# http://t ...",
+        "publishTime": "2026-03-13T05:52:48.448Z",
+        "fetchTime": "2026-03-13T05:52:48.448Z"
+      }
+    },
+    {
+      "id": "bili_1773381171200_8863",
+      "platform": "bilibili",
+      "title": "许仙动漫馆-哔哩哔哩_Bilibili",
+      "type": "acg",
+      "influenceScore": 0.75241,
+      "location": {
+        "lat": 39.9096,
+        "lng": 116.4186,
+        "city": "北京",
+        "district": "丰台区"
+      },
+      "metrics": {
+        "views": 1743520,
+        "likes": 25241,
+        "coins": 68237
+      },
+      "metadata": {
+        "author": "游戏解说",
+        "url": "https://m.bilibili.com/search?keyword=%E8%AE%B8%E4%BB%99%E5%8A%A8%E6%BC%AB%E9%A6%86&from_source=video_tag",
+        "description": "bilibili为您提供许仙动漫馆相关的视频、番剧、影视、动画等内容。bilibili是国内知名的在线视频弹幕网站，拥有最棒的ACG氛围，哔哩哔哩内容丰富多元，涵盖动漫、电影、二 ...",
+        "publishTime": "2026-03-13T05:52:51.200Z",
+        "fetchTime": "2026-03-13T05:52:51.200Z"
+      }
+    },
+    {
+      "id": "dy_002",
+      "platform": "douyin",
+      "title": "深圳湾网红餐厅探店",
+      "type": "food",
+      "influenceScore": 0.74,
+      "location": {
+        "lat": 22.5431,
+        "lng": 113.9481,
+        "city": "深圳",
+        "district": "南山区"
+      },
+      "metrics": {
+        "likes": 185000,
+        "shares": 52000,
+        "comments": 28000
+      },
+      "metadata": {
+        "author": "美食博主",
+        "publishTime": "2026-03-11T22:00:00Z",
+        "fetchTime": "2026-03-12T09:00:00Z"
+      }
+    },
+    {
+      "id": "xhs_002",
+      "platform": "xiaohongshu",
+      "title": "外滩夜景打卡点，绝美视角",
+      "type": "tourism",
+      "influenceScore": 0.72,
+      "location": {
+        "lat": 31.2304,
+        "lng": 121.4737,
+        "city": "上海",
+        "district": "黄浦区"
+      },
+      "metrics": {
+        "likes": 12000,
+        "collects": 6500
+      },
+      "metadata": {
+        "author": "旅行达人",
+        "publishTime": "2026-03-12T07:30:00Z",
+        "fetchTime": "2026-03-12T09:00:00Z"
+      }
+    },
+    {
+      "id": "dy_003",
+      "platform": "douyin",
+      "title": "杭州西湖音乐节现场直击",
+      "type": "event",
+      "influenceScore": 0.71,
+      "location": {
+        "lat": 30.2473,
+        "lng": 120.135,
+        "city": "杭州",
+        "district": "西湖区"
+      },
+      "metrics": {
+        "likes": 168000,
+        "shares": 48000,
+        "comments": 24000
+      },
+      "metadata": {
+        "author": "音乐达人",
+        "publishTime": "2026-03-11T20:00:00Z",
+        "fetchTime": "2026-03-12T09:00:00Z"
+      }
+    },
+    {
+      "id": "bili_002",
+      "platform": "bilibili",
+      "title": "北京动漫展 Cosplay 大赏",
+      "type": "acg",
+      "influenceScore": 0.69,
+      "location": {
+        "lat": 39.8856,
+        "lng": 116.411,
+        "city": "北京",
+        "district": "顺义区"
+      },
+      "metrics": {
+        "views": 520000,
+        "likes": 38000,
+        "coins": 21000
+      },
+      "metadata": {
+        "author": "漫展前线",
+        "publishTime": "2026-03-11T18:00:00Z",
+        "fetchTime": "2026-03-12T09:00:00Z"
+      }
+    },
+    {
+      "id": "xhs_1773381171419_6068",
+      "platform": "xiaohongshu",
+      "title": "小红书爆款笔记的“封面+ 标题” 黄金公式:从踩坑到出片的实操指南|穿搭|拼图",
+      "type": "other",
+      "influenceScore": 0.68425,
+      "location": {
+        "lat": 23.0931,
+        "lng": 113.301,
+        "city": "广州",
+        "district": "海珠区"
+      },
+      "metrics": {
+        "likes": 48425,
+        "collects": 3397
+      },
+      "metadata": {
+        "author": "旅行达人",
+        "url": "https://k.sina.com.cn/article_7880068200_1d5b04c6801901eqfc.html?from=fashion",
+        "description": "穿搭博主@小个子秘籍很擅长这招：在全身照旁用大字体标注“155cm 穿出170cm 既视感”，比纯图片多获得40% 的收藏。避坑要点：字体选粗体无衬线款（如思源黑体），颜色与背景形成高 ...",
+        "publishTime": "2026-03-13T05:52:51.419Z",
+        "fetchTime": "2026-03-13T05:52:51.419Z"
+      }
+    },
+    {
+      "id": "xhs_003",
+      "platform": "xiaohongshu",
+      "title": "成都太古里火锅，排队也要吃",
+      "type": "food",
+      "influenceScore": 0.68,
+      "location": {
+        "lat": 30.6586,
+        "lng": 104.0648,
+        "city": "成都",
+        "district": "锦江区"
+      },
+      "metrics": {
+        "likes": 9800,
+        "collects": 5200
+      },
+      "metadata": {
+        "author": "火锅爱好者",
+        "publishTime": "2026-03-12T06:00:00Z",
+        "fetchTime": "2026-03-12T09:00:00Z"
+      }
+    },
+    {
+      "id": "xhs_1773381168738_2512",
+      "platform": "xiaohongshu",
+      "title": "美食探店博主排行榜前十名- 抖音 - Douyin",
+      "type": "food",
+      "influenceScore": 0.6788700000000001,
+      "location": {
+        "lat": 31.1828,
+        "lng": 121.4404,
+        "city": "上海",
+        "district": "徐汇区"
+      },
+      "metrics": {
+        "likes": 47887,
+        "collects": 16230
+      },
+      "metadata": {
+        "author": "摄影爱好者",
+        "url": "https://www.douyin.com/search/%E7%BE%8E%E9%A3%9F%E6%8E%A2%E5%BA%97%E5%8D%9A%E4%B8%BB%E6%8E%92%E8%A1%8C%E6%A6%9C%E5%89%8D%E5%8D%81%E5%90%8D",
+        "description": "抖音美食探店博主排行榜（探店达人榜）。2023年9月18日至9月24日抖音美食探店博主排行榜，单周新增点赞数据排名前100名网红探店达人。（仅为抖音数据排名，个人观点仅供 ...",
+        "publishTime": "2026-03-13T05:52:48.738Z",
+        "fetchTime": "2026-03-13T05:52:48.738Z"
+      }
+    },
+    {
+      "id": "xhs_1773381173942_7714",
+      "platform": "xiaohongshu",
+      "title": "Follow胖妞小红书美食&旅游攻略分享哦😚😚😚",
+      "type": "food",
+      "influenceScore": 0.67869,
+      "location": {
+        "lat": 31.2262,
+        "lng": 121.4872,
+        "city": "上海",
+        "district": "浦东新区"
+      },
+      "metrics": {
+        "likes": 47869,
+        "collects": 6188
+      },
+      "metadata": {
+        "author": "旅行达人",
+        "url": "https://www.threads.com/@melisa_pua/post/DVxgV17E9ck/follow%E8%83%96%E5%A6%9E%E5%B0%8F%E7%BA%A2%E4%B9%A6%E7%BE%8E%E9%A3%9F%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5%E5%88%86%E4%BA%AB%E5%93%A6",
+        "description": "Melisa Pua (@melisa_pua). 1 View. Follow胖妞小红书美食&旅游攻略 ... 旅行博主1172538152 117 253 8152 关注关注粉丝获赞与收藏粉丝获赞与收藏编辑资料 ...",
+        "publishTime": "2026-03-13T05:52:53.942Z",
+        "fetchTime": "2026-03-13T05:52:53.942Z"
+      }
+    },
+    {
+      "id": "xhs_1773381118635_8386",
+      "platform": "xiaohongshu",
+      "title": "推荐几个假期旅游AI工具|导游|飞猪|携程",
+      "type": "tourism",
+      "influenceScore": 0.6780200000000001,
+      "location": {
+        "lat": 39.8591,
+        "lng": 116.4338,
+        "city": "北京",
+        "district": "丰台区"
+      },
+      "metrics": {
+        "likes": 47802,
+        "collects": 17018
+      },
+      "metadata": {
+        "author": "美食小当家",
+        "url": "https://k.sina.com.cn/article_7879922979_1d5ae152301901oktq.html?from=travel",
+        "description": "打开小红书搜“目的地+ AI攻略”，或者在马蜂窝浏览“AI路书”，快速get别人的宝藏行程、照片、心得、避坑指南。 2、路线规划. 打开携程或飞猪App，在搜索框或明显位置找到“AI行程 ...",
+        "publishTime": "2026-03-13T05:51:58.635Z",
+        "fetchTime": "2026-03-13T05:51:58.635Z"
+      }
+    },
+    {
+      "id": "bili_1773381135069_1669",
+      "platform": "bilibili",
+      "title": "铁三角R70Xa 深度评测| 直推实测| 对比：R70X、MV1",
+      "type": "social_trend",
+      "influenceScore": 0.67479,
+      "location": {
+        "lat": 39.8779,
+        "lng": 116.3787,
+        "city": "北京",
+        "district": "朝阳区"
+      },
+      "metrics": {
+        "views": 1477250,
+        "likes": 17479,
+        "coins": 13421
+      },
+      "metadata": {
+        "author": "UP主小A",
+        "url": "https://www.bilibili.com/video/BV1WXtmz8Eb9/",
+        "description": "一次价值3K的“铁味”还原！它值这个价吗？！| 铁三角R70Xa 深度评测| 直推实测| 对比：R70X、MV1、HD490Pro、HD600、EDXS. 刘湿糊. bilibili热搜. 完整榜单.",
+        "publishTime": "2026-03-13T05:52:15.069Z",
+        "fetchTime": "2026-03-13T05:52:15.069Z"
+      }
+    },
+    {
+      "id": "dy_006",
+      "platform": "douyin",
+      "title": "上海陆家嘴夜景无人机拍摄",
+      "type": "tourism",
+      "influenceScore": 0.67,
+      "location": {
+        "lat": 31.2355,
+        "lng": 121.5045,
+        "city": "上海",
+        "district": "浦东新区"
+      },
+      "metrics": {
+        "likes": 158000,
+        "shares": 45000,
+        "comments": 22000
+      },
+      "metadata": {
+        "author": "航拍达人",
+        "publishTime": "2026-03-11T22:00:00Z",
+        "fetchTime": "2026-03-12T09:00:00Z"
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "evt_nodejs_module_not_found_fix_1774120000000",
+  "type": "EvolutionEvent",
+  "intent": "repair",
+  "outcome": {
+    "score": 0.95,
+    "status": "success"
+  },
+  "capsule_id": "capsule_nodejs_module_not_found_fix",
+  "genes_used": [
+    "gene_nodejs_module_not_found_fix"
+  ],
+  "schema_version": "1.5.0",
+  "signals": [
+    "module not found",
+    "require error",
+    "path resolution"
+  ],
+  "blast_radius": {
+    "files": 3,
+    "lines": 50
+  }
+}

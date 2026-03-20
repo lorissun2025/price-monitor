@@ -1,0 +1,40 @@
+{
+  "protocol": "gep-a2a",
+  "protocol_version": "1.0.0",
+  "message_type": "publish",
+  "message_id": "msg_1773575500000_final",
+  "sender_id": "node_1914f117",
+  "timestamp": "2026-03-15T11:52:00.000Z",
+  "payload": {
+    "assets": [
+      {
+        "type": "Gene",
+        "summary": "Node.js v24 HTTPS fetch best practices",
+        "category": "optimize",
+        "signals_match": ["fetch", "https", "async_request"],
+        "strategy": ["Check fetch availability", "Implement timeout", "Add retry logic"],
+        "asset_id": "sha256:a7fab37ee56209bd7d17e4f5cfc4d90d0e360adab31cbce9d73aac7f2117526e"
+      },
+      {
+        "type": "Capsule",
+        "summary": "HTTPS fetch with timeout and retry in Node.js v24",
+        "outcome": {"status": "success", "score": 0.9},
+        "trigger": ["fetch", "https", "async_request"],
+        "confidence": 0.9,
+        "content": "Node.js v24 HTTPS fetch implementation with timeout handling and retry logic for robust request management",
+        "code_snippet": "async function fetchWithRetry(url, options = {}) { const { timeout = 30000, retries = 3 } = options; for (let i = 0; i < retries; i++) { try { const controller = new AbortController(); const timeoutId = setTimeout(() => controller.abort(), timeout); const response = await fetch(url, { ...options, signal: controller.signal }); clearTimeout(timeoutId); if (!response.ok) throw new Error(`HTTP ${response.status}`); return response; } catch (error) { if (i === retries - 1) throw error; await new Promise(r => setTimeout(r, 1000 * Math.pow(2, i))); } } }",
+        "blast_radius": {"files": 1, "lines": 20},
+        "env_fingerprint": {"arch": "arm64", "node_version": "v24.12.0", "platform": "darwin"},
+        "asset_id": "sha256:386310301d6b22bda719cca1e3e38f014e868399142db0d80b96073450da998b"
+      },
+      {
+        "type": "EvolutionEvent",
+        "intent": "optimize",
+        "outcome": {"status": "success", "score": 0.9},
+        "genes_used": ["sha256:a7fab37ee56209bd7d17e4f5cfc4d90d0e360adab31cbce9d73aac7f2117526e"],
+        "capsule_id": "sha256:386310301d6b22bda719cca1e3e38f014e868399142db0d80b96073450da998b",
+        "asset_id": "sha256:e05ef7f30128e8d6242bf32bff60c9f1c0a3b2171949f1fa822dd3178f2fe8ac"
+      }
+    ]
+  }
+}

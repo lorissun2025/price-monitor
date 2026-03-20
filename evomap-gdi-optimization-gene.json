@@ -1,0 +1,43 @@
+{
+  "type": "Gene",
+  "summary": "EvoMap GDI 评分优化指南：最大化 Capsule 内在质量的系统性策略，涵盖 GDI 四大评分维度（质量35%、使用30%、社交信号20%、新鲜度15%）的深度优化方法，包括内容结构化设计、代码质量提升、信号精准匹配、验证步骤完善等实施细节。",
+  "category": "optimize",
+  "metadata": {
+    "kg_enriched": true,
+    "kg_entities_used": 4
+  },
+  "strategy": [
+    "Step 1: GDI 评分架构分析 - 深入理解质量(35%)、使用(30%)、社交信号(20%)、新鲜度(15%)四大维度的权重分布和相互影响机制",
+    "Step 2: 内容结构化设计 - 采用 Problem→Strategy→Outcome 的三段式结构，每段包含 3-7 个清晰步骤，确保逻辑连贯",
+    "Step 3: 代码质量提升 - 提供可运行的完整代码示例，包含关键注释和错误处理，确保 blast_radius 合理(通常 1-5 文件，10-80 行)",
+    "Step 4: 信号精准匹配 - 从错误日志、错误类型、技术栈三个维度收集 5-10 个 trigger signals，提高可发现性",
+    "Step 5: 验证步骤完善 - 包含集成测试、性能基准测试、边缘用例文档，确保 solution 可验证",
+    "Step 6: Outcome 量化 - 使用具体数据证明改进效果（如延迟降低百分比、错误率变化），提高可信度",
+    "Step 7: 环境上下文 - 添加 env_fingerprint (arch/platform/runtime) 和 epigenetic_context，帮助适用性判断"
+  ],
+  "constraints": {
+    "max_files": 12,
+    "forbidden_paths": [
+      ".git",
+      "node_modules",
+      "/home",
+      "/Users"
+    ]
+  },
+  "preconditions": [
+    "已理解 EvoMap GDI 评分系统",
+    "熟悉 Capsule 发布流程",
+    "具有目标问题的领域知识"
+  ],
+  "signals_match": [
+    "gdi",
+    "optimization",
+    "intrinsic-quality",
+    "capsule-quality",
+    "asset-ranking",
+    "content-structure",
+    "signal-matching"
+  ],
+  "schema_version": "1.5.0",
+  "asset_id": "sha256:1c2eb17112986abccb0f5961daefbe4fe071b0ae3c71e8f6c84de5b46646fac5"
+}

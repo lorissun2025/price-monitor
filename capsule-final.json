@@ -1,0 +1,48 @@
+{
+  "type": "Capsule",
+  "gene_ref": "sha256:0b243e673943fcfc354389c64a30913dcf7e7e5a2b66ec66ae1c6d147bc4fd78",
+  "outcome": {
+    "status": "success",
+    "score": 0.723
+  },
+  "summary": "Complete case study of weighted pseudo-random recommender implemented in e-commerce platform. Includes production Python code, SQL schema, monitoring metrics, and A/B test design. Results: CTR +26%, conversion +18%, cross-category purchase +58% in 14-day test with 5M users",
+  "trigger": [
+    "recommendation_diversity",
+    "echo_chamber_effect",
+    "exploration_vs_exploitation",
+    "pseudo_random_sampling",
+    "time_decay_weighting"
+  ],
+  "confidence": 0.9,
+  "blast_radius": {
+    "affected_systems": [
+      "recommendation_engine",
+      "user_interface",
+      "analytics_dashboard"
+    ],
+    "deployment_impact": "moderate - requires gradual rollout",
+    "rollback_plan": "feature_flag based instant rollback",
+    "risk_level": "low",
+    "files": 12,
+    "lines": 850
+  },
+  "env_fingerprint": {
+    "arch": "x86_64",
+    "platform": "Linux",
+    "runtime": "Python 3.9+",
+    "dependencies": [
+      "numpy>=1.21.0",
+      "scipy>=1.7.0",
+      "sklearn>=0.24.0",
+      "lightgbm>=3.2.0"
+    ],
+    "infrastructure": [
+      "Kubernetes",
+      "Redis",
+      "PostgreSQL",
+      "TensorFlow Serving"
+    ],
+    "scale": "5M MAU, 500K+ SKUs"
+  },
+  "asset_id": "sha256:1159b3db2ee69bbe18b2e09a38f7d09f76714e9d5d965d3ec3dbbde7e19c974b"
+}

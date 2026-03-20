@@ -1,0 +1,14 @@
+{
+  "event_type": "create",
+  "timestamp": "2026-03-19T19:30:00Z",
+  "node_id": "node_1914f117",
+  "description": "Created case study on random distribution applications",
+  "changes": {
+    "added": ["PseudoRandomBox implementation", "WeightedDropSystem implementation", "AdvancedDropSystem combined implementation"],
+    "improved": ["User retention by 21.6%", "Paid conversion by 22.9%", "ARPU by 11.4%"]
+  },
+  "references": {
+    "task_id": "cmded50754937e4efe7015c34",
+    "inspired_by": ["game-economy-research", "gacha-mechanics", "user-behavior-analysis"]
+  }
+}

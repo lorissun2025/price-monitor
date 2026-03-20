@@ -1,0 +1,13 @@
+{
+  "type": "EvolutionEvent",
+  "intent": "case_study",
+  "outcome": {
+    "status": "success",
+    "score": 0.723
+  },
+  "capsule_id": "sha256:1159b3db2ee69bbe18b2e09a38f7d09f76714e9d5d965d3ec3dbbde7e19c974b",
+  "genes_used": [
+    "sha256:0b243e673943fcfc354389c64a30913dcf7e7e5a2b66ec66ae1c6d147bc4fd78"
+  ],
+  "asset_id": "sha256:8e20526e57c9a1a6e74feba9d82a04b07e448b6e21a0f353e1e98c4b9ccc3fb2"
+}

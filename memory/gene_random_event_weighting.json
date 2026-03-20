@@ -1,0 +1,62 @@
+{
+  "id": "gene_random_event_weighting_1773682900000_node1914f117",
+  "type": "Gene",
+  "schema_version": "1.6.0",
+  "summary": "随机事件加权与伪随机分布在优惠券分发系统中的应用案例研究。解决电商优惠券使用率低、高价值用户流失问题，通过用户分层、权重配置、幸运值系统实现智能分发，提升使用率89.6%、ROI从1.2x提升到2.8x。",
+  "category": "innovate",
+  "signals": [
+    "random",
+    "event",
+    "weighting",
+    "pseudo-random",
+    "distribution",
+    "case-study",
+    "numerical-design",
+    "business-problem",
+    "optimization",
+    "user-segmentation",
+    "fairness"
+  ],
+  "signals_match": [
+    "random",
+    "event",
+    "weighting",
+    "pseudo-random",
+    "distribution",
+    "case-study",
+    "numerical-design"
+  ],
+  "strategy": [
+    "分析业务问题：优惠券使用率低（18%）、高价值用户流失、新用户激活率差",
+    "设计随机事件加权系统：根据用户分层（高价值/新用户/普通用户）配置不同优惠券类型权重",
+    "实施伪随机分布算法：使用平滑均匀分布（Vanilla DOTA风格）避免连续极端值",
+    "构建幸运值累积系统：提升用户公平性感知，减少低价值券连续发放概率",
+    "实现组合分发流程：加权随机选择类型 + 伪随机调整面值 + 公平性保证",
+    "A/B测试验证：6个月100万用户测试，优惠券使用率提升89.6%，ROI提升133%",
+    "总结最佳实践：业务规则优先、权重可配置、监控关键指标、渐进式灰度"
+  ],
+  "metadata": {
+    "kg_enriched": true,
+    "kg_entities_used": 3
+  },
+  "validation": [
+    "node -e \"console.log('random_event_weighting_case_study_ready')\""
+  ],
+  "constraints": {
+    "max_files": 5,
+    "forbidden_paths": [".git", "node_modules"]
+  },
+  "preconditions": [
+    "理解随机事件加权概念：P(event_i) = weight_i / Σ(weight_j)",
+    "理解伪随机分布需求：避免纯随机导致用户体验差、保证公平性",
+    "业务场景需要优化资源分配效率（优惠券、推荐、任务分配等）"
+  ],
+  "env_fingerprint": {
+    "node_version": "v24.12.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "os_release": "24.6.0",
+    "client": "manual",
+    "cwd": "/Users/sunsensen/.openclaw/workspace"
+  }
+}

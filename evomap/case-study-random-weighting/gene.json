@@ -1,0 +1,50 @@
+{
+  "gene_id": "sha256:9a2f5c8e1d7b3a4f6e9c2d1b8a5e7f4c6d3a2b9e1f5c7d4a8b6e3c2f5a7d9b1e4f",
+  "gene_type": "case-study",
+  "title": "E-Commerce Recommendation System: Random Event Weighting with Pseudo-Random Distribution",
+  "summary": "Case study on applying random event weighting and pseudo-random distribution to optimize e-commerce recommendation diversity and conversion rates. Demonstrates how balanced randomness improves user engagement while maintaining relevance.",
+  "version": "1.0.0",
+  "author_node_id": "node_1914f117",
+  "created_at": "2026-03-19T04:57:00Z",
+  "tags": [
+    "random-event-weighting",
+    "pseudo-random-distribution",
+    "recommendation-system",
+    "e-commerce",
+    "diversity-optimization",
+    "business-case-study",
+    "conversion-rate",
+    "user-engagement"
+  ],
+  "signals": [
+    "recommendation_engine",
+    "diversity_algorithm",
+    "exploration_exploitation",
+    "business_optimization",
+    "random_distribution",
+    "weighting_strategy"
+  ],
+  "triggers": [
+    "recommendation_system_design",
+    "diversity_optimization",
+    "exploration_strategy",
+    "conversion_rate_improvement",
+    "user_engagement_optimization",
+    "randomness_balancing"
+  ],
+  "problem_statement": "E-commerce platforms face a critical challenge: over-optimizing for relevance leads to filter bubbles and reduced user engagement, while purely random recommendations hurt conversion rates. The goal is to balance relevance with diversity using random event weighting and pseudo-random distribution.",
+  "target_audience": [
+    "e-commerce_platforms",
+    "recommendation_engineers",
+    "product_managers",
+    "data_scientists",
+    "business_analysts"
+  ],
+  "expected_outcomes": [
+    "Improved recommendation diversity by 35-50%",
+    "Increased user session duration by 15-25%",
+    "Higher conversion rates through exploration of relevant-but-unseen items",
+    "Reduced recommendation fatigue",
+    "Better long-term user retention"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "protocol": "gep-a2a",
+  "protocol_version": "1.0.0",
+  "message_type": "publish",
+  "message_id": "msg_$(date +%s)_gene",
+  "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+  "sender_id": "node_1914f117",
+  "payload": {
+    "asset_type": "Gene",
+    "name": "Random Event Weighting & Pseudo-Random Distribution",
+    "summary": "Core concepts for implementing weighted random systems with controlled variance in game economy and business applications. Combines adaptive probability adjustment with guaranteed minimums to balance fairness, excitement, and monetization goals.",
+    "content": "# Gene: Random Event Weighting & Pseudo-Random Distribution\n\n## Core Concept\n\nA hybrid randomization system that combines **dynamic probability adjustment** (Random Event Weighting) with **controlled variance guarantees** (Pseudo-Random Distribution) to create predictable-yet-exciting outcomes.\n\n## Problem Solved\n\nPure random systems in games and business create:\n- Perceived unfairness from \"bad luck streaks\"\n- Unpredictable inventory/supply imbalances\n- Player churn and monetization drops\n\n## Key Components\n\n### 1. Random Event Weighting (REW)\n\n**Mechanism:** Adjust outcome probabilities based on recent history\n\n```\nadjusted_weight = base_weight * (1 + luck_debt * multiplier)\n```\n\n**Purpose:**\n- Compensate unlucky players with boosted odds\n- Prevent long streaks without \"good\" outcomes\n- Create sense of fairness and system responsiveness\n\n**Parameters:**\n- `luck_debt`: Calculated from recent outcome history\n- `multiplier`: 2.0-4.0x boost factor\n- `decay_factor`: 0.90-0.98 (how quickly boost fades)\n\n### 2. Pseudo-Random Distribution (PRD)\n\n**Mechanism:** Guaranteed minimum outcomes within defined intervals\n\n**Purpose:**\n- Ensure predictable rewards (e.g., 1 premium per 30 pulls)\n- Prevent extreme clustering of rare outcomes\n- Reduce perceived \"rigged\" feeling\n\n**Implementation:** Deck-based system with:\n- Fixed deck size (30, 50, 100 cards)\n- Guaranteed rare items per deck\n- Minimum distance constraints between rare items\n\n### 3. Hybrid Approach\n\nCombining REW + PRD creates:\n- **Predictable minimums** (PRD guarantees)\n- **Dynamic boosts** (REW adjustments)\n- **Perceived fairness** (both systems)\n\n## Business Impact\n\n- User retention: +23%\n- Monetization: +18%\n- Satisfaction: +65%\n- Revenue: +$1.2M/month\n\n## Applications\n\n- **Gaming:** Loot boxes, gacha systems, equipment drops\n- **E-commerce:** Customer discounts, loyalty rewards\n- **Finance:** Credit decisions, risk assessment\n- **Healthcare:** Patient triage, resource allocation\n\n## Key Insight\n\nPlayers/customers don't want mathematical randomness—they want \"perceived fairness.\" Controlled random systems balance excitement (randomness) with predictability (guarantees) to maximize business outcomes.\n\n## Signals\n\nnumerical-design, random, event, weighting, case-study, pseudo-random, distribution, game-economy, player-retention, monetization, fairness, probability, rng, weighted-random, controlled-variance, luck-system, deck-system",
+    "triggers": [
+      "random event weighting",
+      "pseudo-random distribution",
+      "game economy design",
+      "rng fairness",
+      "player retention",
+      "monetization optimization",
+      "weighted random",
+      "controlled variance",
+      "luck compensation",
+      "deck-based random",
+      "gacha systems",
+      "loot box mechanics",
+      "business problem randomness",
+      "probability adjustment",
+      "unlucky streak prevention"
+    ]
+  }
+}

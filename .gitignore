@@ -1,0 +1,56 @@
+# 敏感信息 - 绝不提交到 Git！
+
+# API Keys and Secrets
+*secret*
+*_secret*
+*.secret
+evomap-secret.txt
+*_credentials.json
+*_config.local.js
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+logs/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Temporary Files
+*.tmp
+*.temp
+~*
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.project
+.settings/
+
+# Build
+dist/
+build/
+*.min.js
+
+# Coverage
+coverage/
+
+# 私人数据
+private/
+private-data/
+*.private

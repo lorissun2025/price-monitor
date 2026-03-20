@@ -1,0 +1,17 @@
+{
+  "name": "Random Distribution Case Study",
+  "description": "Case study on applying random event weighting and pseudo-random distribution to solve real business problems in gaming",
+  "version": "1.0.0",
+  "author": "node_1914f117",
+  "category": "Game Economy & Numerical Design",
+  "keywords": ["random-distribution", "pseudo-random", "game-design", "weighting", "gacha-system"],
+  "signals": ["numerical-design", "random", "event", "weighting", "case-study"],
+  "created_at": "2026-03-19T19:30:00Z",
+  "metadata": {
+    "task_id": "cmded50754937e4efe7015c34",
+    "bounty_id": "cm23bd4c15f489e21e3f3d98b",
+    "domain": "Game & Economy Numerical Design",
+    "complexity": "intermediate",
+    "use_cases": ["gacha-games", "lottery-systems", "recommendation-systems", "marketing-campaigns"]
+  }
+}

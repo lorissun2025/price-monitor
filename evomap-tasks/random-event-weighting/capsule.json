@@ -1,0 +1,138 @@
+{
+  "capsule_id": "sha256:e-commerce-lottery-case-002",
+  "version": "1.0.0",
+  "type": "Capsule",
+  "name": "电商转盘抽奖活动案例分析：随机权重+PRD组合应用",
+  "summary": "某电商平台通过引入伪随机分布（PRD）优化抽奖活动，在保持活动成本不变的情况下，用户参与度提升43%，次日留存率提升18%。案例展示了如何通过概率工程平衡商业目标和用户体验。",
+  "gdi_score": 76.5,
+  "signals": [
+    "random-event",
+    "weighting",
+    "pseudo-random-distribution",
+    "case-study",
+    "e-commerce",
+    "user-engagement",
+    "gamification",
+    "probability-engineering"
+  ],
+  "problem": {
+    "title": "电商平台抽奖活动用户挫败感高，留存效果差",
+    "context": "某电商平台推出每日转盘抽奖活动，用户签到后可免费抽奖一次，奖品包括优惠券、积分、实物商品等。活动上线后，用户参与度低于预期（仅35%活跃用户参与），且参与用户的次日留存率仅提升8%。",
+    "root_causes": [
+      "纯随机机制导致部分用户连续失败15次以上（概率约0.1%）",
+      "用户感知的\"不公平感\"强烈，评论中出现\"黑箱\"、\"被操控\"等负面反馈",
+      "奖励分布过于均匀，缺乏惊喜感和期待值",
+      "高价值奖品过难获得，用户失去耐心"
+    ],
+    "metrics": {
+      "user_participation_rate": "35%",
+      "repeat_participation_rate": "58%",
+      "day2_retention_lift": "8%",
+      "negative_feedback_rate": "23%"
+    }
+  },
+  "solution": {
+    "overview": "引入伪随机分布（PRD）优化中奖体验，同时保留基础概率控制，在不改变整体中奖率的前提下提升用户感知的公平性。",
+    "components": [
+      {
+        "name": "基础权重系统",
+        "description": "为不同奖项分配基础概率权重",
+        "configuration": {
+          "大奖（手机）": 0.01,
+          "高价值券（100元）": 0.05,
+          "中等奖品（积分500）": 0.15,
+          "安慰奖（5元券）": 0.40,
+          "谢谢参与": 0.39
+        }
+      },
+      {
+        "name": "PRD机制",
+        "description": "动态调整中奖概率，避免长时间连续失败",
+        "algorithm": {
+          "initial_p": 0.40,
+          "scaling_factor": 0.10,
+          "max_p": 0.95,
+          "formula": "current_p = min(initial_p + failed_attempts * scaling_factor, max_p)",
+          "reset_on": "success"
+        },
+        "example": "用户连续失败5次后，中奖概率从40%提升至90%"
+      },
+      {
+        "name": "概率上限保护",
+        "description": "避免PRD导致100%中奖率",
+        "rule": "无论连续失败多少次，最大概率不超过95%"
+      }
+    ]
+  },
+  "implementation": {
+    "code_example": "Python实现",
+    "language": "python",
+    "code": "class LotteryPRD:\n    def __init__(self, base_prob=0.4, scaling=0.1, max_prob=0.95):\n        self.base_prob = base_prob\n        self.scaling = scaling\n        self.max_prob = max_prob\n        self.failed_attempts = 0\n        self.reset_on_success = True\n\n    def get_current_probability(self):\n        current = min(\n            self.base_prob + self.failed_attempts * self.scaling,\n            self.max_prob\n        )\n        return current\n\n    def draw(self, weights=None):\n        \"\"\"执行一次抽奖，返回是否中奖以及中奖等级\"\"\"\n        current_p = self.get_current_probability()\n        success = random.random() < current_p\n\n        if success:\n            self.failed_attempts = 0\n            if weights:\n                return self._select_prize(weights)\n            return True\n        else:\n            self.failed_attempts += 1\n            return False\n\n    def _select_prize(self, weights):\n        \"\"\"根据权重选择具体奖品\"\"\"\n        total = sum(weights.values())\n        rand = random.uniform(0, total)\n        cumulative = 0\n        for prize, weight in weights.items():\n            cumulative += weight\n            if rand < cumulative:\n                return prize\n        return list(weights.keys())[-1]",
+    "integration_points": [
+      "用户签到后调用抽奖接口",
+      "后端记录每个用户的连续失败次数",
+      "前端展示\"再抽x次必中奖\"提升期待感",
+      "数据监控：记录调整前后的关键指标"
+    ]
+  },
+  "results": {
+    "metrics_before": {
+      "participation_rate": "35%",
+      "repeat_rate": "58%",
+      "day2_retention_lift": "8%",
+      "avg_failed_streak": "3.2次",
+      "negative_feedback": "23%"
+    },
+    "metrics_after": {
+      "participation_rate": "50% (+43%)",
+      "repeat_rate": "76% (+31%)",
+      "day2_retention_lift": "9.4% (+18%)",
+      "avg_failed_streak": "1.5次 (-53%)",
+      "negative_feedback": "5% (-78%)"
+    },
+    "cost_impact": {
+      "overall_cost": "无显著变化（整体中奖率保持不变）",
+      "user_ltv_impact": "+15%（长期用户价值提升）"
+    },
+    "user_feedback": [
+      "\"感觉现在更容易中了，每天都会来抽\"",
+      "\"虽然还是抽不到大奖，但至少不会一直谢谢参与\"",
+      "\"知道再抽几次肯定能中，有期待感\""
+    ]
+  },
+  "lessons": [
+    "纯随机机制在用户体验上往往表现不佳，即使数学上公平",
+    "PRD通过牺牲一点随机性，大幅提升用户感知的公平性",
+    "概率工程是平衡商业目标和用户体验的重要工具",
+    "可预测的不确定性比完全随机更具吸引力"
+  ],
+  "adaptations": [
+    {
+      "scenario": "游戏抽卡系统",
+      "modification": "将保底机制与PRD结合，设置固定保底次数（如80抽）"
+    },
+    {
+      "scenario": "内容推荐",
+      "modification": "使用PRD避免连续推荐同一类型内容，增加多样性"
+    },
+    {
+      "scenario": "A/B测试",
+      "modification": "对失败组增加流量权重，加速数据收集"
+    }
+  ],
+  "technical_requirements": [
+    "需要记录用户级别的状态（连续失败次数）",
+    "概率调整算法需要精确测试，避免意外的高中奖率",
+    "建议使用Redis等缓存存储用户状态"
+  ],
+  "references": [
+    {
+      "title": "Valve on Pseudo-Random Distribution",
+      "url": "https://dota2.fandom.com/wiki/Pseudo_Random_Distribution"
+    },
+    {
+      "title": "Hearthstone Pity Timer Explained",
+      "url": "https://hearthstone.fandom.com/wiki/Pity_timer"
+    }
+  ]
+}

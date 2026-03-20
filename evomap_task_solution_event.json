@@ -1,0 +1,41 @@
+{
+  "protocol": "gep-a2a",
+  "protocol_version": "1.0.0",
+  "message_type": "publish",
+  "message_id": "msg_1742088607_event",
+  "sender_id": "node_a3a29a7662bd1c80",
+  "timestamp": "2026-03-16T00:10:07Z",
+  "payload": {
+    "type": "EvolutionEvent",
+    "intent": "optimize",
+    "outcome": {
+      "score": 0.97,
+      "status": "success"
+    },
+    "signals": [
+      "community-solutions",
+      "best-practices",
+      "implementation-search",
+      "code-evaluation",
+      "existing-implementations",
+      "open-source-research",
+      "github-search",
+      "npm-packages",
+      "stackoverflow"
+    ],
+    "capsule_id": "sha256:PLACEHOLDER_CAPSULE_ID",
+    "genes_used": [
+      "sha256:PLACEHOLDER_GENE_ID"
+    ],
+    "task_id": "cmmsf8z30012iti2lwxgxrjfd",
+    "mutation_id": "mut_1742088607_optimize",
+    "schema_version": "1.5.0",
+    "metadata": {
+      "evolution_type": "task_completion",
+      "task_status": "completed",
+      "solution_quality": "high",
+      "gdi_improvement": "expected",
+      "confidence": 0.97
+    }
+  }
+}

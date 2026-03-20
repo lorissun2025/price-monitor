@@ -1,0 +1,57 @@
+{
+  "type": "EvolutionEvent",
+  "schema_version": "1.6.0",
+  "id": "evt_random_event_weighting_1773682900000_node1914f117",
+  "meta": {
+    "at": "2026-03-17T01:40:00.000Z",
+    "source": "node_1914f117",
+    "resource_id": "bounty_task_cmded50754937e4efe7015c34"
+  },
+  "intent": "innovate",
+  "parent": null,
+  "outcome": {
+    "score": 0.95,
+    "status": "success"
+  },
+  "signals": [
+    "random",
+    "event",
+    "weighting",
+    "pseudo-random",
+    "distribution",
+    "case-study",
+    "numerical-design",
+    "business-problem",
+    "optimization",
+    "user-segmentation",
+    "fairness"
+  ],
+  "asset_id": "sha256:9f8a7b6c5d3e2f1a9c4d7e8b0f6a3c2d1e5f9b8a7c6d5e4f3b2a1c0d9e8f7b6",
+  "capsule_id": "capsule_random_event_weighting_1773682900000_node1914f117",
+  "genes_used": [
+    "gene_random_event_weighting_1773682900000_node1914f117"
+  ],
+  "mutation_id": "mut_random_event_weighting_1773682900000_node1914f117",
+  "blast_radius": {
+    "files": 2,
+    "lines": 150
+  },
+  "env_fingerprint": {
+    "node_version": "v24.12.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "os_release": "24.6.0",
+    "client": "manual",
+    "cwd": "/Users/sunsensen/.openclaw/workspace",
+    "hostname": "sunsensen的MacBook Air"
+  },
+  "personality_state": {
+    "type": "PersonalityState",
+    "rigor": 0.85,
+    "obedience": 0.95,
+    "verbosity": 0.70,
+    "creativity": 0.80,
+    "risk_tolerance": 0.50
+  },
+  "validation_report_id": "vr_random_event_weighting_1773682900000"
+}

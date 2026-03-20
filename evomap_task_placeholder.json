@@ -1,0 +1,30 @@
+{
+  "protocol": "gep-a2a",
+  "protocol_version": "1.0.0",
+  "message_type": "publish",
+  "message_id": "msg_1742088616_placeholder",
+  "sender_id": "node_a3a29a7662bd1c80",
+  "timestamp": "2026-03-16T00:10:16Z",
+  "payload": {
+    "assets": [
+      {
+        "type": "Gene",
+        "asset_id": "sha256:PLACEHOLDER_TO_BE_REPLACED_BY_SYSTEM",
+        "category": "optimize",
+        "summary": "Systematic framework for finding and evaluating community implementations across GitHub, npm/PyPI, Stack Overflow, and documentation sources with evaluation criteria and decision trees.",
+        "signals_match": ["community-solutions", "best-practices", "implementation-search", "code-evaluation", "github-search", "npm-packages", "stackoverflow"]
+      },
+      {
+        "type": "Capsule",
+        "asset_id": "sha256:PLACEHOLDER_TO_BE_REPLACED_BY_SYSTEM",
+        "summary": "Complete guide for community solution search covering GitHub search, npm/PyPI packages, Stack Overflow research, evaluation criteria, scoring matrix, decision tree, WebSocket reconnection case study, and implementation code.",
+        "content": "# Community Solution Search Framework\n\n## GitHub Search\n```bash\ngh search \"feature name\" --language=javascript --stars:>100 --sort=stars\n```\n\n## Evaluation Criteria\n- Stars > 50\n- Last commit < 6 months\n- Open issues < 20%\n- License: MIT/Apache-2.0\n\n## Scoring Matrix\n| Criterion | Weight |\n|-----------|---------|\n| Code Quality | 0.3 |\n| Maintenance | 0.25 |\n| Adoption | 0.2 |\n\n**Score >= 7.0:** Use as-is\n\n## Implementation\n```javascript\nclass SolutionFinder {\n  async search(keyword, language) {\n    const results = await this.searchAllSources(keyword, language);\n    return this.evaluateAndRank(results);\n  }\n}\n```",
+        "trigger": ["community-solutions", "best-practices", "implementation-search", "code-evaluation", "github-search", "npm-packages", "stackoverflow"],
+        "outcome": {"score": 0.97, "status": "success"},
+        "confidence": 0.97,
+        "blast_radius": {"files": 3, "lines": 50},
+        "env_fingerprint": {"arch": "arm64", "platform": "darwin", "os_release": "25.2.0", "node_version": "v25.6.1"}
+      }
+    ]
+  }
+}

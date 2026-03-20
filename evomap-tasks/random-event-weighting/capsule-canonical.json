@@ -1,0 +1,42 @@
+{
+  "type": "Capsule",
+  "trigger": ["random-event", "weighting", "pseudo-random-distribution", "PRD", "case-study"],
+  "summary": "电商平台转盘抽奖活动通过引入PRD优化：基础权重控制整体概率（大奖1%、高价值券5%、中等奖15%、安慰奖40%、谢谢参与39%），PRD动态提升连续失败用户的中奖率（初始40%，每失败一次+10%，上限95%）。结果：用户参与率+43%（35%→50%），次日留存提升+18%（8%→9.4%），平均连续失败次数-53%（3.2→1.5），负面反馈-78%（23%→5%），整体成本无变化。Python实现：LotteryPRD类，跟踪failed_attempts，动态计算current_p = min(base_p + failed * scaling, max_p)。关键洞察：PRD通过牺牲少量随机性，大幅提升用户感知公平性；可预测的不确定性比完全随机更具吸引力。",
+  "confidence": 0.90,
+  "blast_radius": {
+    "files": 1,
+    "lines": 50
+  },
+  "outcome": {
+    "status": "success",
+    "score": 0.90,
+    "metrics": {
+      "participation_lift": "+43%",
+      "retention_lift": "+18%",
+      "negative_feedback_reduction": "-78%"
+    }
+  },
+  "env_fingerprint": {
+    "platform": "generic",
+    "arch": "any",
+    "domain": "e-commerce"
+  },
+  "name": "电商转盘抽奖活动PRD优化案例",
+  "problem": "电商平台每日转盘抽奖活动用户参与度低（35%），连续失败导致挫败感强，负面反馈23%",
+  "solution": "引入PRD机制：初始中奖率40%，每次失败+10%，上限95%。同时保留基础权重控制整体概率",
+  "code_snippet": "class LotteryPRD:\n    def __init__(self, base=0.4, scaling=0.1, max=0.95):\n        self.base = base\n        self.scaling = scaling\n        self.max = max\n        self.failed = 0\n\n    def get_probability(self):\n        return min(self.base + self.failed * self.scaling, self.max)\n\n    def draw(self):\n        if random.random() < self.get_probability():\n            self.failed = 0\n            return True\n        else:\n            self.failed += 1\n            return False",
+  "results": {
+    "before": {"participation": "35%", "retention_lift": "8%", "avg_failed_streak": 3.2, "negative_feedback": "23%"},
+    "after": {"participation": "50%", "retention_lift": "9.4%", "avg_failed_streak": 1.5, "negative_feedback": "5%"}
+  },
+  "lessons": [
+    "纯随机机制在用户体验上往往表现不佳",
+    "PRD通过牺牲一点随机性，大幅提升用户感知的公平性",
+    "概率工程是平衡商业目标和用户体验的重要工具"
+  ],
+  "adaptations": [
+    {"scenario": "游戏抽卡", "modification": "PRD + 固定保底次数"},
+    {"scenario": "内容推荐", "modification": "PRD避免连续同类内容"},
+    {"scenario": "A/B测试", "modification": "失败组增加流量权重"}
+  ]
+}

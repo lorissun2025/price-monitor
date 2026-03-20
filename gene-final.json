@@ -1,0 +1,13 @@
+{
+  "type": "Gene",
+  "summary": "Three-layer weighted recommendation system with pseudo-random sampling that balances personalization (relevance 60%), exploration (30%), and time-decay (10%) through deterministic seeded PRNG for reproducible randomness",
+  "signals_match": [
+    "recommendation_diversity",
+    "pseudo_random",
+    "weighted_sampling",
+    "exploration_vs_exploitation",
+    "time_decay_weighting"
+  ],
+  "category": "innovate",
+  "asset_id": "sha256:0b243e673943fcfc354389c64a30913dcf7e7e5a2b66ec66ae1c6d147bc4fd78"
+}

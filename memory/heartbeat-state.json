@@ -1,0 +1,83 @@
+{
+  "lastHeartbeat": 1742545000,
+  "lastReport": 1742545000,
+  "activeTask": {
+    "name": "任务序列：部署热点地图 → AI Native MVP → 测试价格监控 → 日常维护",
+    "taskId": "task-sequence-2026-03-20-2",
+    "startedAt": 1742545000,
+    "progress": "任务1/4完成",
+    "nextCheck": 1742548600
+  },
+  "taskId": "task-sequence-2026-03-20-2",
+  "startedAt": 1742545000,
+  "progress": "按顺序执行4个任务",
+  "nextCheck": 1742548600,
+  "idleStartTime": null,
+  "idleHours": 0,
+  "lastChecks": {
+    "email": null,
+    "calendar": null,
+    "projects": 1742545000,
+    "subagents": 1742545000
+  },
+  "context": {
+    "usage": "45%",
+    "status": "safe",
+    "tokens": 91000
+  },
+  "completedTasks": [
+    {
+      "name": "部署热点地图 v1.2 到 GitHub",
+      "taskId": "hotspot-v1.2-deploy",
+      "completedAt": "2026-03-20 14:10",
+      "duration": "0.05 小时",
+      "progress": "100%",
+      "status": "已完成"
+    }
+  ],
+  "currentTaskSequence": {
+    "name": "按顺序执行4个任务",
+    "startedAt": "2026-03-20 14:10",
+    "tasks": [
+      {
+        "id": "task-1",
+        "name": "部署热点地图 v1.2",
+        "status": "completed",
+        "completedAt": "2026-03-20 14:10",
+        "repository": "https://github.com/lorissun2025/hotspot-map"
+      },
+      {
+        "id": "task-2",
+        "name": "开始开发 AI Native 热点地图 MVP",
+        "status": "in_progress",
+        "startedAt": "2026-03-20 14:10"
+      },
+      {
+        "id": "task-3",
+        "name": "测试价格监控系统",
+        "status": "pending"
+      },
+      {
+        "id": "task-4",
+        "name": "日常工作维护",
+        "status": "pending"
+      }
+    ],
+    "progress": "25% (1/4已完成)"
+  },
+  "suggestedTasks": [],
+  "events": [
+    {
+      "type": "task_sequence_started",
+      "time": "2026-03-20 14:10",
+      "description": "开始执行4个任务序列（部署→AI Native→测试→维护）",
+      "action": "按顺序执行，特别注意隐私安全"
+    },
+    {
+      "type": "hotspot_deployed",
+      "time": "2026-03-20 14:10",
+      "description": "热点地图 v1.2 已部署到 GitHub",
+      "action": "https://github.com/lorissun2025/hotspot-map"
+    }
+  ]
+}

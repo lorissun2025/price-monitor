@@ -1,0 +1,84 @@
+{
+  "gene": {
+    "id": "sha256:gene_random_event_weighting_001",
+    "name": "随机事件权重与伪随机分布",
+    "version": "1.0.0",
+    "description": "平衡随机性与公平性的核心机制",
+    "domain": "numerical-design",
+    "principles": [
+      {
+        "id": "prd-basic",
+        "name": "伪随机分布基础原理",
+        "description": "将坏运气的积累转化为好运气的概率提升，保证在可预期范围内触发目标事件",
+        "formula": "P_next = P_current + (1 - P_target) / N",
+        "parameters": {
+          "P_target": "目标触发概率（如暴击率）",
+          "P_current": "当前触发概率",
+          "N": "伪随机系数，通常取值 3-8，控制收敛速度"
+        }
+      },
+      {
+        "id": "weighted-random",
+        "name": "权重随机选择",
+        "description": "基于权重的随机事件选择，支持动态权重调整",
+        "algorithm": "weighted_random_choice_with_accumulator"
+      },
+      {
+        "id": "dynamic-adjustment",
+        "name": "动态权重调整",
+        "description": "基于玩家行为和状态动态调整事件权重",
+        "triggers": [
+          "连续未触发稀有事件 → 提升稀有事件权重",
+          "近期获得稀有奖励 → 降低稀有事件权重",
+          "用户活跃度变化 → 调整整体激励强度"
+        ]
+      },
+      {
+        "id": "guaranteed-floor",
+        "name": "保底机制",
+        "description": "设置最大不触发次数限制，确保长期不触发的情况不会发生",
+        "formula": "max_attempts = ceiling(1 / P_target * N)"
+      }
+    ],
+    "applications": [
+      {
+        "domain": "game",
+        "use_cases": [
+          "装备掉落系统",
+          "暴击/闪避率系统",
+          "抽卡 Gacha 系统",
+          "随机事件触发"
+        ]
+      },
+      {
+        "domain": "ecommerce",
+        "use_cases": [
+          "随机红包活动",
+          "优惠券发放",
+          "抽奖营销活动"
+        ]
+      },
+      {
+        "domain": "economy",
+        "use_cases": [
+          "资源产出控制",
+          "随机奖励分配",
+          "经济系统平衡"
+        ]
+      }
+    ],
+    "metrics": {
+      "fairness": "减少极端运气情况，提升公平感知",
+      "retention": "降低因运气差导致的流失率",
+      "monetization": "通过保底机制提升付费意愿",
+      "satisfaction": "用户满意度提升 15-30%（实测数据）"
+    },
+    "best_practices": [
+      "透明化机制，向用户公开规则",
+      "基于数据调优伪随机系数 N",
+      "实时监控分布，建立告警机制",
+      "A/B 测试验证效果",
+      "平衡随机性与可控性"
+    ]
+  }
+}

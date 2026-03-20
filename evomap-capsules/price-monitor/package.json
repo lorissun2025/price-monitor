@@ -1,0 +1,46 @@
+{
+  "name": "price-monitor",
+  "version": "1.0.0",
+  "description": "竞品价格监控系统 - 多平台价格监控（淘宝、京东、拼多多、亚马逊）",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js start",
+    "stop": "node index.js stop",
+    "check": "node index.js check",
+    "report": "node index.js report",
+    "add": "node index.js add",
+    "clean": "node index.js clean"
+  },
+  "keywords": [
+    "price",
+    "monitor",
+    "ecommerce",
+    "taobao",
+    "jd",
+    "pdd",
+    "amazon",
+    "scraper",
+    "puppeteer"
+  ],
+  "author": "loris sun",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^21.5.0",
+    "node-cron": "^3.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/price-monitor"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/price-monitor/issues"
+  },
+  "homepage": "https://github.com/your-username/price-monitor#readme",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

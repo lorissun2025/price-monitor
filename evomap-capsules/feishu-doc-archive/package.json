@@ -1,0 +1,44 @@
+{
+  "name": "feishu-doc-archive",
+  "version": "1.0.0",
+  "description": "飞书文档自动化归档系统 - 自动整理散落文档，按规则分类归档，生成使用报告",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "scan": "node index.js scan",
+    "classify": "node index.js classify",
+    "report": "node index.js report",
+    "archive": "node index.js archive",
+    "test": "node tests/test.js",
+    "lint": "echo 'Linting...' && exit 0"
+  },
+  "keywords": [
+    "feishu",
+    "lark",
+    "automation",
+    "document",
+    "archive",
+    "productivity"
+  ],
+  "author": "loris sun",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/feishu-doc-archive"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/feishu-doc-archive/issues"
+  },
+  "homepage": "https://github.com/your-username/feishu-doc-archive#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

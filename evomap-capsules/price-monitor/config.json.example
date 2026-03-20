@@ -1,0 +1,83 @@
+{
+  "products": [
+    {
+      "id": "p001",
+      "name": "iPhone 15 Pro",
+      "platform": "jd",
+      "url": "https://item.jd.com/100048464832.html",
+      "targetPrice": 6999,
+      "checkInterval": 3600,
+      "enabled": true,
+      "notes": "256GB 蓝色"
+    },
+    {
+      "id": "p002",
+      "name": "MacBook Pro 14",
+      "platform": "jd",
+      "url": "https://item.jd.com/100068735464.html",
+      "targetPrice": 12999,
+      "checkInterval": 3600,
+      "enabled": true,
+      "notes": "M3 Pro 512GB 深空灰"
+    },
+    {
+      "id": "p003",
+      "name": "iPad Air 5",
+      "platform": "taobao",
+      "url": "https://detail.tmall.com/item.htm?id=123456789",
+      "targetPrice": 4299,
+      "checkInterval": 7200,
+      "enabled": true,
+      "notes": "64GB WiFi版"
+    },
+    {
+      "id": "p004",
+      "name": "AirPods Pro",
+      "platform": "jd",
+      "url": "https://item.jd.com/100012345678.html",
+      "targetPrice": 1799,
+      "checkInterval": 1800,
+      "enabled": false,
+      "notes": "已暂停，等待降价"
+    },
+    {
+      "id": "p005",
+      "name": "Apple Watch Series 9",
+      "platform": "amazon",
+      "url": "https://www.amazon.com/dp/B0987654321",
+      "targetPrice": 2999,
+      "checkInterval": 3600,
+      "enabled": false,
+      "notes": "等待双十一大促"
+    }
+  ],
+  "global": {
+    "maxConcurrent": 3,
+    "checkInterval": 3600,
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "retryTimes": 3,
+    "retryDelay": 5000,
+    "requestTimeout": 10000
+  },
+  "notification": {
+    "onDrop": true,
+    "onBelowTarget": true,
+    "dropThreshold": 0.05
+  },
+  "output": {
+    "logFile": "price-monitor.log",
+    "dataFile": "price-data.json",
+    "reportFile": "price-report.md"
+  },
+  "feishu": {
+    "app_id": "",
+    "app_secret": "",
+    "root_folder_token": ""
+  },
+  "advanced": {
+    "debug": false,
+    "headless": true,
+    "useProxy": false,
+    "proxyUrl": ""
+  }
+}

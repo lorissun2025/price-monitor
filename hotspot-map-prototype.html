@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🗺️ 热点地图 - HotSpot Map</title>
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+      background: #f5f5f5;
+    }
+
+    .app-container {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* 侧边栏 */
+    .sidebar {
+      width: 320px;
+      background: #fff;
+      padding: 20px;
+      overflow-y: auto;
+      box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    }
+
+    .sidebar h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .section:last-child {
+      border-bottom: none;
+    }
+
+    .section h2 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #333;
+    }
+
+    /* 地图类型切换按钮 */
+    .map-toggle {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .map-toggle button {
+      flex: 1;
+      padding: 10px;
+      border: 2px solid #e0e0e0;
+      background: #fff;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+
+    .map-toggle button:hover {
+      border-color: #1890ff;
+      color: #1890ff;
+    }
+
+    .map-toggle button.active {
+      background: #1890ff;
+      color: #fff;
+      border-color: #1890ff;
+    }
+
+    /* 快捷筛选按钮 */
+    .quick-filter-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .quick-filter {
+      padding: 12px 16px;
+      border: 2px solid #e0e0e0;
+      background: #fff;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.2s;
+      text-align: left;
+    }
+
+    .quick-filter:hover {
+      border-color: #1890ff;
+      color: #1890ff;
+      background: #f0f7ff;
+    }
+
+    .quick-filter.active {
+      background: #1890ff;
+      color: #fff;
+      border-color: #1890ff;
+      font-weight: 500;
+    }
+
+    /* 复选框样式 */
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      padding: 6px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+
+    .checkbox-item:hover {
+      background: #f0f0f0;
+    }
+
+    .checkbox-item input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    .checkbox-item label {
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    /* 统计信息 */
+    .stat-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      font-size: 14px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .stat-item:last-child {
+      border-bottom: none;
+    }
+
+    .stat-value {
+      font-weight: 600;
+      color: #1890ff;
+    }
+
+    /* 用户位置卡片 */
+    .location-card {
+      background: #f0f7ff;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 13px;
+    }
+
+    .location-card strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #333;
+    }
+
+    /* 地图区域 */
+    .map-container {
+      flex: 1;
+      position: relative;
+    }
+
+    #map {
+      height: 100%;
+      width: 100%;
+    }
+
+    /* 自定义 Popup 样式 */
+    .leaflet-popup-content-wrapper {
+      border-radius: 12px;
+      padding: 0;
+    }
+
+    .popup-content {
+      padding: 16px;
+      min-width: 280px;
+    }
+
+    .popup-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .popup-influence {
+      background: #f5f5f5;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    .popup-influence .score {
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .popup-influence .level {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .popup-type {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      margin-top: 8px;
+      background: #e0e0e0;
+      color: #333;
+    }
+
+    .popup-metadata {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #e0e0e0;
+      font-size: 12px;
+      color: #666;
+    }
+
+    .popup-metadata div {
+      margin-bottom: 4px;
+    }
+
+    .popup-btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background: #1890ff;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 6px;
+      margin-top: 12px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .popup-btn:hover {
+      background: #096dd9;
+    }
+
+    /* 扩散动画 */
+    @keyframes pulse {
+      0% {
+        opacity: 0.6;
+      }
+      50% {
+        opacity: 0.3;
+      }
+      100% {
+        opacity: 0.6;
+      }
+    }
+
+    .pulse-circle {
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    /* 热点图例 */
+    .legend {
+      background: white;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      font-size: 12px;
+    }
+
+    .legend-title {
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .legend-color {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- 侧边栏 -->
+    <div class="sidebar">
+      <h1>🗺️ 热点地图</h1>
+
+      <!-- 地图类型切换 -->
+      <div class="section">
+        <h2>地图类型</h2>
+        <div class="map-toggle">
+          <button id="btn-china" class="active" onclick="switchMap('china')">🇨🇳 中国地图</button>
+          <button id="btn-world" onclick="switchMap('world')">🌍 世界地图</button>
+        </div>
+      </div>
+
+      <!-- 快捷筛选 -->
+      <div class="section">
+        <h2>看什么？</h2>
+        <div class="quick-filter-group">
+          <button class="quick-filter active" onclick="quickFilter('all')">📍 全部热点</button>
+          <button class="quick-filter" onclick="quickFilter('food')">🍜 美食探店</button>
+          <button class="quick-filter" onclick="quickFilter('tourism')">🏝 旅游打卡</button>
+          <button class="quick-filter" onclick="quickFilter('event')">🎪 漫展活动</button>
+          <button class="quick-filter" onclick="quickFilter('social')">📰 社交热点</button>
+        </div>
+      </div>
+
+      <!-- 来源选择 -->
+      <div class="section">
+        <h2>来源</h2>
+        <div class="checkbox-group">
+          <div class="checkbox-item">
+            <input type="checkbox" id="plat-xiaohongshu" checked onchange="filterByPlatform('xiaohongshu', this.checked)">
+            <label for="plat-xiaohongshu">📕 小红书</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="plat-weibo" checked onchange="filterByPlatform('weibo', this.checked)">
+            <label for="plat-weibo">📟 微博</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="plat-douyin" checked onchange="filterByPlatform('douyin', this.checked)">
+            <label for="plat-douyin">🎵 抖音</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="plat-bilibili" checked onchange="filterByPlatform('bilibili', this.checked)">
+            <label for="plat-bilibili">📺️ B站</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 热点统计 -->
+      <div class="section">
+        <h2>热点统计</h2>
+        <div class="stat-item">
+          <span>📍 当前展示</span>
+          <span class="stat-value" id="stat-total">0</span>
+        </div>
+        <div class="stat-item">
+          <span>📕 小红书</span>
+          <span class="stat-value" id="stat-xiaohongshu">0</span>
+        </div>
+        <div class="stat-item">
+          <span>📟 微博</span>
+          <span class="stat-value" id="stat-weibo">0</span>
+        </div>
+        <div class="stat-item">
+          <span>🎵 抖音</span>
+          <span class="stat-value" id="stat-douyin">0</span>
+        </div>
+        <div class="stat-item">
+          <span>📺️ B站</span>
+          <span class="stat-value" id="stat-bilibili">0</span>
+        </div>
+      </div>
+
+      <!-- 用户位置 -->
+      <div class="section">
+        <h2>我的位置</h2>
+        <div class="location-card" id="user-location">
+          <strong>📍 北京</strong>
+          <div>39.9042°N, 116.4074°E</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 地图区域 -->
+    <div class="map-container">
+      <div id="map"></div>
+    </div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script>
+    // 全局变量
+    let map;
+    let mapType = 'china';
+    let allHotspots = [];
+    let currentHotspots = [];
+    let hotspotLayers = [];
+    let currentQuickFilter = 'all'; // 当前快捷筛选
+
+    // 模拟数据
+    const mockHotspots = [
+      // 小红书 - 美食
+      {
+        id: 'xhs_001',
+        platform: 'xiaohongshu',
+        title: '三里屯网红咖啡厅',
+        type: 'food',
+        influenceScore: 0.85,
+        location: { lat: 39.9370, lng: 116.4477, city: '北京', district: '朝阳区' },
+        metadata: { likes: 15000, collects: 8000, author: '美食小当家' }
+      },
+      {
+        id: 'xhs_002',
+        platform: 'xiaohongshu',
+        title: '外滩夜景打卡点',
+        type: 'tourism',
+        influenceScore: 0.72,
+        location: { lat: 31.2304, lng: 121.4737, city: '上海', district: '黄浦区' },
+        metadata: { likes: 12000, collects: 6500, author: '旅行达人' }
+      },
+      {
+        id: 'xhs_003',
+        platform: 'xiaohongshu',
+        title: '成都太古里火锅',
+        type: 'food',
+        influenceScore: 0.68,
+        location: { lat: 30.6586, lng: 104.0648, city: '成都', district: '锦江区' },
+        metadata: { likes: 9800, collects: 5200, author: '火锅爱好者' }
+      },
+
+      // 微博 - 社交热点
+      {
+        id: 'wb_001',
+        platform: 'weibo',
+        title: '#北京天气# 降温预警',
+        type: 'social_trend',
+        influenceScore: 0.92,
+        location: { lat: 39.9042, lng: 116.4074, city: '北京', district: '东城区' },
+        metadata: { readCount: 5800000, discussCount: 320000, category: '天气' }
+      },
+      {
+        id: 'wb_002',
+        platform: 'weibo',
+        title: '#上海迪士尼# 周年庆典',
+        type: 'event',
+        influenceScore: 0.78,
+        location: { lat: 31.1444, lng: 121.6578, city: '上海', district: '浦东新区' },
+        metadata: { readCount: 3200000, discussCount: 180000, category: '娱乐' }
+      },
+      {
+        id: 'wb_003',
+        platform: 'weibo',
+        title: '#广州地铁# 新线开通',
+        type: 'social_trend',
+        influenceScore: 0.65,
+        location: { lat: 23.1291, lng: 113.2644, city: '广州', district: '天河区' },
+        metadata: { readCount: 2100000, discussCount: 98000, category: '交通' }
+      },
+
+      // 抖音 - 美食/打卡
+      {
+        id: 'dy_001',
+        platform: 'douyin',
+        title: '故宫打卡视频爆火',
+        type: 'tourism',
+        influenceScore: 0.88,
+        location: { lat: 39.9163, lng: 116.3972, city: '北京', district: '东城区' },
+        metadata: { likes: 250000, shares: 85000, comments: 32000, author: '旅行博主' }
+      },
+      {
+        id: 'dy_002',
+        platform: 'douyin',
+        title: '深圳湾探店美食',
+        type: 'food',
+        influenceScore: 0.74,
+        location: { lat: 22.5431, lng: 113.9481, city: '深圳', district: '南山区' },
+        metadata: { likes: 185000, shares: 52000, comments: 28000, author: '美食博主' }
+      },
+      {
+        id: 'dy_003',
+        platform: 'douyin',
+        title: '杭州西湖音乐节',
+        type: 'event',
+        influenceScore: 0.71,
+        location: { lat: 30.2473, lng: 120.1350, city: '杭州', district: '西湖区' },
+        metadata: { likes: 168000, shares: 48000, comments: 24000, author: '音乐达人' }
+      },
+
+      // B站 - ACG
+      {
+        id: 'bili_001',
+        platform: 'bilibili',
+        title: 'ChinaJoy 2024 上海漫展',
+        type: 'acg',
+        influenceScore: 0.86,
+        location: { lat: 31.1946, lng: 121.5464, city: '上海', district: '浦东新区' },
+        metadata: { views: 890000, likes: 58000, coins: 32000, up: 'ACG情报局' }
+      },
+      {
+        id: 'bili_002',
+        platform: 'bilibili',
+        title: '北京动漫展',
+        type: 'acg',
+        influenceScore: 0.69,
+        location: { lat: 39.8856, lng: 116.4110, city: '北京', district: '顺义区' },
+        metadata: { views: 520000, likes: 38000, coins: 21000, up: '漫展前线' }
+      },
+      {
+        id: 'bili_003',
+        platform: 'bilibili',
+        title: '广州游戏嘉年华',
+        type: 'acg',
+        influenceScore: 0.64,
+        location: { lat: 23.1065, lng: 113.3246, city: '广州', district: '海珠区' },
+        metadata: { views: 480000, likes: 32000, coins: 18000, up: '游戏快报' }
+      }
+    ];
+
+    // 初始化地图
+    function initMap() {
+      map = L.map('map').setView([35.8617, 104.1954], 4);
+
+      // 添加地图底图
+      addTileLayer();
+
+      // 加载模拟数据
+      allHotspots = mockHotspots;
+      currentHotspots = [...allHotspots];
+
+      // 渲染热点
+      renderHotspots();
+
+      // 更新统计
+      updateStats();
+
+      // 添加图例
+      addLegend();
+    }
+
+    // 添加地图底图
+    function addTileLayer() {
+      const tileLayers = {
+        china: 'https://iserver.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+        world: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+      };
+
+      L.tileLayer(tileLayers[mapType], {
+        maxZoom: 18,
+        attribution: mapType === 'china' 
+          ? '&copy; ArcGIS' 
+          : '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      }).addTo(map);
+    }
+
+    // 切换地图类型
+    function switchMap(type) {
+      mapType = type;
+
+      // 更新按钮状态
+      document.getElementById('btn-china').classList.toggle('active', type === 'china');
+      document.getElementById('btn-world').classList.toggle('active', type === 'world');
+
+      // 清空地图
+      map.eachLayer((layer) => {
+        if (layer instanceof L.TileLayer) {
+          map.removeLayer(layer);
+        }
+      });
+
+      // 重新添加底图
+      addTileLayer();
+
+      // 调整视角
+      if (type === 'china') {
+        map.setView([35.8617, 104.1954], 4);
+      } else {
+        map.setView([20, 0], 2);
+      }
+    }
+
+    // 渲染热点
+    function renderHotspots() {
+      // 清除已有图层
+      hotspotLayers.forEach(layer => map.removeLayer(layer));
+      hotspotLayers = [];
+
+      currentHotspots.forEach(hotspot => {
+        const color = getInfluenceColor(hotspot.influenceScore);
+        const radius = getInfluenceRadius(hotspot.influenceScore);
+        const pulseSpeed = getPulseSpeed(hotspot.influenceScore);
+
+        // 创建热点圈
+        const circle = L.circle([hotspot.location.lat, hotspot.location.lng], {
+          color: color,
+          fillColor: color,
+          fillOpacity: 0.3,
+          weight: 2,
+          radius: radius,
+          className: 'pulse-circle'
+        }).addTo(map);
+
+        // 创建标记点
+        const marker = L.marker([hotspot.location.lat, hotspot.location.lng], {
+          icon: L.divIcon({
+            className: 'hotspot-marker',
+            html: getPlatformIcon(hotspot.platform),
+            iconSize: [32, 32],
+            iconAnchor: [16, 16]
+          })
+        }).addTo(map);
+
+        // 创建 Popup
+        const popup = L.popup({
+          maxWidth: 320,
+          minWidth: 280
+        }).setContent(createPopupContent(hotspot));
+
+        marker.bindPopup(popup);
+
+        // 点击热点圈也显示 popup
+        circle.bindPopup(popup);
+
+        hotspotLayers.push(circle, marker);
+      });
+    }
+
+    // 获取影响力颜色
+    function getInfluenceColor(score) {
+      if (score > 0.8) return '#FF0000';    // 红色 - 极高影响力
+      if (score > 0.6) return '#FF6600';    // 橙色 - 高影响力
+      if (score > 0.4) return '#FFCC00';    // 黄色 - 中等影响力
+      if (score > 0.2) return '#00CCFF';    // 蓝色 - 低影响力
+      return '#00CC00';                      // 绿色 - 新兴热点
+    }
+
+    // 获取影响力半径
+    function getInfluenceRadius(score) {
+      return 5000 + score * 10000;  // 5km - 150km
+    }
+
+    // 获取扩散速度（动画周期）
+    function getPulseSpeed(score) {
+      return Math.max(2000, 10000 / (score + 1));  // 2s - 10s
+    }
+
+    // 获取平台图标
+    function getPlatformIcon(platform) {
+      const icons = {
+        xiaohongshu: '📕',
+        weibo: '📟',
+        douyin: '🎵',
+        bilibili: '📺'
+      };
+      return `<div style="font-size: 28px;">${icons[platform] || '📍'}</div>`;
+    }
+
+    // 创建 Popup 内容
+    function createPopupContent(hotspot) {
+      const typeLabels = {
+        food: '🍜 美食',
+        tourism: '🏝 旅游',
+        event: '🎪 活动',
+        acg: '🎮 ACG',
+        social_trend: '📰 社交热点',
+        other: '📍 综合'
+      };
+
+      const influenceLevel = hotspot.influenceScore > 0.8 ? '🔥 极高影响力' :
+                           hotspot.influenceScore > 0.6 ? '⭐ 高影响力' :
+                           hotspot.influenceScore > 0.4 ? '⭐⭐ 中等影响力' :
+                           '⭐⭐ 新兴热点';
+
+      const platformIcons = {
+        xiaohongshu: '📕 小红书',
+        weibo: '📟 微博',
+        douyin: '🎵 抖音',
+        bilibili: '📺️ B站'
+      };
+
+      let metadataHTML = '';
+      if (hotspot.metadata) {
+        Object.entries(hotspot.metadata).forEach(([key, value]) => {
+          const labelMap = {
+            likes: '👍 点赞',
+            collects: '⭐ 收藏',
+            readCount: '👁 阅读',
+            discussCount: '💬 讨论',
+            views: '👁 播放',
+            shares: '🔗 分享',
+            comments: '💬 评论',
+            coins: '🪙 投币',
+            author: '👤 作者',
+            category: '📂 分类'
+          };
+          if (labelMap[key]) {
+            metadataHTML += `<div>${labelMap[key]}: ${formatNumber(value)}</div>`;
+          }
+        });
+      }
+
+      return `
+        <div class="popup-content">
+          <div class="popup-header">
+            ${getPlatformIcon(hotspot.platform)}
+            ${hotspot.title}
+          </div>
+          <div class="popup-influence">
+            <div class="score">📊 影响力: ${hotspot.influenceScore.toFixed(2)}</div>
+            <div class="level">${influenceLevel}</div>
+          </div>
+          <span class="popup-type">${typeLabels[hotspot.type]}</span>
+          <div style="margin-top: 8px; font-size: 13px; color: #666;">
+            平台: ${platformIcons[hotspot.platform]}
+          </div>
+          <div style="margin-top: 6px; font-size: 13px; color: #666;">
+            📍 ${hotspot.location.city} · ${hotspot.location.district}
+          </div>
+          ${metadataHTML ? `<div class="popup-metadata">${metadataHTML}</div>` : ''}
+        </div>
+      `;
+    }
+
+    // 格式化数字
+    function formatNumber(num) {
+      if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+      if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
+      return num.toString();
+    }
+
+    // 快捷筛选
+    function quickFilter(type) {
+      currentQuickFilter = type;
+
+      // 更新按钮状态
+      document.querySelectorAll('.quick-filter').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+
+      // 根据类型设置筛选条件
+      let typesToInclude = [];
+      let platformsToInclude = null; // null 表示不筛选平台
+
+      switch(type) {
+        case 'all':
+          typesToInclude = ['food', 'tourism', 'event', 'acg', 'social_trend'];
+          platformsToInclude = null;
+          break;
+        case 'food':
+          typesToInclude = ['food'];
+          platformsToInclude = ['xiaohongshu', 'douyin']; // 美食主要在小红书和抖音
+          break;
+        case 'tourism':
+          typesToInclude = ['tourism'];
+          platformsToInclude = ['xiaohongshu', 'douyin']; // 旅游主要在小红书和抖音
+          break;
+        case 'event':
+          typesToInclude = ['event', 'acg']; // 活动 + ACG
+          platformsToInclude = ['weibo', 'douyin', 'bilibili']; // 活动、漫展
+          break;
+        case 'social':
+          typesToInclude = ['social_trend'];
+          platformsToInclude = ['weibo']; // 社交热点主要在微博
+          break;
+      }
+
+      // 应用筛选
+      currentHotspots = allHotspots.filter(h => {
+        // 类型筛选
+        const typeMatch = typesToInclude.includes(h.type);
+
+        // 平台筛选（如果有指定）
+        let platformMatch = true;
+        if (platformsToInclude) {
+          platformMatch = platformsToInclude.includes(h.platform);
+        }
+
+        return typeMatch && platformMatch;
+      });
+
+      renderHotspots();
+      updateStats();
+    }
+
+    // 平台筛选
+    function filterByPlatform(platform, checked) {
+      // 如果用户手动选择平台，取消快捷筛选状态
+      if (currentQuickFilter !== 'all') {
+        currentQuickFilter = 'all';
+        document.querySelectorAll('.quick-filter').forEach(btn => {
+          btn.classList.remove('active');
+        });
+        document.querySelector('.quick-filter').classList.add('active');
+      }
+      const selectedPlatforms = getSelectedPlatforms();
+
+      if (selectedPlatforms.length === 0) {
+        // 如果没有选择任何平台，显示所有
+        currentHotspots = [...allHotspots];
+      } else {
+        currentHotspots = allHotspots.filter(h => selectedPlatforms.includes(h.platform));
+      }
+
+      renderHotspots();
+      updateStats();
+    }
+
+    // 获取选中的平台
+    function getSelectedPlatforms() {
+      const platforms = [];
+      if (document.getElementById('plat-xiaohongshu').checked) platforms.push('xiaohongshu');
+      if (document.getElementById('plat-weibo').checked) platforms.push('weibo');
+      if (document.getElementById('plat-douyin').checked) platforms.push('douyin');
+      if (document.getElementById('plat-bilibili').checked) platforms.push('bilibili');
+      return platforms;
+    }
+
+    // 更新统计
+    function updateStats() {
+      document.getElementById('stat-total').textContent = currentHotspots.length;
+      document.getElementById('stat-xiaohongshu').textContent = 
+        currentHotspots.filter(h => h.platform === 'xiaohongshu').length;
+      document.getElementById('stat-weibo').textContent = 
+        currentHotspots.filter(h => h.platform === 'weibo').length;
+      document.getElementById('stat-douyin').textContent = 
+        currentHotspots.filter(h => h.platform === 'douyin').length;
+      document.getElementById('stat-bilibili').textContent = 
+        currentHotspots.filter(h => h.platform === 'bilibili').length;
+    }
+
+    // 添加图例
+    function addLegend() {
+      const legend = L.control({ position: 'bottomright' });
+
+      legend.onAdd = function (map) {
+        const div = L.DomUtil.create('div', 'legend');
+        div.innerHTML = `
+          <div class="legend-title">影响力图例</div>
+          <div class="legend-item">
+            <div class="legend-color" style="background: #FF0000;"></div>
+            <span>极高影响力</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background: #FF6600;"></div>
+            <span>高影响力</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background: #FFCC00;"></div>
+            <span>中等影响力</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background: #00CCFF;"></div>
+            <span>低影响力</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background: #00CC00;"></div>
+            <span>新兴热点</span>
+          </div>
+        `;
+        return div;
+      };
+
+      legend.addTo(map);
+    }
+
+    // 页面加载完成后初始化
+    document.addEventListener('DOMContentLoaded', initMap);
+  </script>
+</body>
+</html>
