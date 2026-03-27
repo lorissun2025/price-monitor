@@ -5,12 +5,37 @@ import { formatDistance, formatDistanceFull, getNavigationLink } from '../utils/
 // Popup 组件
 
 /**
- * 创建 Popup 内容
+ * 创建 Popup 内容（阶段 1 优化：使用 Popup Cache）
  * @param {Object} hotspot - 热点对象
  * @param {Object} userLocation - 用户位置（可选）
  * @returns {string} Popup HTML 内容
  */
 function createPopupContent(hotspot, userLocation = null) {
+  // 阶段 1 优化：使用 Popup Cache
+  if (window.cacheManager) {
+    const cachedContent = window.cacheManager.getPopupContent(hotspot);
+    if (cachedContent) {
+      // 如果有用户位置，需要动态添加距离信息
+      if (userLocation && hotspot.distance !== null && hotspot.distance !== undefined) {
+        // 克隆缓存的 DOM 元素以避免修改缓存
+        const clonedContent = cachedContent.cloneNode(true);
+        const distanceHTML = `
+          <div class="popup-distance">
+            <span class="distance-label">📍 ${formatDistanceFull(hotspot.distance)}</span>
+          </div>
+        `;
+        // 在正确的位置插入距离信息
+        const locationDiv = clonedContent.querySelector('div[style*="margin-top: 6px"]');
+        if (locationDiv) {
+          locationDiv.insertAdjacentHTML('afterend', distanceHTML);
+        }
+        return clonedContent.outerHTML;
+      }
+      return cachedContent.outerHTML;
+    }
+  }
+
+  // 没有缓存或缓存管理器不可用，生成新内容
   const typeLabel = getHotspotTypeLabel(hotspot.type);
   const influenceLabel = getInfluenceLabel(hotspot.influenceScore);
   const platformName = getPlatformName(hotspot.platform);

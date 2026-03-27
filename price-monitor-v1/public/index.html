@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>价格监控系统 v0.3</title>
+<style>
+:root {
+  --primary: #6366f1; --primary-light: #818cf8; --primary-dark: #4f46e5;
+  --danger: #ef4444; --success: #22c55e; --warning: #f59e0b;
+  --bg: #f0f2f5; --card: #fff; --text: #1f2937; --text2: #6b7280; --border: #e5e7eb;
+  --red: #ef4444; --green: #22c55e;
+  --shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+  --shadow-lg: 0 10px 25px rgba(0,0,0,.1);
+  --radius: 14px; --radius-sm: 10px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, 'PingFang SC', 'Helvetica Neue', sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
+
+/* Header */
+.header { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%); color: #fff; padding: 28px 24px 24px; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 20px rgba(99,102,241,.3); }
+.header-inner { max-width: 960px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.header h1 { font-size: 22px; font-weight: 700; letter-spacing: -.5px; }
+.header h1 span { opacity: .6; font-weight: 400; font-size: 14px; margin-left: 8px; }
+.header-actions { display: flex; gap: 8px; }
+
+/* Buttons */
+.btn { padding: 8px 18px; border: none; border-radius: var(--radius-sm); cursor: pointer; font-size: 13px; font-weight: 600; transition: all .15s; display: inline-flex; align-items: center; gap: 6px; }
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); }
+.btn-white { background: rgba(255,255,255,.2); color: #fff; backdrop-filter: blur(8px); }
+.btn-white:hover { background: rgba(255,255,255,.3); }
+.btn-sm { padding: 5px 12px; font-size: 12px; }
+.btn-danger { background: #fee2e2; color: var(--danger); }
+.btn-danger:hover { background: #fecaca; }
+.btn-ghost { background: transparent; color: var(--text2); }
+.btn-ghost:hover { background: var(--bg); }
+.btn-success { background: #dcfce7; color: var(--success); }
+.btn-success:hover { background: #bbf7d0; }
+.btn-warning { background: #fef3c7; color: #d97706; }
+.btn-warning:hover { background: #fde68a; }
+
+/* Container */
+.container { max-width: 960px; margin: 0 auto; padding: 20px 16px 60px; }
+
+/* Monitor Status Bar */
+.monitor-bar { background: var(--card); border-radius: var(--radius); padding: 14px 18px; box-shadow: var(--shadow); margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+.monitor-bar .status { display: flex; align-items: center; gap: 10px; font-size: 13px; }
+.monitor-bar .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--success); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(34,197,94,.4); } 50% { box-shadow: 0 0 0 6px rgba(34,197,94,0); } }
+.monitor-bar .pulse.paused { background: #d1d5db; animation: none; }
+.monitor-bar .countdown { font-size: 14px; font-weight: 700; color: var(--primary); background: rgba(99,102,241,.08); padding: 4px 12px; border-radius: 8px; }
+
+/* Search */
+.search-bar { margin-bottom: 16px; position: relative; }
+.search-bar input { width: 100%; padding: 12px 16px 12px 42px; border: 2px solid var(--border); border-radius: var(--radius); font-size: 14px; outline: none; transition: border-color .2s; background: var(--card); }
+.search-bar input:focus { border-color: var(--primary-light); }
+.search-bar .icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 16px; opacity: .4; }
+
+/* Stats */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
+.stat-card { background: var(--card); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
+.stat-card .label { font-size: 12px; color: var(--text2); margin-bottom: 4px; }
+.stat-card .value { font-size: 24px; font-weight: 700; }
+
+/* Product Grid */
+.section-title { font-size: 16px; font-weight: 600; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center; }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; margin-bottom: 24px; }
+.product-card { background: var(--card); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); transition: all .2s; cursor: pointer; position: relative; border: 2px solid transparent; }
+.product-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); border-color: var(--primary-light); }
+.product-card .platform-tag { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.tag-jd { background: #e74c3c; } .tag-taobao { background: #ff6a00; } .tag-pdd { background: #f01414; } .tag-amazon { background: #ff9900; }
+.product-card .name { font-size: 15px; font-weight: 600; margin-bottom: 10px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.product-card .price-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+.product-card .current-price { font-size: 26px; font-weight: 800; }
+.product-card .change { font-size: 13px; font-weight: 600; padding: 2px 8px; border-radius: 6px; }
+.change.up { color: var(--red); background: #fef2f2; }
+.change.down { color: var(--green); background: #f0fdf4; }
+.product-card .target { font-size: 12px; color: var(--text2); }
+.product-card .alert-info { font-size: 11px; color: var(--warning); margin-top: 4px; }
+.product-card .card-actions { display: flex; gap: 6px; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+.product-card .status-dot { position: absolute; top: 14px; right: 14px; width: 8px; height: 8px; border-radius: 50%; }
+.status-dot.active { background: var(--success); box-shadow: 0 0 0 3px rgba(34,197,94,.2); }
+.status-dot.paused { background: #d1d5db; }
+
+/* Notification List */
+.notif-panel { background: var(--card); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); margin-bottom: 24px; }
+.notif-item { padding: 10px 12px; border-radius: var(--radius-sm); margin-bottom: 6px; background: #fffbeb; border-left: 3px solid var(--warning); font-size: 13px; display: flex; justify-content: space-between; align-items: center; }
+.notif-item .time { font-size: 11px; color: var(--text2); white-space: nowrap; margin-left: 12px; }
+
+/* Modal */
+.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 200; align-items: center; justify-content: center; backdrop-filter: blur(4px); }
+.modal-overlay.active { display: flex; }
+.modal { background: var(--card); border-radius: var(--radius); padding: 28px; width: 90%; max-width: 520px; box-shadow: var(--shadow-lg); animation: modalIn .2s ease; max-height: 90vh; overflow-y: auto; }
+@keyframes modalIn { from { opacity: 0; transform: scale(.95) translateY(10px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+.modal h2 { font-size: 18px; margin-bottom: 20px; }
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--text2); margin-bottom: 6px; }
+.form-group input, .form-group select { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: var(--radius-sm); font-size: 14px; outline: none; transition: border-color .2s; }
+.form-group input:focus, .form-group select:focus { border-color: var(--primary); }
+.form-group .hint { font-size: 11px; color: var(--text2); margin-top: 4px; }
+.modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 24px; }
+
+/* Settings Section */
+.settings-section { background: var(--card); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); margin-bottom: 24px; }
+.settings-section h3 { font-size: 15px; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+.setting-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--bg); gap: 12px; flex-wrap: wrap; }
+.setting-row:last-child { border-bottom: none; }
+.setting-label { font-size: 13px; font-weight: 500; }
+.setting-label .desc { font-size: 11px; color: var(--text2); margin-top: 2px; }
+.setting-input { display: flex; align-items: center; gap: 8px; }
+.setting-input input[type="number"] { width: 80px; padding: 6px 10px; border: 2px solid var(--border); border-radius: 8px; font-size: 14px; text-align: center; }
+.setting-input input[type="text"] { width: 280px; padding: 6px 10px; border: 2px solid var(--border); border-radius: 8px; font-size: 13px; }
+.setting-input input[type="text"]:focus { border-color: var(--primary); }
+.toggle-switch { position: relative; width: 44px; height: 24px; cursor: pointer; }
+.toggle-switch input { display: none; }
+.toggle-switch .slider { position: absolute; inset: 0; background: #d1d5db; border-radius: 12px; transition: .2s; }
+.toggle-switch .slider::before { content: ''; position: absolute; width: 18px; height: 18px; left: 3px; top: 3px; background: #fff; border-radius: 50%; transition: .2s; }
+.toggle-switch input:checked + .slider { background: var(--success); }
+.toggle-switch input:checked + .slider::before { transform: translateX(20px); }
+
+/* Trend Chart */
+.chart-panel { background: var(--card); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); }
+.chart-panel h3 { font-size: 15px; margin-bottom: 14px; }
+
+/* Responsive */
+@media (max-width: 600px) { .stats { grid-template-columns: repeat(2, 1fr); } .product-grid { grid-template-columns: 1fr; } .header-inner { flex-direction: column; align-items: flex-start; } .setting-input input[type="text"] { width: 200px; } }
+
+/* Empty state */
+.empty { text-align: center; padding: 40px 20px; color: var(--text2); font-size: 14px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <h1>🏷️ 价格监控 <span>v0.3</span></h1>
+    <div class="header-actions">
+      <button class="btn btn-white" onclick="refreshPrices()" id="refreshBtn">🔄 刷新价格</button>
+      <button class="btn btn-white" onclick="openSettingsModal()">⚙️ 设置</button>
+      <button class="btn btn-white" onclick="openModal()">➕ 添加商品</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <!-- Monitor Status Bar -->
+  <div class="monitor-bar" id="monitorBar">
+    <div class="status">
+      <div class="pulse" id="monitorPulse"></div>
+      <span id="monitorLabel">监控运行中</span>
+      <span id="lastCheckLabel" style="color:var(--text2);font-size:12px;"></span>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <span class="countdown" id="countdown">--:--</span>
+      <button class="btn btn-sm" id="monitorToggleBtn" onclick="toggleMonitor()"></button>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats" id="stats"></div>
+
+  <!-- Search -->
+  <div class="search-bar">
+    <span class="icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="搜索商品名称、平台..." oninput="debounceSearch()">
+  </div>
+
+  <!-- Notifications -->
+  <div class="notif-panel" id="notifPanel" style="display:none">
+    <div class="section-title">🔔 降价通知 <button class="btn btn-sm btn-ghost" onclick="clearNotifs()">清除全部</button></div>
+    <div id="notifList"></div>
+  </div>
+
+  <!-- Products -->
+  <div class="section-title">📦 监控商品 <span id="lastUpdate" style="font-weight:400;font-size:12px;color:var(--text2)"></span></div>
+  <div class="product-grid" id="productGrid"></div>
+
+  <!-- Trend Chart -->
+  <div class="chart-panel" id="chartPanel" style="display:none">
+    <h3 id="chartTitle">📈 价格趋势</h3>
+    <canvas id="trendChart" height="220"></canvas>
+  </div>
+</div>
+
+<!-- Add/Edit Product Modal -->
+<div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <h2 id="modalTitle">➕ 添加商品</h2>
+    <input type="hidden" id="editId">
+    <div class="form-group">
+      <label>商品名称</label>
+      <input type="text" id="formName" placeholder="例：iPhone 16 Pro Max">
+    </div>
+    <div class="form-group">
+      <label>商品链接</label>
+      <input type="text" id="formUrl" placeholder="https://...">
+    </div>
+    <div class="form-group">
+      <label>平台</label>
+      <select id="formPlatform">
+        <option value="jd">京东</option>
+        <option value="taobao">淘宝/天猫</option>
+        <option value="pdd">拼多多</option>
+        <option value="amazon">亚马逊</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>目标价格 (¥)</label>
+      <input type="number" id="formTarget" placeholder="期望的最低价格" step="0.01">
+      <div class="hint">当商品价格低于此价格时触发降价提醒</div>
+    </div>
+    <div class="form-group">
+      <label>降价幅度提醒 (%)</label>
+      <input type="number" id="formAlertPercent" placeholder="例如：5 表示降价超过5%时提醒" step="0.1">
+      <div class="hint">相对于首次记录价格的降幅百分比，留空则不设置</div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal()">取消</button>
+      <button class="btn btn-primary" onclick="saveProduct()">保存</button>
+    </div>
+  </div>
+</div>
+
+<!-- Settings Modal -->
+<div class="modal-overlay" id="settingsOverlay" onclick="if(event.target===this)closeSettingsModal()">
+  <div class="modal">
+    <h2>⚙️ 系统设置</h2>
+
+    <div class="settings-section">
+      <h3>⏰ 监控设置</h3>
+      <div class="setting-row">
+        <div class="setting-label">自动监控间隔<div class="desc">每隔多少分钟自动刷新一次所有商品价格</div></div>
+        <div class="setting-input">
+          <input type="number" id="settingInterval" min="1" max="1440" value="30">
+          <span style="font-size:13px;color:var(--text2)">分钟</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="settings-section">
+      <h3>📨 飞书通知</h3>
+      <div class="setting-row">
+        <div class="setting-label">启用飞书推送<div class="desc">降价时自动发送飞书消息通知</div></div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="settingFeishuEnabled" onchange="toggleFeishuHint()">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="setting-row" id="feishuWebhookRow" style="display:none">
+        <div class="setting-label">Webhook URL<div class="desc">飞书自定义机器人的 Webhook 地址</div></div>
+        <div class="setting-input">
+          <input type="text" id="settingFeishuUrl" placeholder="https://open.feishu.cn/open-apis/bot/v2/hook/...">
+        </div>
+      </div>
+      <div id="feishuHint" style="font-size:11px;color:var(--text2);margin-top:8px;display:none;">
+        💡 在飞书群中添加自定义机器人，复制 Webhook 地址粘贴到这里
+      </div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeSettingsModal()">取消</button>
+      <button class="btn btn-primary" onclick="saveSettings()">💾 保存设置</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<script>
+let chart = null, searchTimer = null, countdownTimer = null;
+
+// --- Monitor Status ---
+async function updateMonitorStatus() {
+  try {
+    const res = await fetch('/api/monitor/status');
+    const status = await res.json();
+    const pulse = document.getElementById('monitorPulse');
+    const label = document.getElementById('monitorLabel');
+    const toggleBtn = document.getElementById('monitorToggleBtn');
+    const lastLabel = document.getElementById('lastCheckLabel');
+
+    if (status.running) {
+      pulse.classList.remove('paused');
+      label.textContent = '监控运行中';
+      toggleBtn.textContent = '⏸ 暂停';
+      toggleBtn.className = 'btn btn-sm btn-warning';
+    } else {
+      pulse.classList.add('paused');
+      label.textContent = '监控已暂停';
+      toggleBtn.textContent = '▶ 启动';
+      toggleBtn.className = 'btn btn-sm btn-success';
+    }
+
+    if (status.lastCheck) {
+      const t = new Date(status.lastCheck);
+      lastLabel.textContent = `上次检查: ${t.toLocaleTimeString('zh-CN')}`;
+    }
+
+    // Countdown
+    if (countdownTimer) clearInterval(countdownTimer);
+    if (status.running && status.nextCheck) {
+      const updateCountdown = () => {
+        const now = Date.now();
+        const diff = Math.max(0, status.nextCheck - now);
+        const m = Math.floor(diff / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+        document.getElementById('countdown').textContent = `${m}:${String(s).padStart(2,'0')}`;
+        if (diff <= 0) { clearInterval(countdownTimer); document.getElementById('countdown').textContent = '检查中...'; }
+      };
+      updateCountdown();
+      countdownTimer = setInterval(updateCountdown, 1000);
+      // Refresh monitor status periodically to sync
+      setTimeout(updateMonitorStatus, 60000);
+    } else {
+      document.getElementById('countdown').textContent = '--:--';
+    }
+  } catch(e) {}
+}
+
+async function toggleMonitor() {
+  try {
+    await fetch('/api/monitor/toggle', { method: 'POST' });
+    await updateMonitorStatus();
+  } catch(e) { alert('操作失败'); }
+}
+
+// --- Settings ---
+function toggleFeishuHint() {
+  const enabled = document.getElementById('settingFeishuEnabled').checked;
+  document.getElementById('feishuWebhookRow').style.display = enabled ? 'flex' : 'none';
+  document.getElementById('feishuHint').style.display = enabled ? 'block' : 'none';
+}
+
+async function openSettingsModal() {
+  try {
+    const res = await fetch('/api/config');
+    const config = await res.json();
+    document.getElementById('settingInterval').value = config.interval || 30;
+    document.getElementById('settingFeishuEnabled').checked = config.feishu?.enabled || false;
+    document.getElementById('settingFeishuUrl').value = config.feishu?.webhookUrl || '';
+    toggleFeishuHint();
+    document.getElementById('settingsOverlay').classList.add('active');
+  } catch(e) { alert('加载设置失败'); }
+}
+
+function closeSettingsModal() { document.getElementById('settingsOverlay').classList.remove('active'); }
+
+async function saveSettings() {
+  const body = {
+    interval: parseInt(document.getElementById('settingInterval').value) || 30,
+    feishu: {
+      enabled: document.getElementById('settingFeishuEnabled').checked,
+      webhookUrl: document.getElementById('settingFeishuUrl').value.trim()
+    }
+  };
+  try {
+    await fetch('/api/config', { method: 'PUT', headers: {'Content-Type':'application/json'}, body: JSON.stringify(body) });
+    closeSettingsModal();
+    await updateMonitorStatus();
+    alert('✅ 设置已保存');
+  } catch(e) { alert('保存失败'); }
+}
+
+// --- Load & Render ---
+async function loadAndRender() {
+  const res = await fetch('/api/products');
+  const { products, prices } = await res.json();
+  const notifRes = await fetch('/api/notifications');
+  const notifications = await notifRes.json();
+  renderStats(products, prices);
+  renderProducts(products, prices);
+  renderNotifications(notifications);
+}
+
+function renderStats(products, prices) {
+  const monitoring = products.filter(p => p.monitor !== false).length;
+  const alerted = products.filter(p => {
+    const h = prices[p.id]; if (!h || !h.length) return false;
+    return h[h.length-1].price <= p.targetPrice;
+  }).length;
+  const totalNotifs = document.querySelectorAll('#notifList .notif-item').length;
+  document.getElementById('stats').innerHTML = `
+    <div class="stat-card"><div class="label">商品总数</div><div class="value">${products.length}</div></div>
+    <div class="stat-card"><div class="label">监控中</div><div class="value" style="color:var(--primary)">${monitoring}</div></div>
+    <div class="stat-card"><div class="label">已达目标价</div><div class="value" style="color:var(--green)">${alerted}</div></div>
+    <div class="stat-card"><div class="label">待处理通知</div><div class="value" style="color:var(--warning)">${totalNotifs}</div></div>
+  `;
+}
+
+function renderProducts(products, prices) {
+  const grid = document.getElementById('productGrid');
+  if (!products.length) { grid.innerHTML = '<div class="empty">没有找到商品，点击右上角添加</div>'; return; }
+  grid.innerHTML = products.map(p => {
+    const h = prices[p.id] || [];
+    const last = h[h.length - 1];
+    const prev = h.length > 1 ? h[h.length - 2] : null;
+    const priceStr = last ? `¥${last.price.toFixed(2)}` : '--';
+    let changeHtml = '';
+    if (last && prev) {
+      const diff = ((last.price - prev.price) / prev.price * 100).toFixed(2);
+      if (diff > 0) changeHtml = `<span class="change up">↑ ${diff}%</span>`;
+      else if (diff < 0) changeHtml = `<span class="change down">↓ ${Math.abs(diff)}%</span>`;
+    }
+    const reachedTarget = last && p.targetPrice && last.price <= p.targetPrice;
+    const alertPercent = p.alertPercent ? ` · 降${p.alertPercent}%提醒` : '';
+    const platformNames = { jd: '京东', taobao: '淘宝', pdd: '拼多多', amazon: '亚马逊' };
+    const isMonitored = p.monitor !== false;
+    return `<div class="product-card" onclick="showTrend('${p.id}','${p.name.replace(/'/g,"\\'")}')">
+      <div class="status-dot ${isMonitored ? 'active' : 'paused'}"></div>
+      <span class="platform-tag tag-${p.platform}">${platformNames[p.platform] || p.platform}</span>
+      <div class="name">${p.name}</div>
+      <div class="price-row">
+        <span class="current-price" style="${reachedTarget ? 'color:var(--green)' : ''}">${priceStr}</span>
+        ${changeHtml}
+      </div>
+      <div class="target">目标价 ¥${(p.targetPrice||0).toFixed(2)} ${reachedTarget ? '✅ 已达目标' : ''}</div>
+      ${alertPercent ? `<div class="alert-info">🔔 ${alertPercent}</div>` : ''}
+      <div class="card-actions" onclick="event.stopPropagation()">
+        <button class="btn btn-sm btn-ghost" onclick="toggleMonitorItem('${p.id}',${!isMonitored})">${isMonitored ? '⏸ 暂停' : '▶ 启用'}</button>
+        <button class="btn btn-sm btn-ghost" onclick="editProduct('${p.id}')">✏️ 编辑</button>
+        <button class="btn btn-sm btn-danger" onclick="confirmDelete('${p.id}','${p.name.replace(/'/g,"\\'")}')">🗑 删除</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderNotifications(notifs) {
+  const panel = document.getElementById('notifPanel');
+  const list = document.getElementById('notifList');
+  if (!notifs || !notifs.length) { panel.style.display = 'none'; return; }
+  panel.style.display = 'block';
+  list.innerHTML = notifs.slice(0, 20).map(n => `<div class="notif-item"><span>${n.message}</span><span class="time">${new Date(n.time).toLocaleString('zh-CN',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'})}</span></div>`).join('');
+}
+
+// --- Trend Chart ---
+async function showTrend(id, name) {
+  const res = await fetch(`/api/trend/${id}`);
+  const data = await res.json();
+  if (!data.length) return;
+  const panel = document.getElementById('chartPanel');
+  panel.style.display = 'block';
+  document.getElementById('chartTitle').textContent = `📈 ${name} - 价格趋势`;
+  const ctx = document.getElementById('trendChart').getContext('2d');
+  if (chart) chart.destroy();
+  chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: data.map(d => new Date(d.time).toLocaleString('zh-CN', {month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'})),
+      datasets: [{
+        label: '价格 (¥)', data: data.map(d => d.price),
+        borderColor: '#6366f1', borderWidth: 2, fill: true,
+        backgroundColor: 'rgba(99,102,241,.08)', tension: .35, pointRadius: 2, pointHoverRadius: 5
+      }]
+    },
+    options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { ticks: { callback: v => '¥' + v } } } }
+  });
+  panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// --- CRUD ---
+function openModal(edit = false) {
+  document.getElementById('modalOverlay').classList.add('active');
+  document.getElementById('modalTitle').textContent = edit ? '✏️ 编辑商品' : '➕ 添加商品';
+  if (!edit) { document.getElementById('editId').value = ''; document.getElementById('formName').value = ''; document.getElementById('formUrl').value = ''; document.getElementById('formPlatform').value = 'jd'; document.getElementById('formTarget').value = ''; document.getElementById('formAlertPercent').value = ''; }
+}
+
+function closeModal() { document.getElementById('modalOverlay').classList.remove('active'); }
+
+async function saveProduct() {
+  const id = document.getElementById('editId').value;
+  const body = {
+    name: document.getElementById('formName').value.trim(),
+    url: document.getElementById('formUrl').value.trim(),
+    platform: document.getElementById('formPlatform').value,
+    targetPrice: parseFloat(document.getElementById('formTarget').value),
+    alertPercent: parseFloat(document.getElementById('formAlertPercent').value) || 0,
+  };
+  if (!body.name || !body.targetPrice) return alert('请填写商品名称和目标价格');
+  try {
+    if (id) { await fetch(`/api/products/${id}`, { method: 'PUT', headers: {'Content-Type':'application/json'}, body: JSON.stringify(body) }); }
+    else { await fetch('/api/products', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(body) }); }
+    closeModal(); loadAndRender();
+  } catch(e) { alert('保存失败'); }
+}
+
+async function editProduct(id) {
+  const res = await fetch('/api/products');
+  const { products } = await res.json();
+  const p = products.find(x => x.id === id);
+  if (!p) return;
+  document.getElementById('editId').value = p.id;
+  document.getElementById('formName').value = p.name;
+  document.getElementById('formUrl').value = p.url || '';
+  document.getElementById('formPlatform').value = p.platform;
+  document.getElementById('formTarget').value = p.targetPrice;
+  document.getElementById('formAlertPercent').value = p.alertPercent || '';
+  openModal(true);
+}
+
+async function confirmDelete(id, name) {
+  if (!confirm(`确定删除「${name}」？`)) return;
+  await fetch(`/api/products/${id}`, { method: 'DELETE' });
+  loadAndRender();
+}
+
+async function toggleMonitorItem(id, val) {
+  await fetch(`/api/products/${id}`, { method: 'PUT', headers: {'Content-Type':'application/json'}, body: JSON.stringify({ monitor: val }) });
+  loadAndRender();
+}
+
+// --- Refresh ---
+async function refreshPrices() {
+  const btn = document.getElementById('refreshBtn');
+  btn.textContent = '⏳ 检查中...'; btn.disabled = true;
+  try {
+    const res = await fetch('/api/check', { method: 'POST' });
+    const data = await res.json();
+    document.getElementById('lastUpdate').textContent = '更新于 ' + new Date().toLocaleTimeString();
+    loadAndRender();
+    await updateMonitorStatus();
+    if (data.notifications && data.notifications.length) {
+      const newNotifs = data.notifications.length;
+      alert(`🔔 检查完成，发现 ${newNotifs} 条降价通知！`);
+    }
+  } catch(e) { alert('刷新失败'); }
+  btn.textContent = '🔄 刷新价格'; btn.disabled = false;
+}
+
+async function clearNotifs() { await fetch('/api/notifications', { method: 'DELETE' }); loadAndRender(); }
+
+// --- Search ---
+function debounceSearch() { clearTimeout(searchTimer); searchTimer = setTimeout(async () => { const kw = document.getElementById('searchInput').value; const res = await fetch(`/api/products?search=${encodeURIComponent(kw)}`); const { products, prices } = await res.json(); renderProducts(products, prices); }, 300); }
+
+// Init
+loadAndRender();
+updateMonitorStatus();
+</script>
+</body>
+</html>

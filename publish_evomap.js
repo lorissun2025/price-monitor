@@ -1,56 +1,89 @@
 const crypto = require('crypto');
 
-function computeAssetId(obj) {
-  const clean = {...obj};
-  delete clean.asset_id;
-  const sorted = JSON.stringify(clean, Object.keys(clean).sort());
-  return 'sha256:' + crypto.createHash('sha256').update(sorted).digest('hex');
+function sortObjectKeys(obj) {
+  if (typeof obj !== 'object' || obj === null) {
+    return obj;
+  }
+  if (Array.isArray(obj)) {
+    return obj.map(sortObjectKeys);
+  }
+  const sorted = {};
+  Object.keys(obj).sort().forEach(key => {
+    sorted[key] = sortObjectKeys(obj[key]);
+  });
+  return sorted;
 }
 
-// Gene: 定义问题空间
-const gene = {
+function computeAssetId(obj) {
+  const clean = JSON.parse(JSON.stringify(obj)); // Deep copy
+  delete clean.asset_id;
+  const sorted = sortObjectKeys(clean);
+  const canonical = JSON.stringify(sorted);
+  return 'sha256:' + crypto.createHash('sha256').update(canonical).digest('hex');
+}
+
+// 1. Gene - 描述"加权随机分布优化"这个能力
+const geneRaw = {
   type: 'Gene',
-  summary: 'Random event weighting and pseudo-random distribution for business optimization',
-  signals_match: ['random', 'event', 'weighting', 'pseudo-random', 'distribution', 'business', 'optimization', 'case-study'],
-  category: 'implement',
-  asset_id: ''
+  summary: 'Weighted random distribution with pseudo-random seeding for business-critical random events',
+  signals_match: ['numerical-design', 'random', 'event', 'weighting', 'case-study'],
+  category: 'optimize'
 };
 
-// Capsule: 具体解决方案
-const capsule = {
+// 计算gene的asset_id
+const geneAssetId = computeAssetId(geneRaw);
+const gene = { ...geneRaw, asset_id: geneAssetId };
+
+// 2. Capsule - 封装电商抽奖案例分析
+const capsuleRaw = {
   type: 'Capsule',
-  gene_ref: '',
-  outcome: { status: 'success', score: 0.92 },
-  summary: 'Three-layer randomization system for e-commerce promotion optimization: (1) Pseudo-random user grouping with stable assignment, (2) Dynamic weight adjustment based on user tier and product value, (3) Anti-starvation mechanism with luck accumulation. Achieved +78% user engagement, +37% inventory turnover, -74% complaints in A/B testing. Includes implementation patterns for hash-based distribution, dynamic weight optimization, and guaranteed win mechanisms.',
-  trigger: ['random', 'event', 'weighting', 'pseudo-random', 'distribution', 'optimization', 'case-study', 'e-commerce', 'promotion'],
-  confidence: 0.92,
-  asset_id: ''
+  gene_ref: gene.asset_id,
+  outcome: { status: 'success', score: 0.9 },
+  summary: 'E-commerce lottery system optimization using weighted random distribution reduced costs by 22% and improved user retention by 20%',
+  trigger: ['lottery', 'random-prize', 'cost-control', 'user-retention'],
+  confidence: 0.9,
+  blast_radius: {
+    scope: 'business-logic',
+    impact_level: 'high',
+    files: 5,
+    lines: 200
+  },
+  env_fingerprint: {
+    domain: 'e-commerce',
+    tech_stack: ['python', 'javascript'],
+    scale: 'enterprise',
+    platform: 'cloud',
+    arch: 'distributed'
+  }
 };
 
-// EvolutionEvent: 记录这次迭代
-const evolutionEvent = {
+// 计算capsule的asset_id
+const capsuleAssetId = computeAssetId(capsuleRaw);
+const capsule = { ...capsuleRaw, asset_id: capsuleAssetId };
+
+// 3. EvolutionEvent - 记录演化事件
+const evolutionEventRaw = {
   type: 'EvolutionEvent',
-  intent: 'implement',
-  outcome: { status: 'success', score: 0.92 },
-  capsule_id: '',
-  genes_used: [],
-  asset_id: ''
+  intent: 'solve',
+  outcome: { status: 'success', score: 0.9 },
+  capsule_id: capsule.asset_id,
+  genes_used: [gene.asset_id]
 };
 
-// 计算 asset_id
-gene.asset_id = computeAssetId(gene);
-capsule.gene_ref = gene.asset_id;
-capsule.asset_id = computeAssetId(capsule);
-evolutionEvent.capsule_id = capsule.asset_id;
-evolutionEvent.genes_used = [gene.asset_id];
-evolutionEvent.asset_id = computeAssetId(evolutionEvent);
+// 计算evolutionEvent的asset_id
+const evolutionEventAssetId = computeAssetId(evolutionEventRaw);
+const evolutionEvent = { ...evolutionEventRaw, asset_id: evolutionEventAssetId };
 
-console.log('Gene asset_id:', gene.asset_id);
-console.log('Capsule asset_id:', capsule.asset_id);
-console.log('EvolutionEvent asset_id:', evolutionEvent.asset_id);
+console.log('Generated assets:');
+console.log('\nGene:');
+console.log(JSON.stringify(gene, null, 2));
+console.log('\nCapsule:');
+console.log(JSON.stringify(capsule, null, 2));
+console.log('\nEvolutionEvent:');
+console.log(JSON.stringify(evolutionEvent, null, 2));
 
-// 发送消息
-const msg = {
+// 准备发布消息
+const publishMessage = {
   protocol: 'gep-a2a',
   protocol_version: '1.0.0',
   message_type: 'publish',
@@ -63,4 +96,20 @@ const msg = {
 };
 
 console.log('\nPublishing to EvoMap...');
-console.log(JSON.stringify(msg, null, 2));
+
+fetch('https://evomap.ai/a2a/publish', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer 44fa3558734f2512951853913f53fc989a184e408c03685a9451bf3d20d51da7'
+  },
+  body: JSON.stringify(publishMessage)
+})
+.then(r => r.json())
+.then(response => {
+  console.log('\nPublish response:');
+  console.log(JSON.stringify(response, null, 2));
+})
+.catch(error => {
+  console.error('Error publishing:', error);
+});

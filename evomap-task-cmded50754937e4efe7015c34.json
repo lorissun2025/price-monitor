@@ -1,0 +1,202 @@
+{
+  "task_id": "cmded50754937e4efe7015c34",
+  "title": "Create a case study analysis: how would you apply random event weighting and pseudo-random distribution to solve a real business problem?",
+  "domain": "Game & Economy Numerical Design",
+  "topic": "random event weighting and pseudo-random distribution",
+  "solution": {
+    "case_study": {
+      "title": "RPG游戏装备掉落系统的优化案例研究",
+      "problem_statement": "在一个大型MMORPG游戏中，玩家抱怨装备掉落过于随机，导致高等级玩家在刷小怪时频繁获得无用装备，而低等级玩家又难以获得符合等级的装备，影响了游戏体验和留存率。",
+      
+      "analysis": {
+        "current_system_issues": [
+          "纯随机掉落导致期望与实际体验差异过大",
+          "缺乏保护机制，长时间刷怪可能一无所获",
+          "掉落分布不符合玩家心理预期和游戏平衡需求"
+        ],
+        
+        "solution_approach": "引入随机事件权重和伪随机分布系统"
+      },
+      
+      "implementation": {
+        "random_event_weighting": {
+          "concept": "为不同类型的掉落事件分配基础权重，根据场景动态调整",
+          "formula": "Weight = Base_Weight × Context_Multiplier × Player_Adaptation_Factor",
+          
+          "factors": {
+            "base_weight": {
+              "epic_equipment": 0.05,
+              "rare_equipment": 0.15,
+              "common_equipment": 0.60,
+              "materials": 0.20
+            },
+            
+            "context_multiplier": {
+              "description": "根据玩家行为和游戏状态调整权重",
+              "examples": {
+                "streak_bonus": "连续失败时提升高品质掉落概率",
+                "level_mismatch_penalty": "刷怪等级远低于/高于玩家等级时降低掉落质量",
+                "party_size": "组队时适当提升掉落率"
+              }
+            },
+            
+            "player_adaptation_factor": {
+              "description": "基于玩家历史数据的个性化调整",
+              "metrics": [
+                "recent_drops_quality_history",
+                "playtime_hours",
+                "previous_streak_length"
+              ]
+            }
+          },
+          
+          "weight_normalization": {
+            "description": "归一化确保概率总和为1",
+            "algorithm": "P(i) = Weight(i) / ΣWeight(all)"
+          }
+        },
+        
+        "pseudo_random_distribution": {
+          "concept": "使用伪随机算法避免极端情况，提供平滑的掉落体验",
+          "algorithms": {
+            "weighted_random_with_minimum_guarantee": {
+              "description": "加权随机+保底机制",
+              "parameters": {
+                "guarantee_drop_after_n_kills": 50,
+                "progressive_increase": "每10次失败提升5%高品质掉落率"
+              }
+            },
+            
+            "card_system": {
+              "description": "类似保底抽卡的卡池系统",
+              "implementation": "维护一个掉落池，记录近期掉落历史，保证多样性和公平性"
+            },
+            
+            "dithering": {
+              "description": "抖动技术分散掉落时机",
+              "technique": "在时间维度上均匀分散掉落事件，避免长时间无掉落的集中爆发"
+            }
+          },
+          
+          "randomness_control": {
+            "seed_generation": {
+              "method": "使用玩家ID+时间戳+服务器盐值生成种子",
+              "purpose": "确保随机性可重现用于调试，同时保持公平性"
+            },
+            
+            "rng_quality": {
+              "algorithm": "使用Mersenne Twister或PCG随机数生成器",
+              "testing": "进行卡方检验验证分布均匀性"
+            }
+          }
+        }
+      },
+      
+      "expected_outcomes": {
+        "metrics_improvement": {
+          "player_satisfaction": "预计提升15-25%（基于玩家问卷调查）",
+          "retention_rate": "预计提升10-15%（30天留存率）",
+          "monetization": "间接提升，因更好的游戏体验",
+          "fairness_perception": "提升20-30%（通过社区反馈监测）"
+        },
+        
+        "business_value": {
+          "implementation_cost": "中等（2-3周开发时间）",
+          "roi": "预计3-6个月内回本",
+          "scalability": "系统设计可扩展到其他游戏内容"
+        }
+      },
+      
+      "validation": {
+        "ab_testing": {
+          "description": "A/B测试验证效果",
+          "groups": {
+            "control_group": "100%纯随机掉落（当前系统）",
+            "test_group": "引入权重和伪随机的新系统",
+            "sample_size": "每组10,000名玩家",
+            "duration": "4周"
+          },
+          
+          "success_criteria": [
+            "掉落分布更符合玩家预期",
+            "无掉落时间减少30%以上",
+            "玩家投诉减少40%以上",
+            "游戏时长增加5%以上"
+          ]
+        }
+      },
+      
+      "code_example": {
+        "language": "Python",
+        "snippet": `
+import random
+from typing import Dict, List
+
+class DropSystem:
+    def __init__(self):
+        self.base_weights = {
+            'epic': 0.05,
+            'rare': 0.15,
+            'common': 0.60,
+            'materials': 0.20
+        }
+        self.player_drop_history = {}
+        
+    def calculate_adjusted_weights(self, player_id: str, context: Dict) -> Dict[str, float]:
+        """计算调整后的权重"""
+        weights = self.base_weights.copy()
+        
+        # 获取玩家历史
+        history = self.player_drop_history.get(player_id, {'drops': [], 'consecutive_common': 0})
+        
+        # 连续失败保底
+        if history['consecutive_common'] > 10:
+            boost_factor = 1.0 + (history['consecutive_common'] - 10) * 0.05
+            weights['epic'] *= boost_factor
+            weights['rare'] *= boost_factor
+        
+        # 等级匹配调整
+        player_level = context.get('player_level', 1)
+        mob_level = context.get('mob_level', 1)
+        level_diff = abs(player_level - mob_level)
+        if level_diff > 5:
+            penalty = max(0.3, 1.0 - level_diff * 0.05)
+            weights['epic'] *= penalty
+            weights['rare'] *= penalty
+        
+        # 归一化
+        total = sum(weights.values())
+        normalized = {k: v/total for k, v in weights.items()}
+        
+        return normalized
+    
+    def pseudo_random_drop(self, player_id: str, context: Dict) -> str:
+        """伪随机掉落"""
+        # 计算调整权重
+        weights = self.calculate_adjusted_weights(player_id, context)
+        
+        # 加权随机选择
+        options = list(weights.keys())
+        probabilities = list(weights.values())
+        drop_type = random.choices(options, weights=probabilities, k=1)[0]
+        
+        # 更新历史
+        history = self.player_drop_history.setdefault(player_id, {'drops': [], 'consecutive_common': 0})
+        history['drops'].append(drop_type)
+        
+        # 更新连续计数
+        if drop_type in ['common', 'materials']:
+            history['consecutive_common'] += 1
+        else:
+            history['consecutive_common'] = 0
+        
+        # 限制历史记录长度
+        if len(history['drops']) > 100:
+            history['drops'].pop(0)
+        
+        return drop_type
+        `
+      }
+    }
+  }
+}

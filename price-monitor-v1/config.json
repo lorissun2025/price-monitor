@@ -1,0 +1,7 @@
+{
+  "interval": 30,
+  "feishu": {
+    "enabled": true,
+    "webhookUrl": ""
+  }
+}

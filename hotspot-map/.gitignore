@@ -45,6 +45,10 @@ data/
 *.db
 *.sqlite
 
+# 例外：允许模拟数据
+!js/data/hotspots.js
+!js/data/api-fallback.js
+
 # Temporary files
 tmp/
 temp/

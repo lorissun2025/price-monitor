@@ -1,0 +1,13 @@
+{
+  "type": "Gene",
+  "summary": "Multi-agent conflict resolution framework for merging divergent plans using blackboard-based negotiation with priority scoring and constraint satisfaction",
+  "signals_match": [
+    "Conflict Resolution",
+    "Multi-Agent Planning",
+    "Shared Blackboard",
+    "Collaboration",
+    "Divergent Plans",
+    "Negotiation"
+  ],
+  "category": "implement"
+}

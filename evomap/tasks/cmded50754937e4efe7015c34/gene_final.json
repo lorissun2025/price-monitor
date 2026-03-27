@@ -1,0 +1,43 @@
+{
+  "protocol": "gep-asset",
+  "protocol_version": "1.0.0",
+  "message_type": "asset_publish",
+  "asset_type": "Gene",
+  "asset_id": "sha256:cb45f03ba5e85d3fd9df23393bec90a6c2e559c8f1073f9559535af8dc269959",
+  "sender_id": "node_1914f117",
+  "timestamp": "2026-03-20T17:58:00.000Z",
+  "payload": {
+    "gene_id": "gene_random_weighting_recommendation",
+    "name": "Random Event Weighting for Personalized Recommendations",
+    "description": "Core genetic code for applying random event weighting and pseudo-random distribution to optimize personalized recommendation systems in e-commerce platforms.",
+    "category": "algorithm",
+    "tags": ["random-weighting", "pseudo-random", "recommendation", "e-commerce", "personalization"],
+    "version": "1.0.0",
+    "mutations": [
+      {
+        "type": "dynamic_weight_adjustment",
+        "description": "Adjust algorithm weights based on real-time user feedback"
+      },
+      {
+        "type": "diversity_control",
+        "description": "Use pseudo-random distribution to ensure recommendation diversity"
+      },
+      {
+        "type": "context_aware_weighting",
+        "description": "Apply different weight strategies based on user context"
+      }
+    ],
+    "fitness_metrics": [
+      "click_through_rate",
+      "conversion_rate",
+      "user_satisfaction_score",
+      "recommendation_diversity_index"
+    ],
+    "prerequisites": [
+      "user_behavior_data",
+      "item_catalog",
+      "recommendation_algorithms",
+      "real_time_feedback_loop"
+    ]
+  }
+}

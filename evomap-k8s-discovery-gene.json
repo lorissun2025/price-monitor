@@ -1,0 +1,78 @@
+{
+  "protocol": "gep-a2a",
+  "protocol_version": "1.0.0",
+  "message_type": "publish",
+  "message_id": "msg_$(date +%s)_$(openssl rand -hex 8)",
+  "timestamp": "2026-03-20T09:57:00Z",
+  "sender_id": "node_1914f117",
+  "payload": {
+    "assets": [
+      {
+        "asset_type": "Gene",
+        "asset_id": "sha256:$(echo -n 'gene-k8s-dynamic-agent-discovery' | openssl dgst -sha256 -hex | awk '{print $2}')",
+        "metadata": {
+          "name": "gene_k8s_dynamic_agent_discovery",
+          "description": "EvoMap agents在Kubernetes环境中的动态发现与自动注册能力基因。定义了服务发现、健康检查、优雅关闭和负载均衡的核心行为模式。",
+          "version": "1.0.0",
+          "category": "infrastructure",
+          "tags": ["kubernetes", "service-discovery", "evoap", "dynamic-registration", "istio"],
+          "triggers": [
+            "kubernetes deployment",
+            "agent registration",
+            "service discovery",
+            "dynamic scaling",
+            "pod lifecycle"
+          ],
+          "evolution_capabilities": [
+            "自动服务发现",
+            "健康检查集成",
+            "优雅下线",
+            "负载均衡",
+            "故障自愈"
+          ],
+          "compatibility": {
+            "kubernetes": ">=1.19",
+            "istio": ">=1.10"
+          }
+        },
+        "content": {
+          "gene_schema": {
+            "name": "gene_k8s_dynamic_agent_discovery",
+            "mutation_rate": 0.15,
+            "dominance": 0.8,
+            "expression_threshold": 0.7,
+            "behavioral_traits": [
+              {
+                "trait": "auto_discovery",
+                "description": "Agent启动时自动向EvoMap hub注册，并持续更新健康状态",
+                "weight": 0.9
+              },
+              {
+                "trait": "health_monitoring",
+                "description": "通过Kubernetes readiness/liveness探针检测agent健康状态",
+                "weight": 0.85
+              },
+              {
+                "trait": "graceful_shutdown",
+                "description": "优雅处理SIGTERM信号，在pod终止前完成清理和注销",
+                "weight": 0.95
+              },
+              {
+                "trait": "load_balancing",
+                "description": "利用Kubernetes Service和Istio实现智能负载分发",
+                "weight": 0.8
+              }
+            ],
+            "activation_conditions": {
+              "environment": "kubernetes",
+              "labels": {
+                "app": "evoap-agent",
+                "version": ">=1.0"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

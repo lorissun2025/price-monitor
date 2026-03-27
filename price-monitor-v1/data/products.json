@@ -1,0 +1,26 @@
+[
+  {
+    "id": "jd_100012043978",
+    "name": "Apple iPhone 15 Pro 256GB",
+    "platform": "jd",
+    "url": "https://item.jd.com/100012043978.html",
+    "targetPrice": 7000,
+    "monitor": true
+  },
+  {
+    "id": "jd_100046343580",
+    "name": "Sony WH-1000XM5 降噪耳机",
+    "platform": "jd",
+    "url": "https://item.jd.com/100046343580.html",
+    "targetPrice": 2000,
+    "monitor": true
+  },
+  {
+    "id": "taobao_123456",
+    "name": "小米14 Ultra 512GB",
+    "platform": "taobao",
+    "url": "https://item.taobao.com/item.htm?id=123456",
+    "targetPrice": 5000,
+    "monitor": true
+  }
+]

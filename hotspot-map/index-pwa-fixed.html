@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🗺️ 热点地图 - HotSpot Map</title>
+
+  <!-- Favicon Emoji -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🗺️</text></svg>">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- PWA 样式 -->
+  <style>
+    /* 安装横幅样式 */
+    .install-banner {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10000;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 16px 24px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      animation: slideUp 0.5s ease-out;
+      max-width: 90%;
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateX(-50%) translateY(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .install-banner:hover {
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    }
+
+    .install-banner-close {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: white;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .install-banner-close:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- 侧边栏 -->
+    <div class="sidebar">
+      <h1>🗺️ 热点地图</h1>
+
+      <!-- 数据刷新 -->
+      <div class="section">
+        <button id="refresh-btn" onclick="window.app.refreshData()" class="refresh-btn">🔄 刷新数据</button>
+        <div class="refresh-status" id="refresh-status"></div>
+      </div>
+
+      <!-- 搜索框 -->
+      <div class="section">
+        <h2>搜索热点</h2>
+        <div class="search-box">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="搜索标题、城市、作者..."
+            onkeypress="if(event.key === 'Enter') window.app.searchHotspots(this.value)"
+          />
+          <button onclick="window.app.searchHotspots(document.getElementById('search-input').value)">🔍</button>
+        </div>
+        <div class="search-status" id="search-status"></div>
+      </div>
+
+      <!-- 地图类型切换 -->
+      <div class="section">
+        <h2>地图类型</h2>
+        <div class="map-toggle">
+          <button id="btn-china" class="active" onclick="window.app.switchMap('china')">🇨🇳 中国地图</button>
+          <button id="btn-world" onclick="window.app.switchMap('world')">🌍 世界地图</button>
+        </div>
+      </div>
+
+      <!-- 快捷筛选 -->
+      <div class="section">
+        <h2>看什么？</h2>
+        <div class="quick-filter-group">
+          <button class="quick-filter active" onclick="window.app.quickFilter('all')">📍 全部热点</button>
+          <button class="quick-filter" onclick="window.app.quickFilter('food')">🍜 美食探店</button>
+          <button class="quick-filter" onclick="window.app.quickFilter('tourism')">🏝 旅游打卡</button>
+          <button class="quick-filter" onclick="window.app.quickFilter('event')">🎪 漫展活动</button>
+          <button class="quick-filter" onclick="window.app.quickFilter('social')">💬 社交热点</button>
+        </div>
+      </div>
+
+      <!-- 来源选择 -->
+      <div class="section">
+        <h2>来源</h2>
+        <div class="checkbox-group">
+          <div class="checkbox-item">
+            <input type="checkbox" id="plat-xiaohongshu" checked onchange="window.app.filterByPlatform('xiaohongshu', this.checked)">
+            <label for="plat-xiaohongshu">📕 小红书</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="plat-weibo" checked onchange="window.app.filterByPlatform('weibo', this.checked)">
+            <label for="plat-weibo">📢 微博</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="plat-douyin" checked onchange="window.app.filterByPlatform('douyin', this.checked)">
+            <label for="plat-douyin">🎵 抖音</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="plat-bilibili" checked onchange="window.app.filterByPlatform('bilibili', this.checked)">
+            <label for="plat-bilibili">📺️ B站</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 热点统计 -->
+      <div class="section">
+        <h2>热点统计</h2>
+        <div class="stat-item">
+          <span>📍 当前展示</span>
+          <span class="stat-value" id="stat-total">0</span>
+        </div>
+        <div class="stat-item">
+          <span>📕 小红书</span>
+          <span class="stat-value" id="stat-xiaohongshu">0</span>
+        </div>
+        <div class="stat-item">
+          <span>📢 微博</span>
+          <span class="stat-value" id="stat-weibo">0</span>
+        </div>
+        <div class="stat-item">
+          <span>🎵 抖音</span>
+          <span class="stat-value" id="stat-douyin">0</span>
+        </div>
+        <div class="stat-item">
+          <span>📺️ B站</span>
+          <span class="stat-value" id="stat-bilibili">0</span>
+        </div>
+      </div>
+
+      <!-- 用户位置 -->
+      <div class="section">
+        <h2>我的位置</h2>
+        <button onclick="window.app.locateUser()" class="locate-btn">📍 定位我的位置</button>
+        <div class="location-status" id="location-status"></div>
+        <div class="location-actions">
+          <button onclick="window.app.filterByDistance(null)" class="sort-btn" id="sort-btn" disabled>
+            📏 按距离排序
+          </button>
+        </div>
+        <div class="distance-filter">
+          <h3 style="margin: 15px 0 10px 0; font-size: 14px;">距离筛选</h3>
+          <div class="distance-filter-group">
+            <button class="distance-filter-btn active" onclick="window.app.filterByDistance(null)" data-distance="null">
+              全部
+            </button>
+            <button class="distance-filter-btn" onclick="window.app.filterByDistance(5)" data-distance="5">
+              5km
+            </button>
+            <button class="distance-filter-btn" onclick="window.app.filterByDistance(10)" data-distance="10">
+              10km
+            </button>
+            <button class="distance-filter-btn" onclick="window.app.filterByDistance(50)" data-distance="50">
+              50km
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 地图区域 -->
+    <div class="map-container">
+      <div id="map"></div>
+    </div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Logger (必须在其他脚本之前加载) -->
+  <script src="js/utils/logger.js?nocache=1"></script>
+
+  <!-- Service Worker (PWA) -->
+  <script src="sw.js?nocache=1"></script>
+
+  <!-- App Scripts (完整版) -->
+  <script src="js/app-integrated.js?nocache=1"></script>
+
+  <!-- 地理位置（可选） -->
+  <script src="js/utils/geolocation.js?nocache=1"></script>
+</body>
+</html>

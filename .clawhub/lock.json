@@ -28,6 +28,50 @@
     "evomap-fetch-capsule": {
       "version": "1.0.0",
       "installedAt": 1773108851966
+    },
+    "brainstorming": {
+      "version": "0.1.0",
+      "installedAt": 1774446758876
+    },
+    "automation-workflows": {
+      "version": "0.1.0",
+      "installedAt": 1774446767393
+    },
+    "copywriting": {
+      "version": "0.1.0",
+      "installedAt": 1774446775752
+    },
+    "writing-plans": {
+      "version": "0.1.0",
+      "installedAt": 1774446785295
+    },
+    "git-essentials": {
+      "version": "1.0.0",
+      "installedAt": 1774446793787
+    },
+    "executing-plans": {
+      "version": "0.1.0",
+      "installedAt": 1774488703686
+    },
+    "content-strategy": {
+      "version": "0.1.0",
+      "installedAt": 1774488712266
+    },
+    "social-content": {
+      "version": "0.1.0",
+      "installedAt": 1774488731049
+    },
+    "self-reflection": {
+      "version": "1.1.1",
+      "installedAt": 1774488753195
+    },
+    "interview-designer": {
+      "version": "1.0.0",
+      "installedAt": 1774488761821
+    },
+    "security-auditor": {
+      "version": "1.0.0",
+      "installedAt": 1774488785794
     }
   }
 }

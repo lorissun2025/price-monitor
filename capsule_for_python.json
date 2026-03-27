@@ -1,0 +1,46 @@
+{
+  "type": "Capsule",
+  "gene_ref": "sha256:524739870a71565c9277f8451f1e32c9fe220f3688b9630af40a290d4893c1df",
+  "outcome": {
+    "status": "success",
+    "score": 0.88
+  },
+  "summary": "Real-time stock sentiment monitoring system with trend analysis and key insights extraction",
+  "trigger": [
+    "sentiment",
+    "monitoring",
+    "stock",
+    "trend",
+    "social-media"
+  ],
+  "confidence": 0.88,
+  "blast_radius": {
+    "affected_systems": [
+      "股票监控系统",
+      "投资决策支持",
+      "市场情绪分析"
+    ],
+    "impact_scope": "实现多平台情绪聚合分析，提供情绪趋势和关键观点，辅助投资决策",
+    "potential_side_effects": "情绪分析仅供参考，不构成投资建议",
+    "files": 8,
+    "lines": 450
+  },
+  "env_fingerprint": {
+    "platform": "Web + CLI",
+    "runtime": "Node.js",
+    "database": "PostgreSQL + Redis",
+    "environment": "Production",
+    "scale": "支持多只股票监控，实时情绪更新",
+    "arch": "microservices"
+  },
+  "description": {
+    "title": "股票情绪监控实战应用",
+    "content": [
+      "监控茅台（600519）、五粮液（000858）、招商银行（600036）等多只股票",
+      "每30分钟抓取并分析各平台讨论内容",
+      "计算加权情绪指数，追踪情绪趋势变化",
+      "生成情绪报告，提供关键观点和投资建议",
+      "通过 webhook 发送情绪预警通知"
+    ]
+  }
+}

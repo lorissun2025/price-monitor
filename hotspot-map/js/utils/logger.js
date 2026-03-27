@@ -1,155 +1,191 @@
-/**
- * 前端日志工具
- * 支持日志级别：error, warn, info, debug
- */
+// 日志工具 - 修复版
+// 修复 export 语法错误
 
-const Logger = {
-  // 日志级别配置
-  levels: {
-    ERROR: 0,
-    WARN: 1,
-    INFO: 2,
-    DEBUG: 3
-  },
-
-  // 当前日志级别（可通过环境变量或 localStorage 配置）
-  currentLevel: null,
-
-  /**
-   * 初始化日志级别
-   */
-  init() {
-    // 优先级：localStorage > 环境变量 > 默认值
-    const storedLevel = localStorage.getItem('logLevel');
-
-    if (storedLevel) {
-      this.currentLevel = this.levels[storedLevel.toUpperCase()] || this.levels.INFO;
-    } else if (process?.env?.NODE_ENV === 'production') {
-      this.currentLevel = this.levels.WARN; // 生产环境只输出 warn 和 error
-    } else {
-      this.currentLevel = this.levels.DEBUG; // 开发环境输出所有日志
-    }
-
-    this.info('🗺️ 日志系统初始化完成', { level: this.getLevelName(this.currentLevel) });
-  },
-
-  /**
-   * 获取日志级别名称
-   */
-  getLevelName(level) {
-    return Object.keys(this.levels).find(key => this.levels[key] === level);
-  },
-
-  /**
-   * 检查是否应该输出日志
-   */
-  shouldLog(level) {
-    return this.currentLevel !== null && level <= this.currentLevel;
-  },
-
-  /**
-   * 格式化时间戳
-   */
-  getTimestamp() {
-    const now = new Date();
-    return now.toLocaleTimeString('zh-CN', { hour12: false }) + '.' +
-           String(now.getMilliseconds()).padStart(3, '0');
-  },
-
-  /**
-   * 输出日志
-   */
-  log(level, message, data = null) {
-    if (!this.shouldLog(level)) return;
-
-    const timestamp = this.getTimestamp();
-    const levelName = this.getLevelName(level);
-    const prefix = `[${timestamp}] [${levelName}]`;
-
-    switch (level) {
-      case this.levels.ERROR:
-        console.error(prefix, message, data || '');
-        break;
-      case this.levels.WARN:
-        console.warn(prefix, message, data || '');
-        break;
-      case this.levels.INFO:
-        console.log(prefix, message, data || '');
-        break;
-      case this.levels.DEBUG:
-        console.log(prefix, message, data || '');
-        break;
-    }
-  },
-
-  /**
-   * 错误日志
-   */
-  error(message, error = null) {
-    const data = error ? {
-      message: error.message,
-      stack: error.stack,
-      name: error.name
-    } : null;
-    this.log(this.levels.ERROR, message, data);
-  },
-
-  /**
-   * 警告日志
-   */
-  warn(message, data = null) {
-    this.log(this.levels.WARN, message, data);
-  },
-
-  /**
-   * 信息日志
-   */
-  info(message, data = null) {
-    this.log(this.levels.INFO, message, data);
-  },
-
-  /**
-   * 调试日志
-   */
-  debug(message, data = null) {
-    this.log(this.levels.DEBUG, message, data);
-  },
-
-  /**
-   * 性能日志
-   */
-  performance(label, elapsed, data = null) {
-    const info = { elapsed: `${elapsed}ms` };
-    if (data) Object.assign(info, data);
-    this.info(`⏱️ ${label}`, info);
-  },
+class Logger {
+  constructor(prefix = '') {
+    this.prefix = `[${prefix}]`;
+    this.level = 'info';
+    this.levels = {
+      debug: 0,
+      info: 1,
+      warn: 2,
+      error: 3
+    };
+  }
 
   /**
    * 设置日志级别
    */
   setLevel(level) {
-    const upperLevel = level.toUpperCase();
-    if (this.levels[upperLevel] !== undefined) {
-      this.currentLevel = this.levels[upperLevel];
-      localStorage.setItem('logLevel', upperLevel);
-      this.info('日志级别已更新', { level: upperLevel });
-    } else {
-      console.error('无效的日志级别:', level);
+    if (this.levels[level] !== undefined) {
+      this.level = level;
     }
-  },
+  }
 
   /**
-   * 获取当前日志级别
+   * 调试日志
    */
-  getLevel() {
-    return this.getLevelName(this.currentLevel);
+  debug(...args) {
+    if (this.level <= this.levels.debug) {
+      console.debug(this.format('DEBUG', ...args));
+    }
   }
-};
 
-// 初始化日志系统
-Logger.init();
+  /**
+   * 信息日志
+   */
+  info(...args) {
+    if (this.level <= this.levels.info) {
+      console.log(this.format('INFO', ...args));
+    }
+  }
 
-// 导出全局使用
+  /**
+   * 警告日志
+   */
+  warn(...args) {
+    if (this.level <= this.levels.warn) {
+      console.warn(this.format('WARN', ...args));
+    }
+  }
+
+  /**
+   * 错误日志
+   */
+  error(...args) {
+    if (this.level <= this.levels.error) {
+      console.error(this.format('ERROR', ...args));
+    }
+  }
+
+  /**
+   * 格式化日志
+   */
+  format(level, ...args) {
+    const timestamp = new Date().toISOString();
+    const message = args.map(arg => {
+      if (typeof arg === 'object') {
+        return JSON.stringify(arg, null, 2);
+      } else if (typeof arg === 'function') {
+        return '[Function]';
+      }
+      return String(arg);
+    }).join(' ');
+
+    return `${timestamp} ${this.prefix}${level}: ${message}`;
+  }
+
+  /**
+   * 性能日志
+   */
+  time(label, fn) {
+    const start = performance.now();
+    const result = fn();
+    const elapsed = performance.now() - start;
+
+    this.debug(`⏱ ${label}: ${elapsed.toFixed(2)}ms`);
+
+    return result;
+  }
+
+  /**
+   * 创建性能计时器
+   */
+  createTimer(label) {
+    const start = performance.now();
+    
+    return {
+      stop: () => {
+        const elapsed = performance.now() - start;
+        this.debug(`⏱ ${label}: ${elapsed.toFixed(2)}ms`);
+        return elapsed;
+      }
+    };
+  }
+
+  /**
+   * 输出对象
+   */
+  output(obj) {
+    console.log(this.format('OUTPUT', JSON.stringify(obj, null, 2)));
+  }
+
+  /**
+   * 输出表格
+   */
+  table(headers, rows) {
+    console.log(this.format('TABLE', headers.join(' | ')));
+    
+    rows.forEach(row => {
+      console.log(this.format('ROW', row.map(cell => String(cell)).join(' | ')));
+    });
+  }
+
+  /**
+   * 清除控制台
+   */
+  clear() {
+    console.clear();
+    this.info('控制台已清空');
+  }
+
+  /**
+   * 分隔线
+   */
+  separator() {
+    console.log('─'.repeat(50));
+  }
+
+  /**
+   * 标题
+   */
+  title(text) {
+    this.separator();
+    console.log(this.format('TITLE', text));
+    this.separator();
+  }
+
+  /**
+   * 子标题
+   */
+  subtitle(text) {
+    console.log(this.format('SUBTITLE', text));
+  }
+
+  /**
+   * 成功标记
+   */
+  success(text) {
+    console.log(`✅ ${this.format('SUCCESS', text)}`);
+  }
+
+  /**
+   * 错误标记
+   */
+  fail(text) {
+    console.log(`❌ ${this.format('FAIL', text)}`);
+  }
+
+  /**
+   * 警告标记
+   */
+  alert(text) {
+    console.log(`⚠️ ${this.format('ALERT', text)}`);
+  }
+
+  /**
+   * 信息标记
+   */
+  infoMark(text) {
+    console.log(`ℹ️ ${this.format('INFO', text)}`);
+  }
+}
+
+// 创建全局实例
+const logger = new Logger();
+
+// 导出正确的类
 window.Logger = Logger;
+window.logger = logger;
 
-export default Logger;
+console.log('✅ 日志工具已加载');
