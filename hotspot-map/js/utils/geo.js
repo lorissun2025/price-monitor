@@ -11,7 +11,7 @@
  * @param {number} lon2 - 终点经度
  * @returns {number} 距离（km）
  */
-export function calculateDistance(lat1, lon1, lat2, lon2) {
+function calculateDistance(lat1, lon1, lat2, lon2) {
   const R = 6371; // 地球半径（km）
   const dLat = toRad(lat2 - lat1);
   const dLon = toRad(lon2 - lon1);
@@ -39,7 +39,7 @@ function toRad(degrees) {
  * @param {number} distanceKm - 距离（km）
  * @returns {string} 格式化后的距离字符串
  */
-export function formatDistance(distanceKm) {
+function formatDistance(distanceKm) {
   if (distanceKm === null || distanceKm === undefined) {
     return '未知';
   }
@@ -56,7 +56,7 @@ export function formatDistance(distanceKm) {
  * @param {number} distanceKm - 距离（km）
  * @returns {string} 格式化后的距离字符串
  */
-export function formatDistanceFull(distanceKm) {
+function formatDistanceFull(distanceKm) {
   if (distanceKm === null || distanceKm === undefined) {
     return '距离未知';
   }
@@ -76,7 +76,7 @@ export function formatDistanceFull(distanceKm) {
  * @param {number} options.maximumAge - 缓存最大年龄（毫秒）
  * @returns {Promise<Object>} 位置信息
  */
-export function getUserLocation(options = {}) {
+function getUserLocation(options = {}) {
   const {
     enableHighAccuracy = true,
     timeout = 10000,
@@ -129,7 +129,7 @@ export function getUserLocation(options = {}) {
  * @param {number} userLng - 用户经度
  * @returns {Array} 带有距离字段的热点数组
  */
-export function calculateDistancesForHotspots(hotspots, userLat, userLng) {
+function calculateDistancesForHotspots(hotspots, userLat, userLng) {
   return hotspots.map(hotspot => {
     if (hotspot.lat !== null && hotspot.lat !== undefined &&
         hotspot.lng !== null && hotspot.lng !== undefined) {
@@ -155,7 +155,7 @@ export function calculateDistancesForHotspots(hotspots, userLat, userLng) {
  * @param {string} order - 排序方式（'asc' 从近到远，'desc' 从远到近）
  * @returns {Array} 排序后的热点数组
  */
-export function sortByDistance(hotspots, order = 'asc') {
+function sortByDistance(hotspots, order = 'asc') {
   return [...hotspots].sort((a, b) => {
     if (a.distance === null || a.distance === undefined) return 1;
     if (b.distance === null || b.distance === undefined) return -1;
@@ -174,7 +174,7 @@ export function sortByDistance(hotspots, order = 'asc') {
  * @param {number} maxDistance - 最大距离（km），null 表示不限制
  * @returns {Array} 筛选后的热点数组
  */
-export function filterByDistance(hotspots, maxDistance) {
+function filterByDistance(hotspots, maxDistance) {
   if (maxDistance === null || maxDistance === undefined) {
     return hotspots;
   }
@@ -192,7 +192,7 @@ export function filterByDistance(hotspots, maxDistance) {
  * @param {Array} hotspots - 热点数组（必须已计算距离）
  * @returns {Object} 统计信息
  */
-export function calculateDistanceStats(hotspots) {
+function calculateDistanceStats(hotspots) {
   const validHotspots = hotspots.filter(h =>
     h.distance !== null && h.distance !== undefined
   );
@@ -233,7 +233,7 @@ export function calculateDistanceStats(hotspots) {
  * @param {string} provider - 导航提供商（'gaode' 或 'baidu'）
  * @returns {string} 导航链接
  */
-export function getNavigationLink(lat, lng, name, provider = 'gaode') {
+function getNavigationLink(lat, lng, name, provider = 'gaode') {
   const encodedName = encodeURIComponent(name);
 
   if (provider === 'gaode') {
@@ -254,7 +254,7 @@ export function getNavigationLink(lat, lng, name, provider = 'gaode') {
  * @param {number} lng - 经度
  * @returns {boolean} 是否有效
  */
-export function isValidLocation(lat, lng) {
+function isValidLocation(lat, lng) {
   return (
     lat !== null && lat !== undefined &&
     lng !== null && lng !== undefined &&
@@ -262,3 +262,15 @@ export function isValidLocation(lat, lng) {
     lng >= -180 && lng <= 180
   );
 }
+
+// 导出到全局
+window.calculateDistance = calculateDistance;
+window.formatDistance = formatDistance;
+window.formatDistanceFull = formatDistanceFull;
+window.getUserLocation = getUserLocation;
+window.calculateDistancesForHotspots = calculateDistancesForHotspots;
+window.sortByDistance = sortByDistance;
+window.filterByDistance = filterByDistance;
+window.calculateDistanceStats = calculateDistanceStats;
+window.getNavigationLink = getNavigationLink;
+window.isValidLocation = isValidLocation;

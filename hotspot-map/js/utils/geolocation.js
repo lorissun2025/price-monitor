@@ -30,12 +30,12 @@ const GeoLocation = {
    */
   tryGetLocation: function() {
     if (!navigator.geolocation) {
-      Logger.warn('您的浏览器不支持地理位置 API');
+      logger.warn('您的浏览器不支持地理位置 API');
       this.showError('您的浏览器不支持地理位置功能');
       return;
     }
 
-    Logger.debug('正在请求用户位置');
+    logger.debug('正在请求用户位置');
 
     navigator.geolocation.getCurrentPosition(
       (position) => this.onSuccess(position),
@@ -61,7 +61,7 @@ const GeoLocation = {
       timestamp: Date.now()
     };
 
-    Logger.debug('获取位置成功', this.currentPosition);
+    logger.debug('获取位置成功', this.currentPosition);
 
     // 显示用户位置
     this.showUserPosition(latitude, longitude, accuracy);
@@ -77,7 +77,7 @@ const GeoLocation = {
    * 位置获取失败
    */
   onError: function(error) {
-    Logger.error('获取位置失败', error);
+    logger.error('获取位置失败', error);
 
     let message = '';
     switch(error.code) {
@@ -121,21 +121,17 @@ const GeoLocation = {
       weight: 1
     }).addTo(this.map);
 
-    // 创建用户位置标记
+    // 创建用户位置标记（蓝色脉冲点）
     const userIcon = L.divIcon({
       className: 'user-marker',
       html: `
-        <div style="
-          width: 20px;
-          height: 20px;
-          background: #4285F4;
-          border: 3px solid #FFFFFF;
-          border-radius: 50%;
-          box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-        "></div>
+        <div class="location-marker-inner">
+          <div class="location-pulse"></div>
+          <div class="location-dot"></div>
+        </div>
       `,
-      iconSize: [20, 20],
-      iconAnchor: [10, 10]
+      iconSize: [30, 30],
+      iconAnchor: [15, 15]
     });
 
     this.userMarker = L.marker([latitude, longitude], { icon: userIcon })

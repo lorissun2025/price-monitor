@@ -1,8 +1,7 @@
 // Popup 组件
 
-import { formatDistance, formatDistanceFull, getNavigationLink } from '../utils/geo.js';
-
 // Popup 组件
+// Note: formatDistance, formatDistanceFull, getNavigationLink are available from geo.js module
 
 /**
  * 创建 Popup 内容（阶段 1 优化：使用 Popup Cache）

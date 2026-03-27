@@ -9,7 +9,7 @@ let currentQuickFilter = 'all';
  */
 function initFilter(hotspots) {
   // app.js 已经管理了 allHotspots 和 currentHotspots，这里不做处理
-  Logger.debug('筛选器初始化完成');
+  logger.debug('筛选器初始化完成');
 }
 
 /**
@@ -18,6 +18,7 @@ function initFilter(hotspots) {
  */
 function _quickFilter(type) {
   currentQuickFilter = type;
+  window.currentQuickFilter = type;
 
   // 更新按钮状态
   document.querySelectorAll('.quick-filter').forEach(btn => {
@@ -30,35 +31,38 @@ function _quickFilter(type) {
     activeBtn.classList.add('active');
   }
 
-  // 根据类型设置筛选条件
-  let typesToInclude = [];
-  let platformsToInclude = null;
+  // 使用 app.js 的统一筛选（保留距离筛选）
+  if (typeof window.applyCurrentFilters === 'function') {
+    window.applyCurrentFilters();
+    window.updateStats();
+  } else {
+    // 回退：根据类型设置筛选条件
+    let typesToInclude = [];
+    let platformsToInclude = null;
 
-  switch(type) {
-    case 'all':
-      typesToInclude = ['food', 'tourism', 'event', 'acg', 'social_trend'];
-      platformsToInclude = null;
-      break;
-    case 'food':
-      typesToInclude = ['food'];
-      platformsToInclude = ['xiaohongshu', 'douyin'];
-      break;
-    case 'tourism':
-      typesToInclude = ['tourism'];
-      platformsToInclude = ['xiaohongshu', 'douyin'];
-      break;
-    case 'event':
-      typesToInclude = ['event', 'acg'];
-      platformsToInclude = ['weibo', 'douyin', 'bilibili'];
-      break;
-    case 'social':
-      typesToInclude = ['social_trend'];
-      platformsToInclude = ['weibo'];
-      break;
+    switch(type) {
+      case 'all':
+        typesToInclude = ['food', 'tourism', 'event', 'acg', 'social_trend'];
+        break;
+      case 'food':
+        typesToInclude = ['food'];
+        platformsToInclude = ['xiaohongshu', 'douyin'];
+        break;
+      case 'tourism':
+        typesToInclude = ['tourism'];
+        platformsToInclude = ['xiaohongshu', 'douyin'];
+        break;
+      case 'event':
+        typesToInclude = ['event', 'acg'];
+        platformsToInclude = ['weibo', 'douyin', 'bilibili'];
+        break;
+      case 'social':
+        typesToInclude = ['social_trend'];
+        platformsToInclude = ['weibo'];
+        break;
+    }
+    applyFilter(typesToInclude, platformsToInclude);
   }
-
-  // 应用筛选
-  applyFilter(typesToInclude, platformsToInclude);
 }
 
 /**
@@ -67,17 +71,23 @@ function _quickFilter(type) {
  * @param {boolean} checked - 是否选中
  */
 function _filterByPlatform(platform, checked) {
-  // 如果用户手动选择平台，取消快捷筛选状态
-  if (currentQuickFilter !== 'all') {
-    currentQuickFilter = 'all';
-    document.querySelectorAll('.quick-filter').forEach(btn => {
-      btn.classList.remove('active');
-    });
-    document.querySelector('.quick-filter').classList.add('active');
+  // 使用 app.js 的统一筛选（保留距离筛选）
+  if (typeof window.applyCurrentFilters === 'function') {
+    window.applyCurrentFilters();
+    window.updateStats();
+  } else {
+    // 回退逻辑
+    if (currentQuickFilter !== 'all') {
+      currentQuickFilter = 'all';
+      window.currentQuickFilter = 'all';
+      document.querySelectorAll('.quick-filter').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.querySelector('.quick-filter').classList.add('active');
+    }
+    const selectedPlatforms = getSelectedPlatforms();
+    applyFilter(null, selectedPlatforms);
   }
-
-  const selectedPlatforms = getSelectedPlatforms();
-  applyFilter(null, selectedPlatforms);
 }
 
 /**
@@ -139,6 +149,7 @@ function getAllHotspots() {
 }
 
 // 导出全局函数供 HTML 调用
+window.initFilter = initFilter;
 window.quickFilter = _quickFilter;
 window.filterByPlatform = _filterByPlatform;
 window.getCurrentHotspots = getCurrentHotspots;

@@ -557,6 +557,11 @@ body {
 
 /* ============ 位置标记样式 ============ */
 
+.user-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
 .location-marker {
   display: flex;
   align-items: center;

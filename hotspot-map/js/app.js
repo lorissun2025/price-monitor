@@ -14,44 +14,44 @@ window.distanceFilter = null; // 距离筛选：null = 全部, 5, 10, 50 (km)
  */
 document.addEventListener('DOMContentLoaded', async function() {
   const appStartTime = Date.now();
-  Logger.info('🗺️ 热点地图启动中...');
+  logger.info('🗺️ 热点地图启动中...');
 
   // 1. 初始化地图
   window.initMap();
-  Logger.debug('地图初始化完成');
+  logger.debug('地图初始化完成');
 
   // 1.5 初始化地理位置
   if (typeof GeoLocation !== 'undefined') {
     GeoLocation.init(window.map);
-    Logger.debug('地理位置功能已初始化');
+    logger.debug('地理位置功能已初始化');
   }
 
   // 2. 加载并处理数据
   await loadData();
-  Logger.info('数据加载完成', { total: window.allHotspots.length });
+  logger.info('数据加载完成', { total: window.allHotspots.length });
 
   // 3. 初始化筛选器
   window.initFilter(window.allHotspots);
-  Logger.debug('筛选器初始化完成');
+  logger.debug('筛选器初始化完成');
 
   // 4. 渲染热点
   window.renderHotspots(window.currentHotspots);
-  Logger.debug('热点渲染完成', { layers: window.hotspotLayers.length });
+  logger.debug('热点渲染完成', { layers: window.hotspotLayers.length });
 
   // 5. 更新统计
   window.updateStats();
-  Logger.debug('统计更新完成');
+  logger.debug('统计更新完成');
 
   // 6. 添加图例
   window.addLegend();
-  Logger.debug('图例添加完成');
+  logger.debug('图例添加完成');
 
   // 7. 调整地图视野
   window.fitBoundsToHotspots(window.currentHotspots);
-  Logger.debug('地图视野调整完成');
+  logger.debug('地图视野调整完成');
 
   const totalElapsed = Date.now() - appStartTime;
-  Logger.info(`🎉 热点地图启动成功！`, {
+  logger.info(`🎉 热点地图启动成功！`, {
     displayed: window.currentHotspots.length,
     total: window.allHotspots.length,
     elapsed: `${totalElapsed}ms`
@@ -70,12 +70,12 @@ document.addEventListener('DOMContentLoaded', async function() {
 async function loadData() {
   const startTime = Date.now();
   try {
-    Logger.debug('正在从 API 获取热点数据');
+    logger.debug('正在从 API 获取热点数据');
 
     // 从 API 获取数据
     window.allHotspots = await window.fetchHotspots();
 
-    Logger.debug('加载热点数据', { count: window.allHotspots.length });
+    logger.debug('加载热点数据', { count: window.allHotspots.length });
 
     // 计算影响力等级
     window.allHotspots.forEach(hotspot => {
@@ -88,7 +88,7 @@ async function loadData() {
     // 只保留 Top 30 个热点（避免拥挤）
     window.allHotspots = window.allHotspots.slice(0, 30);
 
-    Logger.debug('优化后展示', { count: window.allHotspots.length });
+    logger.debug('优化后展示', { count: window.allHotspots.length });
 
     // 按城市分组统计（用于调试）
     const cityGroups = {};
@@ -96,11 +96,11 @@ async function loadData() {
       const city = h.location.city;
       cityGroups[city] = (cityGroups[city] || 0) + 1;
     });
-    Logger.debug('城市分布', cityGroups);
+    logger.debug('城市分布', cityGroups);
 
     window.currentHotspots = [...window.allHotspots];
   } catch (error) {
-    Logger.error('从 API 加载数据失败，使用模拟数据', error);
+    logger.error('从 API 加载数据失败，使用模拟数据', error);
 
     // 降级到模拟数据
     window.allHotspots = mockHotspots;
@@ -116,7 +116,7 @@ async function loadData() {
     // 只保留 Top 30 个热点
     window.allHotspots = window.allHotspots.slice(0, 30);
 
-    Logger.debug('使用模拟数据', { count: window.allHotspots.length });
+    logger.debug('使用模拟数据', { count: window.allHotspots.length });
 
     window.currentHotspots = [...window.allHotspots];
   }
@@ -129,7 +129,7 @@ function renderHotspots(hotspots) {
   if (!hotspots) return;
 
   const startTime = Date.now();
-  Logger.debug('开始渲染热点', { count: hotspots.length });
+  logger.debug('开始渲染热点', { count: hotspots.length });
 
   // 清除已有图层
   window.hotspotLayers.forEach(layer => window.map.removeLayer(layer));
@@ -174,7 +174,7 @@ function renderHotspots(hotspots) {
   });
 
   const elapsed = Date.now() - startTime;
-  Logger.debug('热点渲染完成', { layers: window.hotspotLayers.length, elapsed: `${elapsed}ms` });
+  logger.debug('热点渲染完成', { layers: window.hotspotLayers.length, elapsed: `${elapsed}ms` });
 }
 
 /**
@@ -327,7 +327,7 @@ async function searchHotspots() {
       window.fitBoundsToHotspots(window.currentHotspots);
     }
   } catch (error) {
-    Logger.error('搜索失败', error);
+    logger.error('搜索失败', error);
     searchStatus.textContent = '❌ 搜索失败，请稍后重试';
     searchStatus.style.color = '#ff4d4f';
   }
@@ -356,7 +356,7 @@ async function refreshData() {
   refreshStatus.style.color = '#1890ff';
 
   try {
-    Logger.info('开始刷新数据');
+    logger.info('开始刷新数据');
 
     // 重新加载数据
     await loadData();
@@ -370,9 +370,9 @@ async function refreshData() {
     refreshStatus.textContent = `✅ 数据已更新！共 ${window.allHotspots.length} 个热点`;
     refreshStatus.style.color = '#52c41a';
 
-    Logger.info('数据刷新完成', { total: window.allHotspots.length });
+    logger.info('数据刷新完成', { total: window.allHotspots.length });
   } catch (error) {
-    Logger.error('数据刷新失败', error);
+    logger.error('数据刷新失败', error);
     refreshStatus.textContent = '❌ 刷新失败，请稍后重试';
     refreshStatus.style.color = '#ff4d4f';
   } finally {
@@ -444,12 +444,13 @@ window.refreshData = refreshData;
 window.locateUser = locateUser;
 window.sortHotspotsByDistance = sortHotspotsByDistance;
 window.filterByDistance = filterByDistance;
+window.applyCurrentFilters = applyCurrentFilters;
 
 /**
  * 处理用户位置获取成功事件
  */
 function handleUserPositionFound(event) {
-  Logger.info('用户位置获取成功', event.detail);
+  logger.info('用户位置获取成功', event.detail);
   window.userLocation = event.detail;
 
   // 更新状态显示
@@ -483,7 +484,7 @@ function handleUserPositionFound(event) {
  * 处理用户位置获取失败事件
  */
 function handleUserPositionError(event) {
-  Logger.error('用户位置获取失败', event.detail);
+  logger.error('用户位置获取失败', event.detail);
 
   const locationStatus = document.getElementById('location-status');
   if (locationStatus) {
@@ -502,7 +503,7 @@ function handleUserPositionError(event) {
  */
 function calculateHotspotDistances() {
   if (!window.userLocation) {
-    Logger.warn('用户位置未知，无法计算距离');
+    logger.warn('用户位置未知，无法计算距离');
     return;
   }
 
@@ -520,14 +521,14 @@ function calculateHotspotDistances() {
     }
   });
 
-  Logger.debug('已计算所有热点的距离');
+  logger.debug('已计算所有热点的距离');
 }
 
 /**
  * 定位用户位置
  */
 function locateUser() {
-  Logger.info('开始定位用户位置');
+  logger.info('开始定位用户位置');
 
   const locationStatus = document.getElementById('location-status');
   if (locationStatus) {
@@ -538,7 +539,7 @@ function locateUser() {
   if (typeof GeoLocation !== 'undefined') {
     GeoLocation.tryGetLocation();
   } else {
-    Logger.error('GeoLocation 未加载');
+    logger.error('GeoLocation 未加载');
     if (locationStatus) {
       locationStatus.textContent = '❌ 地理位置功能未加载';
       locationStatus.style.color = '#ff4d4f';
@@ -551,7 +552,7 @@ function locateUser() {
  */
 function sortHotspotsByDistance() {
   if (!window.userLocation) {
-    Logger.warn('用户位置未知，无法按距离排序');
+    logger.warn('用户位置未知，无法按距离排序');
     return;
   }
 
@@ -563,13 +564,13 @@ function sortHotspotsByDistance() {
     window.currentHotspots.sort((a, b) => b.influenceScore - a.influenceScore);
     sortBtn.textContent = '📏 按距离排序';
     sortBtn.dataset.sorted = 'false';
-    Logger.debug('已恢复按影响力排序');
+    logger.debug('已恢复按影响力排序');
   } else {
     // 按距离排序（从近到远）
     window.currentHotspots.sort((a, b) => (a.distance || Infinity) - (b.distance || Infinity));
     sortBtn.textContent = '📏 取消距离排序';
     sortBtn.dataset.sorted = 'true';
-    Logger.debug('已按距离排序');
+    logger.debug('已按距离排序');
   }
 
   // 重新渲染
@@ -581,7 +582,7 @@ function sortHotspotsByDistance() {
  * 按距离筛选热点
  */
 function filterByDistance(maxDistance) {
-  Logger.debug('按距离筛选', { maxDistance: maxDistance === null ? '全部' : `${maxDistance}km` });
+  logger.debug('按距离筛选', { maxDistance: maxDistance === null ? '全部' : `${maxDistance}km` });
 
   window.distanceFilter = maxDistance;
   applyCurrentFilters();
@@ -611,8 +612,11 @@ createPopupContent = function(hotspot) {
       </div>
     `;
 
-    // 在 </div> 之前插入距离信息
-    content = content.replace('</div>', distanceInfo + '</div>');
+    // 在最后一个 </div> 之前插入距离信息
+    const lastDivIndex = content.lastIndexOf('</div>');
+    if (lastDivIndex !== -1) {
+      content = content.substring(0, lastDivIndex) + distanceInfo + '</div>' + content.substring(lastDivIndex + 6);
+    }
   }
 
   return content;

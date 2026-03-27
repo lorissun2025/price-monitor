@@ -1,0 +1,91 @@
+{
+  "gene": {
+    "type": "Gene",
+    "summary": "股票情绪分析系统 - 基于多源社交媒体数据的A股市场情绪监测与分析平台，支持雪球、百度贴吧、微博、东方财富股吧等多数据源采集，结合情绪词典法和LLM深度分析，生成情绪指数和趋势报告",
+    "description": "通过爬取雪球、百度贴吧、微博、东方财富股吧等社交媒体平台的股票讨论内容，使用情绪词典法和LLM分析相结合的方式，计算情绪指数、追踪情绪趋势，并提供关键观点摘要和投资情绪参考建议",
+    "signals_match": [
+      "stock-sentiment",
+      "情绪分析",
+      "A股",
+      "nlp",
+      "sentiment-analysis",
+      "股票监控",
+      "市场情绪"
+    ],
+    "category": "innovate",
+    "tags": [
+      "stock",
+      "sentiment",
+      "NLP",
+      "A股",
+      "social-media",
+      "emotion-analysis",
+      "data-mining"
+    ],
+    "created_at": "2026-03-27T07:05:56.982Z",
+    "version": "1.0.0",
+    "asset_id": "sha256:46c344e000a6662ed43debdc81b3b571e046ca23b0a5885b4c7c3c1cedca05e7"
+  },
+  "capsule": {
+    "type": "Capsule",
+    "gene_ref": "sha256:46c344e000a6662ed43debdc81b3b571e046ca23b0a5885b4c7c3c1cedca05e7",
+    "summary": "完整的股票情绪分析系统设计，包含数据采集模块（Firecrawl多源抓取）、NLP处理模块（情绪词典+LLM双引擎）、情绪指数计算模块（加权平均+趋势分析）和可视化通知模块",
+    "description": "系统由四大模块组成：1)数据采集模块-使用Firecrawl抓取雪球/贴吧/微博/东方财富的股票讨论；2)NLP处理模块-情绪词典法快速初筛+LLM深度分析提取关键观点；3)情绪指数计算模块-加权时序分析生成0-1情绪分数和趋势；4)监控通知模块-30分钟定时巡检+异常波动告警。支持多股票对比和情绪报告生成。",
+    "outcome": {
+      "status": "success",
+      "score": 0.9
+    },
+    "confidence": 0.9,
+    "trigger": [
+      "stock",
+      "sentiment",
+      "A股",
+      "emotion",
+      "情绪监控"
+    ],
+    "implementation": {
+      "data_sources": [
+        "雪球",
+        "百度贴吧",
+        "微博",
+        "东方财富股吧"
+      ],
+      "algorithms": [
+        "情绪词典法",
+        "LLM情绪分析",
+        "加权时序分析"
+      ],
+      "features": [
+        "多源数据采集",
+        "情绪指数计算",
+        "趋势分析",
+        "关键观点摘要",
+        "定时监控",
+        "异常检测",
+        "多股票对比"
+      ],
+      "tech_stack": [
+        "JavaScript",
+        "Firecrawl",
+        "LLM API"
+      ],
+      "risk_disclaimer": "情绪分析仅供参考，不构成投资建议"
+    },
+    "version": "1.0.0",
+    "created_at": "2026-03-27T07:05:56.982Z",
+    "asset_id": "sha256:cfc728902a2fc8a1e307ed4f25ba86e64f6e1f90b4c1b43dea02369630d6065e"
+  },
+  "evolutionEvent": {
+    "type": "EvolutionEvent",
+    "intent": "innovate",
+    "gene_ref": "sha256:46c344e000a6662ed43debdc81b3b571e046ca23b0a5885b4c7c3c1cedca05e7",
+    "capsule_id": "sha256:cfc728902a2fc8a1e307ed4f25ba86e64f6e1f90b4c1b43dea02369630d6065e",
+    "outcome": {
+      "status": "success",
+      "score": 0.9
+    },
+    "description": "创建股票情绪分析系统Capsule，创新性地结合多源社交媒体数据采集、双引擎NLP分析和时序情绪追踪，为A股投资者提供市场情绪参考",
+    "created_at": "2026-03-27T07:05:56.982Z",
+    "asset_id": "sha256:7f8d3d638bd896acb72fa2eb2dbdaa2875aacb946b2200f3f7bcd3b783ebc737"
+  }
+}

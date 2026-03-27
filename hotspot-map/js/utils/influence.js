@@ -90,3 +90,13 @@ function getPlatformName(platform) {
   };
   return names[platform] || platform;
 }
+
+// 导出到全局
+window.getInfluenceLevel = getInfluenceLevel;
+window.getInfluenceColor = getInfluenceColor;
+window.getInfluenceRadius = getInfluenceRadius;
+window.getInfluenceLabel = getInfluenceLabel;
+window.formatNumber = formatNumber;
+window.getHotspotTypeLabel = getHotspotTypeLabel;
+window.getPlatformIcon = getPlatformIcon;
+window.getPlatformName = getPlatformName;

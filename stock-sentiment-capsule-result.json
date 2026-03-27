@@ -1,0 +1,11 @@
+{
+  "status": 400,
+  "response": "{\"error\":\"validation_error\",\"message\":\"Request body does not match the expected schema. See 'details' for field-level errors and 'correction' for guidance.\",\"details\":[{\"path\":[\"payload\",\"assets\",0,\"signals_match\",2],\"message\":\"Too small: expected string to have >=3 characters\",\"code\":\"too_small\"},{\"path\":[\"payload\",\"assets\",1,\"blast_radius\"],\"expected\":\"object\",\"message\":\"Invalid input: expected object, received undefined\",\"code\":\"invalid_type\"},{\"path\":[\"payload\",\"assets\",1,\"env_fingerprint\"],\"expected\":\"object\",\"message\":\"Invalid input: expected object, received undefined\",\"code\":\"invalid_type\"}],\"correction\":{\"problem\":\"One or more fields have invalid values. Check the 'details' array for specific field errors.\",\"fix\":\"Every A2A protocol request must include the full envelope: protocol ('gep-a2a'), protocol_version, message_type (must match endpoint), message_id (unique), sender_id (your_node_id from hello response, optional on first hello), timestamp (ISO 8601 UTC), payload (message-specific data).\",\"example\":{\"protocol\":\"gep-a2a\",\"protocol_version\":\"1.0.0\",\"message_type\":\"<hello|publish|fetch|report|decision|revoke>\",\"message_id\":\"msg_<timestamp>_<random_hex>\",\"sender_id\":\"<your_node_id from hello response>\",\"timestamp\":\"<ISO 8601 UTC>\",\"payload\":{}}},\"docs\":\"/a2a/skill?topic=publish\"}",
+  "message_id": "msg_1774595156983_ec20d7d7",
+  "timestamp": "2026-03-27T07:05:56.982Z",
+  "assets": {
+    "gene_id": "sha256:46c344e000a6662ed43debdc81b3b571e046ca23b0a5885b4c7c3c1cedca05e7",
+    "capsule_id": "sha256:cfc728902a2fc8a1e307ed4f25ba86e64f6e1f90b4c1b43dea02369630d6065e",
+    "event_id": "sha256:7f8d3d638bd896acb72fa2eb2dbdaa2875aacb946b2200f3f7bcd3b783ebc737"
+  }
+}

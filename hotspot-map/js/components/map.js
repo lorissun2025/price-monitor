@@ -16,11 +16,14 @@ function initMap() {
 
 function addTileLayer() {
   const tileLayers = {
-    china: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-    world: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+    china: 'https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}',
+    world: 'https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}',
+    chinaSubdomains: '1234',
+    worldSubdomains: '1234'
   };
   L.tileLayer(tileLayers[mapType], {
-    maxZoom: 18
+    maxZoom: 18,
+    subdomains: '1234'
   }).addTo(window.map);
 }
 
@@ -83,58 +86,64 @@ function locateUser() {
   const statusElement = document.getElementById('location-status');
 
   if (!navigator.geolocation) {
-    alert('您的浏览器不支持地理位置功能');
+    statusElement.textContent = '❌ 浏览器不支持定位';
+    statusElement.style.color = '#ff4d4f';
     return;
   }
 
   statusElement.textContent = '📍 正在定位...';
   statusElement.style.color = '#1890ff';
 
+  // 优先使用 GeoLocation 模块
+  if (typeof GeoLocation !== 'undefined') {
+    GeoLocation.tryGetLocation();
+    return;
+  }
+
+  // 回退：直接使用浏览器 API
   navigator.geolocation.getCurrentPosition(
     (position) => {
-      const { latitude, longitude } = position.coords;
+      const { latitude, longitude, accuracy } = position.coords;
       userLocation = { lat: latitude, lng: longitude };
 
-      // 在地图上显示用户位置
       showUserLocation(userLocation);
-
-      // 计算到热点的距离
       calculateDistances(userLocation);
 
-      statusElement.textContent = '✅ 定位成功！';
-      statusElement.style.color = '#52c41a';
-
-      Logger.debug('用户位置', userLocation);
-    },
-    (error) => {
-      Logger.error('定位失败', error);
-
-      let errorMessage = '定位失败';
-      switch (error.code) {
-        case error.PERMISSION_DENIED:
-          errorMessage = '您拒绝了定位请求';
-          break;
-        case error.POSITION_UNAVAILABLE:
-          errorMessage = '位置信息不可用';
-          break;
-        case error.TIMEOUT:
-          errorMessage = '定位请求超时';
-          break;
+      // 同步到 GeoLocation
+      if (typeof GeoLocation !== 'undefined') {
+        GeoLocation.currentPosition = { latitude, longitude, accuracy };
+        GeoLocation.showUserPosition(latitude, longitude, accuracy);
       }
 
+      statusElement.innerHTML = `✅ 定位成功<br><small style="color:#666;">纬度: ${latitude.toFixed(4)} 经度: ${longitude.toFixed(4)}</small>`;
+      statusElement.style.color = '#52c41a';
+
+      const sortBtn = document.getElementById('sort-btn');
+      if (sortBtn) sortBtn.disabled = false;
+
+      // 设置全局用户位置供距离筛选使用
+      window.userLocation = { latitude, longitude, accuracy };
+
+      // 重新应用筛选（含距离信息）
+      if (typeof window.applyCurrentFilters === 'function') {
+        window.applyCurrentFilters();
+        window.updateStats();
+      }
+
+      logger.debug('用户位置', userLocation);
+    },
+    (error) => {
+      logger.error('定位失败', error);
+      let errorMessage = '定位失败';
+      switch (error.code) {
+        case error.PERMISSION_DENIED: errorMessage = '您拒绝了定位请求'; break;
+        case error.POSITION_UNAVAILABLE: errorMessage = '位置信息不可用'; break;
+        case error.TIMEOUT: errorMessage = '定位请求超时'; break;
+      }
       statusElement.textContent = `❌ ${errorMessage}`;
       statusElement.style.color = '#ff4d4f';
-
-      // 使用默认位置（北京）
-      userLocation = { lat: 39.9042, lng: 116.4074 };
-      showUserLocation(userLocation);
-      calculateDistances(userLocation);
     },
-    {
-      enableHighAccuracy: true,
-      timeout: 10000,
-      maximumAge: 300000  // 5分钟缓存
-    }
+    { enableHighAccuracy: true, timeout: 10000, maximumAge: 300000 }
   );
 }
 
@@ -149,13 +158,18 @@ function showUserLocation(location) {
     map.removeLayer(userLocationMarker);
   }
 
-  // 创建用户位置标记
+  // 创建用户位置标记（蓝色脉冲点）
   userLocationMarker = L.marker([location.lat, location.lng], {
     icon: L.divIcon({
-      className: 'user-location-marker',
-      html: '<div style="font-size: 32px;">🔵</div>',
-      iconSize: [32, 32],
-      iconAnchor: [16, 16]
+      className: 'user-marker',
+      html: `
+        <div class="location-marker-inner">
+          <div class="location-pulse"></div>
+          <div class="location-dot"></div>
+        </div>
+      `,
+      iconSize: [30, 30],
+      iconAnchor: [15, 15]
     })
   }).addTo(map);
 
@@ -186,7 +200,7 @@ function calculateDistances(userLoc) {
     hotspot.distanceText = formatDistance(distance);
   });
 
-  Logger.debug('距离计算完成');
+  logger.debug('距离计算完成');
 }
 
 /**
@@ -240,7 +254,7 @@ function sortHotspotsByDistance() {
   window.updateStats();
   window.fitBoundsToHotspots(sorted);
 
-  Logger.debug('按距离排序完成', { count: sorted.length });
+  logger.debug('按距离排序完成', { count: sorted.length });
 }
 
 /**
